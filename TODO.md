@@ -11,5 +11,5 @@
 
 - PB: Dokument aufsetzen
 - PK: Projektplan (Grafik) erstellen
-- Artefakte definieren:
-- Analyse erstellen:
+- SS: Artefakte definieren
+- FM: Analyse erstellen
