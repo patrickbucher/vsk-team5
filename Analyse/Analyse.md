@@ -35,9 +35,29 @@ Dieses Regelwerk ist in der Methode `org.bitstorm.gameoflife.GameOfLifeGrid.next
     - `GameOfLife` erweitert ein AWT-Applet und baut die ganze Benutzeroberfläche auf. Neben dem eigentlichen Spielfeld (Zellenraster) gibt es unten auch noch Steuerelemente mit vordefinierten Figuren, Schaltflächen zur Steuerung des Ablaufs (_Next_, _Start_, Auswahl der Geschwindigkeit), eine Auswahl für die Zellengrösse und eine Statusanzeige für die Generation (Nummer des aktuellen Zyklus). Die Berechnung der nächsten Generation wird in einen eigenen Thread ausgelagert, wozu das `Runnable`-Interface implementiert wird. TODO
 - `org.bitstorm.util`
 
-## Ablauf & Ereignisse
+## Log-Ereignisse
 
-TODO
+nach Log-Level
+
+### Error
+
+- bei Exceptions
+
+### Warning
+
+- wenn keine Änderungen mehr stattfinden
+
+### Debug
+
+- Benutzerinteraktoin
+
+### Info
+
+- neue Generation
+
+### Trace
+
+- Statusänderung einzelner Zelle
 
 # Spezielles
 
