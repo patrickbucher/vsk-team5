@@ -11,7 +11,14 @@
 
 ## SW 1
 
-- [ ] **PB**: Dokument aufsetzen
-- [ ] **PK**: Projektplan (Grafik) erstellen
-- [ ] **SS**: Artefakte definieren
-- [ ] **FM**: Analyse erstellen
+- [X] **PB**: Dokument aufsetzen
+- [X] **PK**: Projektplan (Grafik) erstellen
+- [X] **SS**: Artefakte definieren
+- [X] **FM**: Analyse erstellen
+
+## SW 2
+
+- [ ] **PB**: 
+- [ ] **PK**: 
+- [ ] **SS**: 
+- [ ] **FM**: 
