@@ -16,9 +16,9 @@
 - [X] **SS**: Artefakte definieren
 - [X] **FM**: Analyse erstellen
 
-## SW 2
+## SW 4
 
-- [ ] **PB**: 
-- [ ] **PK**: 
-- [ ] **SS**: 
-- [ ] **FM**: 
+- [ ] **PB**: Epics und Stories bestimmen
+- [ ] **PK**: Risiken definieren
+- [ ] **SS**: Tools (Tests, Entwicklung, Abnahme) definieren
+- [ ] **FM**: Meilensteinbericht (1. Meilenstein)
