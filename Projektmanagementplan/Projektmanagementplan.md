@@ -7,7 +7,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektorganisation
 ## Organisationsplan
-![Organigramm](images/Organigramm.png)
+![Organigramm](https://github.com/patrickbucher/vsk-team5/blob/master/images/Organigramm.png)
 
 ## Rollen & Zuständigkeiten
 
