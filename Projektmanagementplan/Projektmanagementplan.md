@@ -7,7 +7,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektorganisation
 ## Organisationsplan
-![Organigramm](https://github.com/patrickbucher/vsk-team5/blob/master/Projektmanagementplan/img/Organigramm.png)
+![Organigramm](img/Organigramm.png)
 
 ## Rollen & Zuständigkeiten
 
@@ -30,7 +30,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektführung
 ## Rahmenplan
-![Rahmenplan](https://github.com/patrickbucher/vsk-team5/blob/master/Projektmanagementplan/img/Rahmenplan.png)
+![Rahmenplan](img/Rahmenplan.png)
 ## Meilensteinplan
 
 Das komplette Projekt ist in vier Meilensteine aufgeteilt.<br>Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe.
@@ -53,7 +53,7 @@ Die Projektdurchführung (MS 3 / 4) ist in vier Sprints aufgeteilt. Jeder Sprint
 |      4 | 13.05.2018 | Sprintreview S4                     |
 
 ## Projektstrukturplan
-![Projektstrukturplan](Projektmanagementplan/img/Projektstrukturplan.PNG)
+![Projektstrukturplan](img/Projektstrukturplan.png)
 
 ## Aufwandschätzung
 ## Ressourcenplan
