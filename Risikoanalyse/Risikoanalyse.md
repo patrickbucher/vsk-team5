@@ -2,6 +2,9 @@
 
 ## Risikien
 
+* Krankheits- / Unfallbedingte Ausfälle
+* Ausfall HSLU-Netzwerk
+* Hardwareausfall
 
 
 ## Risikomatrix
