@@ -30,6 +30,8 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektführung
 ## Rahmenplan
+Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingplant werden.
+
 ![Rahmenplan](https://github.com/patrickbucher/vsk-team5/blob/master/Projektmanagementplan/img/Rahmenplan.png)
 ## Meilensteinplan
 
@@ -53,6 +55,8 @@ Die Projektdurchführung (MS 3 / 4) ist in vier Sprints aufgeteilt. Jeder Sprint
 |      4 | 13.05.2018 | Sprintreview S4                     |
 
 ## Projektstrukturplan
+Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt.
+
 ![Projektstrukturplan](Projektmanagementplan/img/Projektstrukturplan.PNG)
 
 ## Aufwandschätzung
