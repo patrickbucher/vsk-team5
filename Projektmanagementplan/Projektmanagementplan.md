@@ -31,7 +31,9 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 # Projektführung
 ## Rahmenplan
 ## Meilensteinplan
+## Sprintplan
 ## Projektstrukturplan
+## Aufwandschätzung
 ## Ressourcenplan
 ## Projektkontrolle
 
@@ -57,7 +59,6 @@ Für die **Entwicklung** sind folgende Tools im Einsatz:
 | Testing              | JUnit<br>Integrationstests<br>Systemtests |
 
 ## Konfigurationsmanagement
-
 ## Releasemanagement
 Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröffentlichung. Dieses Projekt beinhaltet zwei Releases:
 - Release 1: Zwischenabgabe (SW08)
