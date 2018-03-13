@@ -7,7 +7,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektorganisation
 ## Organisationsplan
-![Organigramm](https://github.com/patrickbucher/vsk-team5/blob/master/images/Organigramm.png)
+![Organigramm](/img/Organigramm.png)
 
 ## Rollen & Zuständigkeiten
 
@@ -30,6 +30,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektführung
 ## Rahmenplan
+![Rahmenplan](/img/Rahmenplan.png)
 ## Meilensteinplan
 
 Das komplette Projekt ist in vier Meilensteine aufgeteilt.<br>Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe.
