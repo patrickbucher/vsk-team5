@@ -43,10 +43,10 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 Für das **Projektmanagement** sind folgende Tools im Einsatz:
 
-| Bereich                | Tool     |
-| ---------------------- | -------- |
-| Vorgehensmodell: Scrum | ScrumDo  |
-| Datenaustausch         | GitHub   |
+| Bereich                | Tool                                         |
+| ---------------------- | -------------------------------------------- |
+| Vorgehensmodell: Scrum | ScrumDo                                      |
+| Datenaustausch         | GitHub                                       |
 | Dokumentation          | Markdown<br>Microsoft Office 2016<br>draw.io |
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:
@@ -59,6 +59,9 @@ Für die **Entwicklung** sind folgende Tools im Einsatz:
 | Testing              | JUnit<br>Integrationstests<br>Systemtests |
 
 ## Konfigurationsmanagement
+Das Konfigurationsmanagement soll die Einhaltung von Regeln für einen organisatiorischen und verhaltensmässigen Lebenslauf eines Produkts und seiner Configuration Items (Konfigurationseinheiten) gewährleisten.<br>
+Ein Configuration Item ist eine beliebige Kombination aus Hardware, Software oder Dienstleistung.<br>In diesem Projekt sind diese die Dokumentationen, Komponenten und Interfaces. Im Kapitel "Releasemanagement" sind diese ausführlich aufgelistet.
+
 ## Releasemanagement
 Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröffentlichung. Dieses Projekt beinhaltet zwei Releases:
 - Release 1: Zwischenabgabe (SW08)
