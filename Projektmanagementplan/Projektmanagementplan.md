@@ -9,22 +9,22 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ## Organisationsplan
 ## Rollen & Zuständigkeiten
 
-| Rolle            | Teammitglied    | Kürzel |
-|------------------+-----------------+--------|
-| Projektleiter    | Sascha Sägesser | SS     |
-| Interfacekomitee | Patrick Bucher  | PB     |
-| Product Owner    | Fabian Meyer    | FB     |
-| Scrum Master     | Pascal Kiser    | PK     |
+| Rolle              | Teammitglied      | Kürzel   |
+| ------------------ | ----------------- | -------- |
+| Projektleiter      | Sascha Sägesser   | SS       |
+| Interfacekomitee   | Patrick Bucher    | PB       |
+| Product Owner      | Fabian Meyer      | FB       |
+| Scrum Master       | Pascal Kiser      | PK       |
 
-| Zuständigkeit       | Teammitglied    | Kürzel |
-|---------------------+-----------------+--------|
-| Dokumentation       | Patrick Bucher  | PB     |
-| Build               | Pascal Kiser    | PK     |
-| Testing             | Fabian Meyer    | FM     |
-| Codereview          | Patrick Bucher  | PB     |
-| Sprintreviews       | Sascha Sägesser | SS     |
-| Meilensteinberichte | Fabian Meyer    | FM     |
-| Risikomanagement    | Pascal Kiser    | PK     |
+| Zuständigkeit         | Teammitglied      | Kürzel   |
+| --------------------- | ----------------- | -------- |
+| Dokumentation         | Patrick Bucher    | PB       |
+| Build                 | Pascal Kiser      | PK       |
+| Testing               | Fabian Meyer      | FM       |
+| Codereview            | Patrick Bucher    | PB       |
+| Sprintreviews         | Sascha Sägesser   | SS       |
+| Meilensteinberichte   | Fabian Meyer      | FM       |
+| Risikomanagement      | Pascal Kiser      | PK       |
 
 # Projektführung
 ## Rahmenplan
