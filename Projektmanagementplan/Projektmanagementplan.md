@@ -53,6 +53,8 @@ Die Projektdurchführung (MS 3 / 4) ist in vier Sprints aufgeteilt. Jeder Sprint
 |      4 | 13.05.2018 | Sprintreview S4                     |
 
 ## Projektstrukturplan
+![Projektstrukturplan](Projektmanagementplan/img/Projektstrukturplan.PNG)
+
 ## Aufwandschätzung
 ## Ressourcenplan
 ## Projektkontrolle
@@ -91,7 +93,8 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | --------------------- | --------- | --------- |
 | Projektmanagementplan |           |           |
 | Systemspezifikation   |           |           |
-| LoggerInterface       |           |           |
+| Logger                |           |           |
+| LoggerSetup           |           |           |
 | LoggerCommon          |           |           |
 | LoggerComponent       |           |           |
 | LoggerServer          |           |           |
