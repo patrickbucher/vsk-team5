@@ -25,10 +25,11 @@ Massnahmen:
 
 Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
 
+Massnahmen:
 * Versionsverwaltung
 * Regelmässig Commit / Push
 
-### Unrealistische Planung / Zeitknappheit
+### Zeitknappheit
 
 * Priorisierung von Features
 * Minimalanforderungen definieren
