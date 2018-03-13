@@ -7,6 +7,8 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Projektorganisation
 ## Organisationsplan
+![Organigramm](images/Organigramm.png)
+
 ## Rollen & Zuständigkeiten
 
 | Rolle              | Teammitglied      | Kürzel   |
