@@ -2,10 +2,37 @@
 
 ## Risikien
 
-* Krankheits- / Unfallbedingte Ausfälle
-* Ausfall HSLU-Netzwerk
-* Hardwareausfall
+### Krankheits- / Unfallbedingte Ausfälle
 
+Eine oder mehrere Personen fallen aus.
+
+Massnahmen:
+* Know-How redundant: Dokumentation pflegen, Austausch im Plenum
+* Keine Extremsportarten 
+* Gesunde Ernährung
+* 
+
+### Ausfall HSLU-Netz
+
+HSLU-Netz / Enterpriselab fällt aus.
+
+Massnahmen:
+* Backup (lokal)
+* Ausweichmöglichkeiten (Github)
+* Dokumentation separat verwaltet
+
+### Hardwareausfall
+
+Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
+
+* Versionsverwaltung
+* Regelmässig Commit / Push
+
+### Unrealistische Planung / Zeitknappheit
+
+* Priorisierung von Features
+* Minimalanforderungen definieren
+* 
 
 ## Risikomatrix
 
