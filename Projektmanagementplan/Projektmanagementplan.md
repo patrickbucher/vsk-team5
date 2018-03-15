@@ -13,22 +13,22 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ## Rollen & Zuständigkeiten
 
-| Rolle              | Teammitglied      | Kürzel   |
-| ------------------ | ----------------- | -------- |
-| Projektleiter      | Sascha Sägesser   | SS       |
-| Interfacekomitee   | Patrick Bucher    | PB       |
-| Product Owner      | Fabian Meyer      | FB       |
-| Scrum Master       | Pascal Kiser      | PK       |
+### Rollen
 
-| Zuständigkeit         | Teammitglied      | Kürzel   |
-| --------------------- | ----------------- | -------- |
-| Dokumentation         | Patrick Bucher    | PB       |
-| Build                 | Pascal Kiser      | PK       |
-| Testing               | Fabian Meyer      | FM       |
-| Codereview            | Patrick Bucher    | PB       |
-| Sprintreviews         | Sascha Sägesser   | SS       |
-| Meilensteinberichte   | Fabian Meyer      | FM       |
-| Risikomanagement      | Pascal Kiser      | PK       |
+- Projektleiter: Sascha Sägesser
+- Interfacekomitee: Patrick Bucher
+- Product Owner: Fabian Meyer
+- Scrum Master: Pascal Kiser
+
+### Zuständigkeit
+
+- Dokumentation: Patrick Bucher
+- Build: Pascal Kiser
+- Testing: Fabian Meyer
+- Codereview: Patrick Bucher
+- Sprintreviews: Sascha Sägesser
+- Meilensteinberichte: Fabian Meyer
+- Risikomanagement: Pascal Kiser
 
 # Projektführung
 
@@ -40,14 +40,22 @@ Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten 
 
 ## Meilensteinplan
 
-Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe.
+Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
 
-| MS   | Termin     | Deliverables                                                                                              |
-| ---: | ---------- | --------------------------------------------------------------------------------------------------------- |
-| 1    | 19.02.2018 | Auftrag "Message-Logger"                                                                                  |
-| 2    | 12.03.2018 | ProductBacklog, Sprintplanung S1/S2, Detailplanung S1, Meilensteinbericht MS 2                            |
-| 3    | 08.04.2018 | Release 1 gemäss Muss-Features deployed und lauffähig, Sprintplanung S3/S4, Meilensteinbericht MS 3     |
-| 4    | 13.05.2018 | Release 2 gemäss Muss-Features deployed und lauffähig, Meilensteinbericht MS 4                            |
+1. Meilenstein (19.02.2018)
+    - Auftrag "Message-Logger"
+2. Meilenstein (12.03.2018)
+    - ProductBacklog
+    - Sprintplanung S1/S2
+    - Detailplanung S1
+    - Meilensteinbericht MS 2
+3. Meilenstein (08.04.2018)
+    - Release 1 gemäss Muss-Features deployed und lauffähig
+    - Sprintplanung S3/S4
+    - Meilensteinbericht MS 3
+4. Meilenstein (13.05.2018)
+    - Release 2 gemäss Muss-Features deployed und lauffähig
+    - Meilensteinbericht MS 4
 
 ## Sprintplan
 
