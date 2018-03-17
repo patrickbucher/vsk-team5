@@ -18,7 +18,7 @@
 
 ## SW 4
 
-- [ ] **PB**: Epics und Stories bestimmen
+- [X] **PB**: Epics und Stories bestimmen
 - [ ] **PK**: Risiken definieren
 - [ ] **SS**: Tools (Tests, Entwicklung, Abnahme) definieren
 - [ ] **FM**: Meilensteinbericht (1. Meilenstein)
