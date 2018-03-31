@@ -22,3 +22,18 @@
 - [ ] **PK**: Risiken definieren
 - [ ] **SS**: Tools (Tests, Entwicklung, Abnahme) definieren
 - [ ] **FM**: Meilensteinbericht (1. Meilenstein)
+
+## Zwischenabgabe
+
+[ ] Projektplan
+    - Organisation
+    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen)
+[ ] Testplan
+    - Testprotokolle
+    - Was wurde wie getestet?
+[ ] Sprintreviews
+    - geplant/erreicht
+[ ] TCP-Schnittstelle
+    - Entscheidungen festhalten
+[ ] Konfiguration
+[ ] JavaDoc
