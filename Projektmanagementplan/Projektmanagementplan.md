@@ -6,6 +6,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
 # Projektorganisation
+#### Version 1.0.0
 
 ## Organisationsplan
 
