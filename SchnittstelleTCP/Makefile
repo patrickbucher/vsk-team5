@@ -4,3 +4,6 @@ DATE=-V date="`date +'%d.%m.%Y'`"
 
 %.pdf: %.md
 	pandoc -s $(PARAMS) $(FONTS) $(DATE) $< -o $@
+
+%.png: %.dot
+	dot $< -Tpng -o $@

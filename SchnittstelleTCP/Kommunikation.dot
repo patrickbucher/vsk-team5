@@ -1,0 +1,8 @@
+digraph Kommunikaiton {
+    rankdir="LR";
+    graph [dpi=150];
+    node [fontname="sans"];
+    edge [fontname="mono"];
+    Client -> Server [label="1. Message-Instanz"];
+    Server -> Client [label="2. \"OK\""];
+}

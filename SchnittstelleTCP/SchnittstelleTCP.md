@@ -10,6 +10,8 @@ Die Client-Server-Kommunikation besteht darin, Instanzen der Klasse `Message` vo
 
 Zwar gibt es mit RMI und HTTP komfortablere und stabilere Protokolle als "blankes" TCP, diese haben aber einen grösseren Overhead und benötigen zusätzliche Komponenten: bei RMI dies spezielle Stub-Klassen, bei HTTP ein Webserver, der das entsprechende Protokoll "spricht". Da die Implementierung mittels TCP auf Anhieb und problemlos funktioniert hat, gab es keinen Grund, auf ein höherwertiges Protokoll (mit entsprechendem Overhead) zu wechseln.
 
+![Das -- denkbar einfache -- TCP-Protokoll](Kommunikation.png)
+
 # Server
 
 Der Server wird mit der Klasse `ConcurrentLoggerServer` (`logger-server`) umgesetzt. Der Port, auf den der Server hören soll, kann per Konstruktor übergeben werden. Derzeit wird er über die Konstante `DEFAULT_PORT` mit dem Wert `1234` belegt. (TODO: Konfiguration über Kommandozeilenparameter!) Sobald der `ServerSocket` and den jeweiligen Port gebunden ist, nimmt er Verbindungen entgegen.
