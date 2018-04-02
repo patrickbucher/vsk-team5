@@ -52,4 +52,6 @@ Eine mögliche Lösungsvariante wäre die Erweiterung um ein _Heartbeat_-Protoko
 
 Eine einfachere (wenn auch etwas unschöne) Variante ist in den Klassen `Logging` und `LoggerComponentSetup` implementiert. Die Methode `Logging.disconnect()` ruft die Methode `LoggerComponentSetup.configure(LoggerSetupConfiguration)` mit einem `null`-Parameter auf. Statt nun eine Verbindung mit einem anderen Server aufzunehmen -- wie es mit einem entsprechend gesetzten `LoggerSetupConfiguration`-Parameter passieren würde --, wird einfach die bisherige Verbindung getrennt. Für den Client-Code ist diese Unschönheit zumindest gut verborgen und daher aus pragmatischer Perspektive vertretbar.
 
-![Klassendiagramm zur TCP-Kommunikation](classes.png){width=100%}
+![Klassendiagramm zur TCP-Kommunikation](classes.png)
+
+![Sequenzdiagramm zur TCP-Kommunikation](sequence.png)

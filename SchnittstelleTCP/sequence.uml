@@ -1,0 +1,20 @@
+@startuml
+group Setup
+    LoggerClient -> LoggerComponentSetup: create
+    LoggerComponentSetup -> LoggerComponent: create
+    LoggerComponent -> ConcurrentLoggerServer: connect
+    ConcurrentLoggerServer -> ConcurrentClientHandler: create
+    ConcurrentClientHandler --> LoggerComponent: listen
+end
+group Communication
+    LoggerComponent -> ConcurrentClientHandler: log message
+    ConcurrentClientHandler -> StringPersistor: persist
+    StringPersistor --> ConcurrentClientHandler: persisted
+    ConcurrentClientHandler --> LoggerComponent: "OK"
+end
+group Disconnect
+    LoggerClient -> LoggerComponentSetup: disconnect
+    LoggerComponentSetup -> ConcurrentClientHandler: close
+    ConcurrentClientHandler --> LoggerComponentSetup: closed
+end
+@enduml
