@@ -51,3 +51,5 @@ Das spezifizierte `Logger`-Interface bietet keine Methode zum Schliessen der Soc
 Eine mögliche Lösungsvariante wäre die Erweiterung um ein _Heartbeat_-Protokoll. Zu diesem Zweck würden Client und Server (bei Inaktivität) periodisch Meldungen austauschen um zu bestätigen, dass beide noch «da» sind. Dies würde aber die Kommunikationsschnittstelle erheblich verkomplizieren.
 
 Eine einfachere (wenn auch etwas unschöne) Variante ist in den Klassen `Logging` und `LoggerComponentSetup` implementiert. Die Methode `Logging.disconnect()` ruft die Methode `LoggerComponentSetup.configure(LoggerSetupConfiguration)` mit einem `null`-Parameter auf. Statt nun eine Verbindung mit einem anderen Server aufzunehmen -- wie es mit einem entsprechend gesetzten `LoggerSetupConfiguration`-Parameter passieren würde --, wird einfach die bisherige Verbindung getrennt. Für den Client-Code ist diese Unschönheit zumindest gut verborgen und daher aus pragmatischer Perspektive vertretbar.
+
+![Klassendiagramm zur TCP-Kommunikation](classes.png){width=100%}
