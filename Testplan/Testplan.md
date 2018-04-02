@@ -1,7 +1,7 @@
 ---
 title: Testplan
 subtitle: Verteilte Systeme und Komponenten
-author: Gruppe 5 (Bucher, Kiser, Meyer, Sägesser)
+author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
 # Feature-Tests
