@@ -1,12 +1,12 @@
 ---
 title: Projektmanagementplan
 subtitle: Verteilte System und Komponenten
-date: 27.02.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
 # Projektorganisation
-#### Version 1.0.0
+
+**Version 1.0.0**
 
 ## Organisationsplan
 
@@ -97,9 +97,9 @@ Für die **Entwicklung** sind folgende Tools im Einsatz:
 
 | Bereich              | Tool                                      |
 | -------------------- | ----------------------------------------- |
-| Entwicklungsumgebung | ItelliJ IDEA 2017                         |
+| Entwicklungsumgebung | ItelliJ IDEA 2017, Eclipse                |
 | Programmiersprache   | Java 1.8                                  |
-| Versionskontrolle    | GitLab                                    |
+| Versionskontrolle    | git, GitLab                               |
 | Testing              | JUnit, Integrationstests, Systemtests     |
 
 ## Konfigurationsmanagement

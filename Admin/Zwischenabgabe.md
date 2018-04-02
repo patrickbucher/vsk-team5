@@ -28,7 +28,7 @@
     - Was wurde wie getestet?
 [ ] Sprintreviews
     - geplant/erreicht
-[ ] TCP-Schnittstelle
+[X] TCP-Schnittstelle
     - Entscheidungen festhalten
 [ ] Konfiguration
 [ ] JavaDoc
