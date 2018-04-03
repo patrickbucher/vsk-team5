@@ -17,3 +17,18 @@
 - Konfigurationen (soweit vorhanden)
 - JavaDoc
     - zumindest Interfaces
+
+# Zwischenabgabe
+
+[ ] Projektplan
+    - Organisation
+    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen)
+[ ] Testplan
+    - Testprotokolle
+    - Was wurde wie getestet?
+[ ] Sprintreviews
+    - geplant/erreicht
+[X] TCP-Schnittstelle
+    - Entscheidungen festhalten
+[ ] Konfiguration
+[ ] JavaDoc

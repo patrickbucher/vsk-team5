@@ -1,0 +1,8 @@
+digraph Kommunikaiton {
+    rankdir="LR";
+    graph [dpi=150];
+    node [fontname="Droid Sans",fontsize="11pt"];
+    edge [fontname="Droid Sans Mono",fontsize="11pt"];
+    Client -> Server [label="1. Message-Instanz"];
+    Server -> Client [label="2. \"OK\""];
+}

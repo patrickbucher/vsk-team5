@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+package "loggercomponent" {
+    class LoggerComponent {
+        - LoggerComponent(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream)
+        {static} + create (level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream):LoggerComponent
+        + log(level:LogLevel, message:String):void
+        + log(level:LogLevel, message:String, args:Object[]):void
+        + log(level:LogLevel, throwable:Throwable, message:String):void
+        + log(level:LogLevel, throwable:Throwable, message:String, args:Object[]):void
+        ___
+        - send(message:Message):void
+    }
+    LoggerComponent --> loggercommon.Message
+}
+package "loggercommon" {
+    class Message {
+        - Message(level:String, timestamp:String, message:String):Message
+        {static} + of(level:String, timestamp:String, message:String):Message
+        + getLevel():String
+        + getTimestamp():String
+        + getMessage():String
+        + hashCode():int
+        + equals(other:Object):boolean
+        + toString():String
+    }
+}
+package "loggerserver" {
+    class ConcurrentLoggerServer {
+        - ConcurrentLoggerServer(port:int)
+        + run():void
+        + stopServer():boid
+        {static} + main(args:String[]):void
+    }
+    class ConcurrentClientHandler {
+        - ConcurrentClientHandler(socket:Socket, input:ObjectInputStream, output:ObjectOutputStream)
+        {static} + listen(socket:Socket):ConcurrentClientHandler
+        + run():void
+    }
+    ConcurrentLoggerServer *-- ConcurrentClientHandler
+    ConcurrentClientHandler --> loggercommon.Message
+}
+@enduml
