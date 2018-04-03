@@ -148,10 +148,6 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
 
 # Anhänge
-## Testplan
-### Testdesign & Abläufe
-### Testfälle
-
 ## Sprintreviews
 ### Sprintreview 1
 #### Protokoll Sprintreview
