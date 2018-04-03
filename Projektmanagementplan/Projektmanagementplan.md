@@ -75,9 +75,31 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 ![Projektstrukturplan](img/Projektstrukturplan.png)
 
 ## Risikomanagement
-## Aufwandschätzung
-## Ressourcenplan
+
 ## Projektkontrolle
+
+Für die Projektkontrolle sind folgende Tools und Methoden im Einsatz:
+
+- ScrumDo
+- ProductBacklog
+- SprintBacklog
+- Backlog-Grooming
+- Definierung von Definition of Done der Tasks
+- Sprintreviews
+- Meilensteinberichte
+
+## Aufwandschätzung
+Es wird davon ausgegangen, dass pro Person und Woche, zusätzlich zu den Vorlesungen, 5 Stunden Aufwand hinzukommen.
+Insgesamt entsteht so ein geschätzter Aufwand von 40 Stunden pro Sprint, respektive 80 Stunden jeweils für die Zwischen- und Schlussabgabe.
+
+Der Aufwand wird weiterhin in folgende Kategorien unterteilt:
+
+- Dokumentation
+- Entwicklung
+- Testing
+- Reviewing
+
+Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung. Für die Schlussabgabe wird jedoch eine erstellt.
 
 # Projektunterstützung
 
