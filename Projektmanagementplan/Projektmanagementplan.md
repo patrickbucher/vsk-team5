@@ -145,7 +145,7 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | 4        | Risikoanalyse            | 1.0.0    | erledigt |
 | 5        | Scrum-Stories            | 1.0.0    | erledigt |
 
-Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen. <br>
+Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen.
 
 Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, die Gruppenorganisation und -kommunikation gebraucht haben. Weiterhin benötigte auch das Aufsetzen der Umgebung mitsamt allen Tools eine gewisse Zeit.
 
@@ -158,5 +158,25 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 ### Sprintreview 2
 
 ## Meilensteinberichte
+
 ### Meilensteinbericht 1
+
+#### Zeitpunkt Meilenstein 1: Beginn SW04
+
+#### Beschreibung Meilenstein 1
+
+Der erste Meilenstein wurde erreicht, nachdem das Projekt bekannt gegeben wurde, die Gruppen gebildet wurden, alle nötigen Informationen abgegeben wurden, die Gruppen sich mit der Aufgabenstellung auseinandergesetzt haben und die Gruppen die nötige Entwicklungsumgebung und alle wichtigen Werkzeuge aufgesetzt haben.
+
+Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in Anspruch genommen.
+
+#### Meilensteinziele:
+1. Projektauftrag als Gruppe entgegennehmen
+2. Gruppe setzt sich mit Projektauftrag auseinander
+3. Jedes Gruppenmitglied setzt die Entwicklungsumgebung und alle nötigen Werkzeuge auf
+
+#### Wurden die Meilensteinziele erreicht?
+1. Ja. Die Gruppenmitglieder waren alle jederzeit anwesend und konnten den Projektauftrag erfolgreich entgegennehmen.
+2. Ja. Die Gruppe hat sich kennengelernt und erste Aufgaben wurden verteilt. Jedes Teammitglied hat sich selbständig mit der Thematik auseinandergesetzt.
+3. Ja. Jedes Teammitglied hat die Entwicklungsumgebung und die Tools aufgesetzt.
+
 ### Meilensteinbericht 2
