@@ -46,7 +46,9 @@ Ein Server muss die Logmeldungen von mehreren Clients gleichzeitig handhaben kö
 
 Läuft ein Server und werden mehrere Instanzen des `DemoLoggerClient` schnell nacheinander aufgestartet, kann man mit dem Aufruf von `tail -f *.log` im Temp-Verzeichnis sehen, wie die Logmeldungen abwechselnd von verschiedenen Clients eintreffen.
 
-## Persistente Speicherung
+## Dauerhafte Speicherung
+
+Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile` implementiert.
 
 - `StringPersistorFileTest`
 - `PersistedStringParserTest`

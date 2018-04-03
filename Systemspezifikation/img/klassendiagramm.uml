@@ -1,0 +1,57 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package "game" {
+    class Logging {
+    }
+}
+
+package "loggerinterface" {
+    interface Logger {
+    }
+    interface LoggerSetup {
+    }
+    enum LogLevel {
+    }
+    class Configuration {
+    }
+    class LoggerSetupConfiguratiion {
+    }
+    class ConfigurationParser {
+    }
+}
+
+package "loggercomponent" {
+    class LoggerComponent {
+    }
+    class LoggerComponentSetup {
+    }
+}
+
+package "loggerserver" {
+    class ConcurrentLoggerServer {
+    }
+    class ConcurrentClientHandler {
+    }
+}
+
+package "loggercommon" {
+    class Message {
+    }
+}
+
+package "stringpersistor" {
+    class StringPersistorFile {
+    }
+    class PersistedStringParser {
+    }
+}
+
+package "stringpersistor.api" {
+    interface StringPersistor {
+    }
+    class PersistedString {
+    }
+}
+
+@enduml
