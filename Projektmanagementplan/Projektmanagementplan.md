@@ -87,20 +87,21 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 
 Für das **Projektmanagement** sind folgende Tools im Einsatz:
 
-| Bereich                | Tool                                               |
-|------------------------|----------------------------------------------------|
-| Vorgehensmodell: Scrum | ScrumDo                                            |
-| Datenaustausch         | GitHub                                             |
-| Dokumentation          | Markdown, Pandoc, Microsoft Office 2016,,  draw.io |
+| Bereich                | Tool                                                       |
+|------------------------|------------------------------------------------------------|
+| Vorgehensmodell: Scrum | ScrumDo                                                    |
+| Datenaustausch         | GitHub                                                     |
+| Dokumentation          | Markdown, Pandoc, Microsoft Office 2016, draw.io, plantuml |
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:
 
-| Bereich              | Tool                                      |
-| -------------------- | ----------------------------------------- |
-| Entwicklungsumgebung | ItelliJ IDEA 2017, Eclipse                |
-| Programmiersprache   | Java 1.8                                  |
-| Versionskontrolle    | git, GitLab                               |
-| Testing              | JUnit, Integrationstests, Systemtests     |
+| Bereich                | Tool                                      |
+| --------------------   | ----------------------------------------- |
+| Entwicklungsumgebung   | ItelliJ IDEA 2017, Eclipse                |
+| Programmiersprache     | Java 1.8                                  |
+| Versionskontrolle      | git, GitLab                               |
+| Testing                | JUnit, Integrationstests, Systemtests     |
+| Continuous Integration | Jenkins                                   |
 
 ## Konfigurationsmanagement
 
