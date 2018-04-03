@@ -74,6 +74,7 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 
 ![Projektstrukturplan](img/Projektstrukturplan.png)
 
+## Risikomanagement
 ## Aufwandschätzung
 ## Ressourcenplan
 ## Projektkontrolle
@@ -81,8 +82,6 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 # Projektunterstützung
 
 ## Tools für Entwicklung, Test & Abnahme
-
-**Hinweis:** Dieses Kapitel wird noch erweitert.
 
 Für das **Projektmanagement** sind folgende Tools im Einsatz:
 
@@ -128,11 +127,11 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
 
-# Testplan
-## Testdesign & Abläufe
-## Testfälle
-
 # Anhänge
+## Testplan
+### Testdesign & Abläufe
+### Testfälle
+
 ## Sprintreviews
 ### Sprintreview 1
 #### Protokoll Sprintreview
