@@ -38,8 +38,7 @@ Die kausal und verlässliche Aufzeichnung der Log-Ereignisse erfordert das Zusam
 
 ## Austausch der Logger-Komponente
 
-- Versuch: Bearbieten der `config.xml`
-- Derzeit noch keine andere Logger-Komponente verfügbar für Tests
+TODO: Derzeit (Stand 3. April 2018) ist noch keine Logger-Komponente einer anderen Gruppe verfügbar für Tests. Sobald dies der Fall ist, kann die `.jar`-Datei einer anderen Gruppe in ein lokales Verzeichnis kopiert und die Konfiguration (`config.xml`) entsprechend angepasst werden.
 
 ## Mehrere Logger auf einem Server
 
@@ -60,3 +59,19 @@ Läuft ein Server und werden mehrere Instanzen des `DemoLoggerClient` schnell na
 
 - `StringPersistorAdapterTest`
 - `LogEntryTest`
+
+# Testübersicht
+
+| Testfall                     | Art[^1] | Testet                                              |
+|------------------------------|---------|-----------------------------------------------------|
+| `DemoLoggerClient`           | TP      | Kompletten Anwendungsstack                          |
+| `MessageTest`                | UT      | `Message`                                           |
+| `LoggerComponentTest`        | UT      | `LoggerComponent`                                   |
+| `LoggerComponentSetupTest`   | IT      | `LoggerComponentSetup`, `LoggerComponent`           |
+| `LoggerServerTest`           | IT      | `ConcurrentLoggerServer`, `ConcurrentClientHandler` |
+| `StringPersistorAdapterTest` | IT      | `StringPersistorAdapter`, `StringPersistorFile`     |
+| `LogEntryTest`               | UT      | `LogEntry`                                          |
+| `PersistedStringParserTest`  | UT      | `PersistedStringParser`                             |
+| `StringPersistorFileTest`    | IT      | `StringPersistorFile`, `PersistedStringParser`      |
+
+[^1]: TP: Testprogramm, UT: Unit-Test, IT: Integrationstest
