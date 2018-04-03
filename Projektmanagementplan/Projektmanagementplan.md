@@ -2,11 +2,10 @@
 title: Projektmanagementplan
 subtitle: Verteilte System und Komponenten
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
+version: 1.0.0
 ---
 
 # Projektorganisation
-
-**Version 1.0.0**
 
 ## Organisationsplan
 
@@ -95,13 +94,13 @@ Für das **Projektmanagement** sind folgende Tools im Einsatz:
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:
 
-| Bereich                | Tool                                      |
-| --------------------   | ----------------------------------------- |
-| Entwicklungsumgebung   | ItelliJ IDEA 2017, Eclipse                |
-| Programmiersprache     | Java 1.8                                  |
-| Versionskontrolle      | git, GitLab                               |
-| Testing                | JUnit, Integrationstests, Systemtests     |
-| Continuous Integration | Jenkins                                   |
+| Bereich                | Tool                                  |
+| ---------------------- | ------------------------------------- |
+| Entwicklungsumgebung   | ItelliJ IDEA 2017                     |
+| Programmiersprache     | Java 1.8                              |
+| Versionskontrolle      | git, GitLab                           |
+| Testing                | JUnit, Integrationstests, Systemtests |
+| Continuous Integration | Jenkins                               |
 
 ## Konfigurationsmanagement
 
@@ -116,23 +115,48 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 - Release 1: Zwischenabgabe (SW08)
 - Release 2: Schlussgabe (SW13)
 
-| Configuration Item    | Release 1 | Release 2 |
-| --------------------- | --------- | --------- |
-| Projektmanagementplan |           |           |
-| Systemspezifikation   |           |           |
-| Logger                |           |           |
-| LoggerSetup           |           |           |
-| LoggerCommon          |           |           |
-| LoggerComponent       |           |           |
-| LoggerServer          |           |           |
-| StringPersistor       |           |           |
-| StringPersistorFile   |           |           |
-| GameOfLife            |           |           |
+| Configuration Item    | Release 1      | Release 2 |
+| --------------------- | -------------- | --------- |
+| Projektmanagementplan | 1.0.0          |           |
+| Systemspezifikation   | 1.0.0          |           |
+| Logger                | 1.0.0-SNAPSHOT |           |
+| LoggerSetup           | 1.0.0-SNAPSHOT |           |
+| LoggerCommon          | 1.0.0-SNAPSHOT |           |
+| LoggerComponent       | 1.0.0-SNAPSHOT |           |
+| LoggerServer          | 1.0.0-SNAPSHOT |           |
+| StringPersistor       | 4.0.1          |           |
+| StringPersistorFile   | 1.0.0-SNAPSHOT |           |
+| GameOfLife            | 1.0.0-SNAPSHOT |           |
 
 # Testplan
 ## Testdesign & Abläufe
 ## Testfälle
 
 # Anhänge
-## Sprintreview
-## Meilensteinreview
+## Sprintreviews
+### Sprintreview 1
+#### Protokoll Sprintreview
+
+| Nr. / ID | Titel / Kurzbeschreibung | Version  | Status   |
+| -------: | ------------------------ | -------- | -------- |
+| 1        | Projektmanagementplan    | 1.0.0    | erledigt |
+| 2        | Projektstrukturplan      | 1.0.0    | erledigt |
+| 3        | Rahmenplan               | 1.0.0    | erledigt |
+| 4        | Risikoanalyse            | 1.0.0    | erledigt |
+| 5        | Scrum-Stories            | 1.0.0    | erledigt |
+
+Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen. <br>
+
+Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, die Gruppenorganisation und -kommunikation gebraucht haben. Weiterhin benötigte auch das Aufsetzen der Umgebung mitsamt allen Tools eine gewisse Zeit.
+
+**Im ersten Sprint konnten wir also folgende Artefakte bereitstellen: Projektmanagementplan, Projektstrukturplan, Rahmenplan, Risikoanalyse, Scrum-Stories.**
+
+#### Testprotokoll
+
+Im Sprint 1 wurden noch keine Tests vorgenommen.
+
+### Sprintreview 2
+
+## Meilensteinberichte
+### Meilensteinbericht 1
+### Meilensteinbericht 2
