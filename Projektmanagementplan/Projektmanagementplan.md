@@ -1,8 +1,7 @@
 ---
 title: Projektmanagementplan
-subtitle: Verteilte System und Komponenten
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
-version: 1.0.0
 ---
 
 # Projektorganisation
