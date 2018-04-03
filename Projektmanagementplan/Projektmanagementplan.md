@@ -14,20 +14,20 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ### Rollen
 
-- Projektleiter: Sascha Sägesser
-- Interfacekomitee: Patrick Bucher
-- Product Owner: Fabian Meyer
-- Scrum Master: Pascal Kiser
+- Projektleiter: _Sascha Sägesser_
+- Interfacekomitee: _Patrick Bucher_
+- Product Owner: _Fabian Meyer_
+- Scrum Master: _Pascal Kiser_
 
 ### Zuständigkeit
 
-- Dokumentation: Patrick Bucher
-- Build: Pascal Kiser
-- Testing: Fabian Meyer
-- Codereview: Patrick Bucher
-- Sprintreviews: Sascha Sägesser
-- Meilensteinberichte: Fabian Meyer
-- Risikomanagement: Pascal Kiser
+- Dokumentation: _Patrick Bucher_
+- Build: _Pascal Kiser_
+- Testing: _Fabian Meyer_
+- Codereview: _Patrick Bucher_
+- Sprintreviews: _Sascha Sägesser_
+- Meilensteinberichte: _Fabian Meyer_
+- Risikomanagement: _Pascal Kiser_
 
 # Projektführung
 
@@ -41,18 +41,18 @@ Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten 
 
 Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
 
-1. Meilenstein (19.02.2018)
+1. **Meilenstein (19.02.2018)**
     - Auftrag "Message-Logger"
-2. Meilenstein (12.03.2018)
+2. **Meilenstein (12.03.2018)**
     - ProductBacklog
     - Sprintplanung S1/S2
     - Detailplanung S1
     - Meilensteinbericht MS 2
-3. Meilenstein (08.04.2018)
+3. **Meilenstein (08.04.2018)**
     - Release 1 gemäss Muss-Features deployed und lauffähig
     - Sprintplanung S3/S4
     - Meilensteinbericht MS 3
-4. Meilenstein (13.05.2018)
+4. **Meilenstein (13.05.2018)**
     - Release 2 gemäss Muss-Features deployed und lauffähig
     - Meilensteinbericht MS 4
 
