@@ -37,26 +37,24 @@ Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten 
 
 ## Meilensteinplan
 
-Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
+Das komplette Projekt ist in drei Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Start der Projektumsetzung und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
 
-1. **Meilenstein (19.02.2018)**
-    - Auftrag "Message-Logger"
-2. **Meilenstein (12.03.2018)**
+1. **Meilenstein (Start Umsetzung, 12.03.2018)**
     - ProductBacklog
     - Sprintplanung S1/S2
     - Detailplanung S1
     - Meilensteinbericht MS 2
-3. **Meilenstein (08.04.2018)**
+2. **Meilenstein (Zwischenabgabe, 08.04.2018)**
     - Release 1 gemäss Muss-Features deployed und lauffähig
     - Sprintplanung S3/S4
     - Meilensteinbericht MS 3
-4. **Meilenstein (13.05.2018)**
+3. **Meilenstein (Schlussabgabe, 13.05.2018)**
     - Release 2 gemäss Muss-Features deployed und lauffähig
     - Meilensteinbericht MS 4
 
 ## Sprintplan
 
-Die Projektdurchführung (MS 3 / 4) ist in vier Sprints aufgeteilt. Jeder Sprint dauert zwei Wochen. Die Detaillierte Sprintplanung ist mittels des Online-Tools "ScrumDo" realisiert.
+Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint dauert zwei Wochen. Die Detaillierte Sprintplanung ist mittels des Online-Tools "ScrumDo" realisiert.
 
 | Sprint  | Termin     | Deliverables                        |
 | ------: | ---------- | ----------------------------------- |
@@ -108,7 +106,7 @@ Für das **Projektmanagement** sind folgende Tools im Einsatz:
 | Bereich                | Tool                                                       |
 |------------------------|------------------------------------------------------------|
 | Vorgehensmodell: Scrum | ScrumDo                                                    |
-| Datenaustausch         | GitHub                                                     |
+| Datenaustausch         | git, GitHub                                                     |
 | Dokumentation          | Markdown, Pandoc, Microsoft Office 2016, draw.io, plantuml |
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:

@@ -29,7 +29,7 @@ package "loggerserver" {
     class ConcurrentLoggerServer {
         - ConcurrentLoggerServer(port:int)
         + run():void
-        + stopServer():boid
+        + stopServer():void
         {static} + main(args:String[]):void
     }
     class ConcurrentClientHandler {
