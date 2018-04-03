@@ -1,8 +1,7 @@
 ---
 title: Projektmanagementplan
-subtitle: Verteilte System und Komponenten
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
-version: 1.0.0
 ---
 
 # Projektorganisation
@@ -11,24 +10,22 @@ version: 1.0.0
 
 ![Organigramm](img/Organigramm.png)
 
-## Rollen & Zuständigkeiten
+## Rollen
 
-### Rollen
+- Projektleiter: _Sascha Sägesser_
+- Interfacekomitee: _Patrick Bucher_
+- Product Owner: _Fabian Meyer_
+- Scrum Master: _Pascal Kiser_
 
-- Projektleiter: Sascha Sägesser
-- Interfacekomitee: Patrick Bucher
-- Product Owner: Fabian Meyer
-- Scrum Master: Pascal Kiser
+## Zuständigkeit
 
-### Zuständigkeit
-
-- Dokumentation: Patrick Bucher
-- Build: Pascal Kiser
-- Testing: Fabian Meyer
-- Codereview: Patrick Bucher
-- Sprintreviews: Sascha Sägesser
-- Meilensteinberichte: Fabian Meyer
-- Risikomanagement: Pascal Kiser
+- Dokumentation: _Patrick Bucher_
+- Build: _Pascal Kiser_
+- Testing: _Fabian Meyer_
+- Codereview: _Patrick Bucher_
+- Sprintreviews: _Sascha Sägesser_
+- Meilensteinberichte: _Fabian Meyer_
+- Risikomanagement: _Pascal Kiser_
 
 # Projektführung
 
@@ -42,18 +39,18 @@ Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten 
 
 Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
 
-1. Meilenstein (19.02.2018)
+1. **Meilenstein (19.02.2018)**
     - Auftrag "Message-Logger"
-2. Meilenstein (12.03.2018)
+2. **Meilenstein (12.03.2018)**
     - ProductBacklog
     - Sprintplanung S1/S2
     - Detailplanung S1
     - Meilensteinbericht MS 2
-3. Meilenstein (08.04.2018)
+3. **Meilenstein (08.04.2018)**
     - Release 1 gemäss Muss-Features deployed und lauffähig
     - Sprintplanung S3/S4
     - Meilensteinbericht MS 3
-4. Meilenstein (13.05.2018)
+4. **Meilenstein (13.05.2018)**
     - Release 2 gemäss Muss-Features deployed und lauffähig
     - Meilensteinbericht MS 4
 
@@ -75,9 +72,32 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 ![Projektstrukturplan](img/Projektstrukturplan.png)
 
 ## Risikomanagement
-## Aufwandschätzung
-## Ressourcenplan
+
 ## Projektkontrolle
+
+Für die Projektkontrolle sind folgende Tools und Methoden im Einsatz:
+
+- ScrumDo
+- ProductBacklog
+- SprintBacklog
+- Backlog-Grooming
+- Definierung von Definition of Done der Tasks
+- Sprintreviews
+- Meilensteinberichte
+
+## Aufwandschätzung
+
+Es wird davon ausgegangen, dass pro Person und Woche, zusätzlich zu den Vorlesungen, 5 Stunden Aufwand hinzukommen.
+Insgesamt entsteht so ein geschätzter Aufwand von 40 Stunden pro Sprint, respektive 80 Stunden jeweils für die Zwischen- und Schlussabgabe.
+
+Der Aufwand wird weiterhin in folgende Kategorien unterteilt:
+
+- Dokumentation
+- Entwicklung
+- Testing
+- Reviewing
+
+Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung. Für die Schlussabgabe wird jedoch eine erstellt.
 
 # Projektunterstützung
 
@@ -126,8 +146,3 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistor       | 4.0.1          |           |
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
-
-# Anhänge
-## Testplan
-### Testdesign & Abläufe
-### Testfälle
