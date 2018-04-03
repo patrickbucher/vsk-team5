@@ -1,7 +1,6 @@
 ---
 title: Systemspezifikation
-subtitle: Verteilte System und Komponenten
-date: 27.02.2018
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
@@ -24,6 +23,18 @@ Die Schnittstelle zwischen dem System und dem Benutzer stellt z.B. ein Computer 
 
 # Schnittstellen
 ## Externe Schnittstellen
+Um einen Austausch der Komponenten innerhalb des Moduls zu ermöglich, wurden folgeden Schnittstellen definiert.
+
+| Schnittstellen  | Version        |
+| --------------- | -------------- |
+| Logger          | 1.0.0-SNAPSHOT |
+| LoggerSetup     | 1.0.0-SNAPSHOT |
+| StringPersistor | 4.0.1          |
+
+Diese Schnittstellen werden hier nicht detaillierter beschrieben. Die Dokumentation für Logger und LoggerSetup befindet sich auf ILIAS.
+
+Von Java 1.8 zur Verfügung gestellte Schnittstellen sind hier nicht aufgeführt.
+
 ## Wichtige interne Schnittstellen
 
 # Implementationen

@@ -37,26 +37,24 @@ Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten 
 
 ## Meilensteinplan
 
-Das komplette Projekt ist in vier Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Projektstart, also der ersten Vorlesung. Der zweite Meilenstein stellt den Start der Projektumsetzung dar und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
+Das komplette Projekt ist in drei Meilensteine aufgeteilt. Der erste Meilenstein entspricht dem Start der Projektumsetzung und die beiden letzten Meilensteine ergeben sich aus der Zwischen- und Schlussabgabe. Zu jedem Meilenstein gibt es Deliverables:
 
-1. **Meilenstein (19.02.2018)**
-    - Auftrag "Message-Logger"
-2. **Meilenstein (12.03.2018)**
+1. **Meilenstein (Start Umsetzung, 12.03.2018)**
     - ProductBacklog
     - Sprintplanung S1/S2
     - Detailplanung S1
     - Meilensteinbericht MS 2
-3. **Meilenstein (08.04.2018)**
+2. **Meilenstein (Zwischenabgabe, 08.04.2018)**
     - Release 1 gemäss Muss-Features deployed und lauffähig
     - Sprintplanung S3/S4
     - Meilensteinbericht MS 3
-4. **Meilenstein (13.05.2018)**
+3. **Meilenstein (Schlussabgabe, 13.05.2018)**
     - Release 2 gemäss Muss-Features deployed und lauffähig
     - Meilensteinbericht MS 4
 
 ## Sprintplan
 
-Die Projektdurchführung (MS 3 / 4) ist in vier Sprints aufgeteilt. Jeder Sprint dauert zwei Wochen. Die Detaillierte Sprintplanung ist mittels des Online-Tools "ScrumDo" realisiert.
+Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint dauert zwei Wochen. Die Detaillierte Sprintplanung ist mittels des Online-Tools "ScrumDo" realisiert.
 
 | Sprint  | Termin     | Deliverables                        |
 | ------: | ---------- | ----------------------------------- |
@@ -108,7 +106,7 @@ Für das **Projektmanagement** sind folgende Tools im Einsatz:
 | Bereich                | Tool                                                       |
 |------------------------|------------------------------------------------------------|
 | Vorgehensmodell: Scrum | ScrumDo                                                    |
-| Datenaustausch         | GitHub                                                     |
+| Datenaustausch         | git, GitHub                                                     |
 | Dokumentation          | Markdown, Pandoc, Microsoft Office 2016, draw.io, plantuml |
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:
@@ -146,32 +144,3 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistor       | 4.0.1          |           |
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
-
-# Anhänge
-## Sprintreviews
-### Sprintreview 1
-#### Protokoll Sprintreview
-
-| Nr. / ID | Titel / Kurzbeschreibung | Version  | Status   |
-| -------: | ------------------------ | -------- | -------- |
-| 1        | Projektmanagementplan    | 1.0.0    | erledigt |
-| 2        | Projektstrukturplan      | 1.0.0    | erledigt |
-| 3        | Rahmenplan               | 1.0.0    | erledigt |
-| 4        | Risikoanalyse            | 1.0.0    | erledigt |
-| 5        | Scrum-Stories            | 1.0.0    | erledigt |
-
-Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen. <br>
-
-Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, die Gruppenorganisation und -kommunikation gebraucht haben. Weiterhin benötigte auch das Aufsetzen der Umgebung mitsamt allen Tools eine gewisse Zeit.
-
-**Im ersten Sprint konnten wir also folgende Artefakte bereitstellen: Projektmanagementplan, Projektstrukturplan, Rahmenplan, Risikoanalyse, Scrum-Stories.**
-
-#### Testprotokoll
-
-Im Sprint 1 wurden noch keine Tests vorgenommen.
-
-### Sprintreview 2
-
-## Meilensteinberichte
-### Meilensteinbericht 1
-### Meilensteinbericht 2
