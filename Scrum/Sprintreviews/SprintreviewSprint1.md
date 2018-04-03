@@ -1,13 +1,12 @@
 ---
-title: Sprintreview
+title: Sprintreview - Sprint 1
 subtitle: Verteilte Systeme und Komponenten
 date: 27.03.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
+version: 1.1.0
 ---
 
 # Sprintreview - Sprint 1
-
-**Version 1.0.0**
 
 ## Protokoll Sprintreview
 
