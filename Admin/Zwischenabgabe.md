@@ -20,15 +20,16 @@
 
 # Zwischenabgabe
 
-[ ] Projektplan
-    - Organisation
-    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen)
-[ ] Testplan
-    - Testprotokolle
-    - Was wurde wie getestet?
-[ ] Sprintreviews
-    - geplant/erreicht
-[X] TCP-Schnittstelle
-    - Entscheidungen festhalten
-[ ] Konfiguration
-[ ] JavaDoc
+- [ ] Projektplan
+- [ ] Organisation
+- [ ] Risikomanagement (Abhängigkeiten, Gegenmassnahmen)
+- [ ] Testplan
+- [ ] Testprotokolle
+- [ ] Was wurde wie getestet?
+- [ ] Sprintreviews
+- [ ] geplant/erreicht
+- [x] TCP-Schnittstelle
+- [ ] Entscheidungen festhalten
+- [ ] Konfiguration
+- [ ] JavaDoc
+
