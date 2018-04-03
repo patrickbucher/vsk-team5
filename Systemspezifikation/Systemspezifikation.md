@@ -1,7 +1,6 @@
 ---
 title: Systemspezifikation
-subtitle: Verteilte System und Komponenten
-date: 27.02.2018
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
