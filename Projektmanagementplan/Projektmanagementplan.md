@@ -8,7 +8,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ## Organisationsplan
 
-![Organigramm](img/Organigramm.png)
+![Organigramm](img/Organigramm.png)\
 
 ## Rollen
 
@@ -33,7 +33,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingeplant werden.
 
-![Rahmenplan](img/Rahmenplan.png)
+![Rahmenplan](img/Rahmenplan.png)\
 
 ## Meilensteinplan
 
@@ -67,7 +67,7 @@ Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint
 
 Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt.
 
-![Projektstrukturplan](img/Projektstrukturplan.png)
+![Projektstrukturplan](img/Projektstrukturplan.png)\
 
 ## Risikomanagement
 
