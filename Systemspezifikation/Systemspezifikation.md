@@ -6,7 +6,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 # Systemübersicht
 
-![Komponentendiagramm](img/komponentendiagramm.png)
+![Komponentendiagramm](img/komponentendiagramm.png)\
 
 ## Kontextdiagramm
 
@@ -14,15 +14,20 @@ Das nachfolgende Diagramm bietet einen abstrakten Überblick über das System un
 
 Die Schnittstelle zwischen dem System und dem Benutzer stellt z.B. ein Computer dar, auf dem der Benutzer dann das GameOfLife spielen und gleichzeitig loggen kann. Zusätzlich gehört die Aufgabenstellung, sprich der LoggerProjektauftrag, zum Kontext, da das System auf Basis dessen entwickelt wird.
 
-![Kontextdiagramm](img/kontextdiagramm.PNG)
+![Kontextdiagramm](img/kontextdiagramm.PNG)\
 
 # Architektur und Designentscheide
+
 ## Modell(e) und Sichten
+
 ## Daten (Mengengerüst & Strukturen)
+
 ## Entwurfsentscheide
 
 # Schnittstellen
+
 ## Externe Schnittstellen
+
 Um einen Austausch der Komponenten innerhalb des Moduls zu ermöglich, wurden folgeden Schnittstellen definiert.
 
 | Schnittstellen  | Version        |
