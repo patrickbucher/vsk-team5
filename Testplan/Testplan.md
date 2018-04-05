@@ -1,6 +1,6 @@
 ---
 title: Testplan
-subtitle: Verteilte Systeme und Komponenten
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
@@ -38,7 +38,7 @@ Die kausal und verlässliche Aufzeichnung der Log-Ereignisse erfordert das Zusam
 
 ## Austausch der Logger-Komponente
 
-TODO: Derzeit (Stand 3. April 2018) ist noch keine Logger-Komponente einer anderen Gruppe verfügbar für Tests. Sobald dies der Fall ist, kann die `.jar`-Datei einer anderen Gruppe in ein lokales Verzeichnis kopiert und die Konfiguration (`config.xml`) entsprechend angepasst werden.
+Derzeit (Stand 5. April 2018) ist noch keine Logger-Komponente einer anderen Gruppe für Tests verfügbar. Sobald dies der Fall ist, kann die `.jar`-Datei einer anderen Gruppe in ein lokales Verzeichnis kopiert und die Konfiguration (`config.xml`) entsprechend angepasst werden.
 
 ## Mehrere Logger auf einem Server
 
@@ -46,21 +46,31 @@ Ein Server muss die Logmeldungen von mehreren Clients gleichzeitig handhaben kö
 
 Läuft ein Server und werden mehrere Instanzen des `DemoLoggerClient` schnell nacheinander aufgestartet, kann man mit dem Aufruf von `tail -f *.log` im Temp-Verzeichnis sehen, wie die Logmeldungen abwechselnd von verschiedenen Clients eintreffen.
 
-## Dauerhafte Speicherung
+## Dauerhafte Speicherung {#stringpersistor}
 
-Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile` implementiert.
+Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile` implementiert. Der Testfall dazu heisst `StringPersistorFileTest`. Dieser testet das Schreiben (`StringPersistorFile.save()`) und anschliessende Einlesen (`StringPersistorFile.get()`) von Logmeldungen. Es werden verschiedene Zeilentrennzeichen getestet (`\n` für Unix und `\r\n` für Windows), indem die entsprechende Laufzeitvariable (`line.separator`) gesetzt wird. Da beim Loggen von Stack-Traces eine Logmeldung mehrere Zeilen umfassen kann, wird auch das Schreiben und Auslesen mehrzeiliger Logmeldungen getestet (`testMultiLineMessages`).
 
-- `StringPersistorFileTest`
-- `PersistedStringParserTest`
+Dem `StringPersistor` wird über die Methode `setFile(File)` eine Datei zum Schreiben und Einlesen von Logmeldungen angegeben. Dabei kann es passieren, dass auf die angegebene Datei nicht wie gewünscht zugegriffen werden kann. Die folgenden Tests stellen sicher, dass auf diese Situationen rechtzeitig erkannt und mit einer Exception behandelt wird:
+
+- `testWriteWithoutFile()`: Schreiben, ohne vorher eine Datei angegeben zu haben
+- `testReadWithoutFile()`: Lesen, ohne vorher eine Datei angegeben zu haben
+- `testUnwritableFile()`: Schreiben auf eine schreibgeschützte Datei
+- `testUnreadableFile()`: Lesen von einer lesegeschützten Datei
+- `testNotExistantFile()`: Setzen einer nicht existierenden Datei
+
+`StringPersistorFile` verwendet zum Einlesen der Logmeldungen eine Hilfsklasse namens `PersistedStringParser`. Diese liest Logmeldungen in dem Format aus, wie es in der Klasse `PersistedString.toString()` implementiert ist. (Für die Schlussabgabe soll das Formatieren der Meldungen flexibler per Strategy-Pattern implementiert werden.) So beginnt eine Logmeldung jeweils mit einem ISO-formatiertem Timestamp. Es folgt ein Leerzeichen, eine Pipe (`|`) und wieder ein Leerzeichen, worauf die eigentliche Logmeldung folgt. (Diese enthält wiederum einen Timestamp, was auf dieser Semantikebene aber nicht von Belang ist. Schliesslich geht es hier darum, den Beginn einer neuen Logmeldung feststellen zu können.)
+
+Der bereits beschriebene Testfall `StringPersistorFileTest` deckt zwar schon einen grossen Teil vom `PersistedStringParser` ab. Dennoch wurde mit `PersistedStringParserTest` ein klassischer Unit-Test für die Klasse `PersistedStringParser` geschrieben. Bei der Umsetzung der `get()`-Methode von `StringPersistorFile`, welche den `PersistedStringParser` verwendet, sollte nämlich zunächst sichergestellt werden, dass die besagte Hilfsklasse soweit funktioniert. So gab es beim Entwickeln der `get()`-Methode Gewissheit darüber, dass etwaige Fehler in derselben und nicht andernorts zu suchen sind, was einem ein hektisches Hin und Her zwischen den einzelnen Klassen erspart.
 
 ## `StringPersistor`-Komponente
 
-- siehe oben
+Die `StringPersistor`-Komponente wird durch die bereits genannten Testfälle (siehe Abschnitt [_Dauerhafte Speicherung_]{#stringpersistor}) abgedeckt.
 
 ## Adapter für `StringPersistor`
 
-- `StringPersistorAdapterTest`
-- `LogEntryTest`
+Der Logger-Server soll den `StringPersistor` über einen Adapter verwenden. Der Logger-Server nimmt von der Logger-Component Instanzen der Klasse `Message` entgegen. Der `StringPersistor` arbeitet intern mit Instanzen der Klasse `PersistedString`. Für den Austausch der Logmeldungen zwischen Logger-Server und `StringPersistor` wurde darum ein neuer Übergabeparameter entwickelt, der sich auf die Aspekte beschränkt, die für Logger-Server und `StringPersistor` wichtig sind: Das Interface `LogMessage`. Dieses wird von der Klasse `LogEntry` implementiert, und definiert Methoden um die folgendenden Felder auslesen zu können: `Level` (als `String`, da der Server die Enum `LogLevel` nicht kennt), `CreationTimestamp` und `ServerEntryTimestamp` (beide vom Typ `java.time.Instant`) und `Message` (`String`). Zu komfortablen Erstellen einer `LogEntry`-Instanz wurde das Builder-Pattern implementiert (`LogEntry.Builder`), welches durch den Testfall `LogEntryTest` abgedeckt wird, indem sichergestellt wird, dass die gesetzten Werte (zwingende und optionale) korrekt gesetzt werden.
+
+Der `StringPersistorAdapter` wird durch den Testfall `StringPersistorAdapterTest` abgedeckt. In der Testmethode `testAdapter()` wird eine Logmeldung über das Adapter-Interface in eine temporäre Datei geschrieben. Die Logmeldung wird anschliessend aus der Datei ausgelesen und mit dem ursprünglichen `LogEntry` verglichen. Dabei wird auch ein grosser Teil der Klasse `StringPersistor` und der `LogEntry.Builder` mitgetestet.
 
 # Testübersicht
 
@@ -77,3 +87,9 @@ Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile`
 | `StringPersistorFileTest`    | IT      | `StringPersistorFile`, `PersistedStringParser`      |
 
 [^1]: TP: Testprogramm, UT: Unit-Test, IT: Integrationstest
+
+## Testabdeckung
+
+Gemäss [Jenkins](https://jenkins-vsk.el.eee.intern/jenkins/) wird gegenwärtig (Stand: 5. April 2018) eine Testabdeckung von ca. 75% (`logger`) bzw. 85% (`stringpersistor`) erreicht. Nicht abgedeckter Code findet sich u.a. in Getter- und Setter-Methoden und in der Ausnahmebehandlung. Manche Exceptions (gerade die `IOException`) können nur schwer und teil unzuverlässig provoziert werden. Für das `game`-Projekt wurden keine Tests geschrieben, da die eigentlichen Programmlogik nicht Gegenstand des Projektes ist und in diesem Rahmen auch nicht verändert werden soll.
+
+Die gegenwärtige Testabdeckung wird von der Gruppe 5 damit als zufriedenstellend betrachtet.
