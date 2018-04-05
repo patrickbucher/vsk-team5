@@ -1,6 +1,6 @@
 ---
 title: TCP-Schnittstelle
-subtitle: Verteilte Systeme und Komponenten
+subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
@@ -44,14 +44,12 @@ Die TCP-Kommunikation wurde zunächst händisch getestet, indem ein Logger-Clien
 
 Beim `LoggerComponentTest`, bei dem die Socketkommunikation über den `PipeInputStream` und den `PipeOutputStream` simuliert wird, tritt sofort eine `EOFException` auf, wenn `LoggerComponent` die `"OK"`-Rückmeldung erfolglos zu lesen versucht. Aus diesem Grund muss in diesem Test die `"OK"`-Rückmeldung bereits vor dem Log-Aufruf in die Pipe geschrieben werden -- die Logmeldung im Voraus quittiert werden. (In diesem Test geht es um die Filterung und Formatierung der Logmeldungen, nicht um die Netzwerkkommunikation. Ein solcher Workaround ist somit vertretbar, zeigt aber die Grenze des gewählten Mocking-Ansatzes auf.)
 
-## Clientseitiges Schliessen des Sockets
+# Überblick
 
-Das spezifizierte `Logger`-Interface bietet keine Methode zum Schliessen der Socket-Verbindung an, zumal dieses nur ein Interface auf eine Logger-Komponte darstellt und von Netzwerkverbindungen nichts «weiss». Der Server hat aber keine Möglichkeit festzustellen, ob ein Client noch «da» ist. Schliesslich ist es möglich, dass für einen langen Zeitraum nichts und dann plötzlich wieder etwas geloggt werden soll.
+## Klassendiagramm
 
-Eine mögliche Lösungsvariante wäre die Erweiterung um ein _Heartbeat_-Protokoll. Zu diesem Zweck würden Client und Server (bei Inaktivität) periodisch Meldungen austauschen um zu bestätigen, dass beide noch «da» sind. Dies würde aber die Kommunikationsschnittstelle erheblich verkomplizieren.
+![Klassendiagramm zur TCP-Kommunikation](classes.png){width=90%}
 
-Eine einfachere (wenn auch etwas unschöne) Variante ist in den Klassen `Logging` und `LoggerComponentSetup` implementiert. Die Methode `Logging.disconnect()` ruft die Methode `LoggerComponentSetup.configure(LoggerSetupConfiguration)` mit einem `null`-Parameter auf. Statt nun eine Verbindung mit einem anderen Server aufzunehmen -- wie es mit einem entsprechend gesetzten `LoggerSetupConfiguration`-Parameter passieren würde --, wird einfach die bisherige Verbindung getrennt. Für den Client-Code ist diese Unschönheit zumindest gut verborgen und daher aus pragmatischer Perspektive vertretbar.
+## Sequenzdiagramm
 
-![Klassendiagramm zur TCP-Kommunikation](classes.png)
-
-![Sequenzdiagramm zur TCP-Kommunikation](sequence.png)
+![Sequenzdiagramm zur TCP-Kommunikation](sequence.png){width=90%}
