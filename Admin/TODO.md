@@ -25,15 +25,12 @@
 
 ## Zwischenabgabe
 
-[ ] Projektplan
-    - Organisation
-    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen)
-[ ] Testplan
-    - Testprotokolle
-    - Was wurde wie getestet?
-[ ] Sprintreviews
+- [ ] Projektplan: **SS**
+    - Organisation: **SS**
+    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen): **PK**
+- [X] Testplan: **PB**
+- [ ] Sprintreviews: **FM**
     - geplant/erreicht
-[ ] TCP-Schnittstelle
-    - Entscheidungen festhalten
-[ ] Konfiguration
-[ ] JavaDoc
+- [X] TCP-Schnittstelle: **PB**
+- [ ] Systemspezifikation: **PB**
+- [ ] JavaDoc: **PB**
