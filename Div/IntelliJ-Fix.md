@@ -2,7 +2,6 @@
 author: Patrick Bucher
 title: 'IntelliJ-Fix'
 ---
-
 -   `~/.m2/repository` löschen
 -   alle Ordner in `~/IdeaProjects` löschen
 -   alle drei Projekte nach `~/IdeaProjects/` klonen
