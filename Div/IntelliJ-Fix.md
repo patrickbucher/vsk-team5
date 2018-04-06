@@ -12,19 +12,23 @@ title: 'IntelliJ-Fix'
 -   Neues Java-Projekt (mit Defaulteinstellungen) namens `vsk` erstellen
 -   Alle drei VSK-Module importieren über Menü "File -\> New -\> Module
     from Existing Sources..."
+    -   Reihenfolge: `stringpersistor`, `logger`, `game`
     -   Import module from external model: Maven
     -   Alle anderen Einstellungen belassen, "Next", "Finish"
+    -   Bei Nachfrage "Maven projects need to be imported" (Fenster unten rechts) mit "Enable Auto-Import" antworten
 -   Cmd-Shift-A: "Project Structure"
-    -   Unter "Modules" sicherstellen, dass das "Language Level" überall
-        auf 8 steht
+    -   Unter "Project Settings -\> Modules" sicherstellen, dass das "Language Level" überall auf 8 steht
 -   IntelliJ schliessen
 -   Alle Module builden
     -   `cd ~/IdeaProjects/g05-stringpersistor && mvn package`
     -   `cd ~/IdeaProjects/g05-logger && mvn package`
     -   `cd ~/IdeaProjects/g05-game && mvn package`
 -   `config.xml` aus `g05-game` nach `vsk` kopieren
+    -   Pfad von `<jarFile>` anpassen
 -   IntelliJ öffnen
     -   `ConcurrentLoggerServer` starten
     -   `DemoLoggerClient` starten
+        -   sicherstellen, dass `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent` auf die Konsole ausgegeben wird (ansonsten stimmt etwas mit `config.xml` nicht)
     -   `cd $TMPDIR`
     -   `tail -f *.log`
+        -   Die Log-Meldungen müssten nun erscheinen

@@ -34,12 +34,14 @@
 <li>Neues Java-Projekt (mit Defaulteinstellungen) namens <code>vsk</code> erstellen</li>
 <li>Alle drei VSK-Module importieren über Menü “File -&gt; New -&gt; Module from Existing Sources…”
 <ul>
+<li>Reihenfolge: <code>stringpersistor</code>, <code>logger</code>, <code>game</code></li>
 <li>Import module from external model: Maven</li>
 <li>Alle anderen Einstellungen belassen, “Next”, “Finish”</li>
+<li>Bei Nachfrage “Maven projects need to be imported” (Fenster unten rechts) mit “Enable Auto-Import” antworten</li>
 </ul></li>
 <li>Cmd-Shift-A: “Project Structure”
 <ul>
-<li>Unter “Modules” sicherstellen, dass das “Language Level” überall auf 8 steht</li>
+<li>Unter “Project Settings -&gt; Modules” sicherstellen, dass das “Language Level” überall auf 8 steht</li>
 </ul></li>
 <li>IntelliJ schliessen</li>
 <li>Alle Module builden
@@ -48,13 +50,22 @@
 <li><code>cd ~/IdeaProjects/g05-logger &amp;&amp; mvn package</code></li>
 <li><code>cd ~/IdeaProjects/g05-game &amp;&amp; mvn package</code></li>
 </ul></li>
-<li><code>config.xml</code> aus <code>g05-game</code> nach <code>vsk</code> kopieren</li>
+<li><code>config.xml</code> aus <code>g05-game</code> nach <code>vsk</code> kopieren
+<ul>
+<li>Pfad von <code>&lt;jarFile&gt;</code> anpassen</li>
+</ul></li>
 <li>IntelliJ öffnen
 <ul>
 <li><code>ConcurrentLoggerServer</code> starten</li>
-<li><code>DemoLoggerClient</code> starten</li>
+<li><code>DemoLoggerClient</code> starten
+<ul>
+<li>sicherstellen, dass <code>ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent</code> auf die Konsole ausgegeben wird (ansonsten stimmt etwas mit <code>config.xml</code> nicht)</li>
+</ul></li>
 <li><code>cd $TMPDIR</code></li>
-<li><code>tail -f *.log</code></li>
+<li><code>tail -f *.log</code>
+<ul>
+<li>Die Log-Meldungen müssten nun erscheinen</li>
+</ul></li>
 </ul></li>
 </ul>
 </body>
