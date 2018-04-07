@@ -1,0 +1,23 @@
+@startuml
+
+interface TCP
+
+package Client {
+    [Game] --> Logger
+    [Game] --> LoggerSetup
+    Logger --> [LoggerComponent]
+    LoggerSetup --> [LoggerComponent]
+    [LoggerComponent] --> TCP
+}
+
+package Server {
+    database Storage
+    [LoggerServer] <-- TCP
+    LogPersistor <-- [LoggerServer]
+    [StringPersistorAdapter] <-- LogPersistor
+    StringPersistor <-- [StringPersistorAdapter]
+    [StringPersistorFile] <-- StringPersistor
+    Storage <-- [StringPersistorFile]
+}
+
+@enduml

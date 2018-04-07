@@ -220,7 +220,7 @@ package "stringpersistor" {
     interface LogPersistor {
         + save(log:LogMessage)
     }
-    class LogPersistorAdapter {
+    class StringPersistorAdapter {
         - stringPersistor:StringPersistor
         - formatter:LogMessageFormatter
         - StringPersistorAdapter(formatter:LogMessageFormatter, stringPersistor:StringPersistor)
@@ -243,10 +243,10 @@ package "stringpersistor" {
     StringPersistorAdapter --> StringPersistorFile
     StringPersistorAdapter o-- LogMessageFormatter
     LogMessageFormatter --> LogMessage
-    LogMessageFormatter --> PersistedString
+    LogMessageFormatter --> stringpersistorapi.PersistedString
     LogMessageFormatter <|-- SimpleFormatter
     SimpleFormatter --> LogMessage
-    SimpleFormatter --> PersistedString
+    SimpleFormatter --> stringpersistorapi.PersistedString
     LogEntry --> LogEntryBuilder
 }
 
