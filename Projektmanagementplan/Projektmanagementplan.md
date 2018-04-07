@@ -8,7 +8,9 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ## Organisationsplan
 
-![Organigramm](img/Organigramm.png)\
+Siehe Abbildung [Organigramm](#organigramm).
+
+![Organigramm](img/Organigramm.png){#organigramm}
 
 ## Rollen
 
@@ -31,9 +33,9 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ## Rahmenplan
 
-Der Rahmenplan stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingeplant werden.
+Der Rahmenplan (siehe Abbildung [Rahmenplan](#rahmenplan)) stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingeplant werden.
 
-![Rahmenplan](img/Rahmenplan.png)\
+![Rahmenplan](img/Rahmenplan.png){#rahmenplan}
 
 ## Meilensteinplan
 
@@ -65,9 +67,9 @@ Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint
 
 ## Projektstrukturplan
 
-Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt.
+Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt (siehe Abbildung [Projektstrukturplan](#projektstrukturplan)).
 
-![Projektstrukturplan](img/Projektstrukturplan.png)\
+![Projektstrukturplan](img/Projektstrukturplan.png){#projektstrukturplan}
 
 ## Risikomanagement
 
@@ -106,7 +108,7 @@ Für das **Projektmanagement** sind folgende Tools im Einsatz:
 | Bereich                | Tool                                                       |
 |------------------------|------------------------------------------------------------|
 | Vorgehensmodell: Scrum | ScrumDo                                                    |
-| Datenaustausch         | git, GitHub                                                     |
+| Datenaustausch         | `git`, GitHub                                              |
 | Dokumentation          | Markdown, Pandoc, Microsoft Office 2016, draw.io, plantuml |
 
 Für die **Entwicklung** sind folgende Tools im Einsatz:
@@ -117,6 +119,7 @@ Für die **Entwicklung** sind folgende Tools im Einsatz:
 | Programmiersprache     | Java 1.8                              |
 | Versionskontrolle      | git, GitLab                           |
 | Testing                | JUnit, Integrationstests, Systemtests |
+| Build                  | Maven, `make`                         |
 | Continuous Integration | Jenkins                               |
 
 ## Konfigurationsmanagement
@@ -136,6 +139,11 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | --------------------- | -------------- | --------- |
 | Projektmanagementplan | 1.0.0          |           |
 | Systemspezifikation   | 1.0.0          |           |
+| TCP-Schnittstelle     | 1.0.0          |           |
+| Testplan              | 1.0.0          |           |
+| Scrum-Dokumentation   | 1.0.0          |           |
+| Systemspezifikation   | 1.0.0          |           |
+| Systemspezifikation   | 1.0.0          |           |
 | Logger                | 1.0.0-SNAPSHOT |           |
 | LoggerSetup           | 1.0.0-SNAPSHOT |           |
 | LoggerCommon          | 1.0.0-SNAPSHOT |           |
@@ -144,3 +152,50 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistor       | 4.0.1          |           |
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
+
+# Risikomanagement
+
+## Risikien
+
+### Krankheits- / Unfallbedingte Ausfälle
+
+Eine oder mehrere Personen fallen aus.
+
+Massnahmen:
+
+* Know-How redundant: Dokumentation pflegen, Austausch im Plenum
+* Keine Extremsportarten 
+* Gesunde Ernährung
+
+### Ausfall HSLU-Netz
+
+HSLU-Netz oder EnterpriseLab fällt aus.
+
+Massnahmen:
+
+* Backup (lokal)
+* Ausweichmöglichkeiten (GitHub)
+* Dokumentation separat verwaltet
+
+### Hardwareausfall
+
+Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
+
+Massnahmen:
+
+* Versionsverwaltung
+* Regelmässig Commit/Push
+
+### Zeitknappheit
+
+* Priorisierung von Features
+* Minimalanforderungen definieren
+
+## Risikomatrix
+
+| Schadensschwere / Eintreffenswahrscheinlichkeit | 1   | 2   | 3   |
+| ----------------------------------------------- | --- | --- | --- |
+| sehr gering                                     |     |     |     |
+| gering                                          |     |     |     |
+| mittel                                          |     |     |     |
+| hoch                                            |     |     |     |

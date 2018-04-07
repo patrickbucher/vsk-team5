@@ -1,6 +1,6 @@
-PARAMS=-N --toc --latex-engine=xelatex -V documentclass=scrartcl -V papersize=a4 -V lang=de -V urlcolor=blue
+PARAMS=-N --toc --pdf-engine=xelatex -V documentclass=scrartcl -V papersize=a4 -V lang=de -V urlcolor=blue
 FONTS=-V mainfont="Droid Serif" -V sansfont="Droid Sans" -V monofont="Droid Sans Mono"
 DATE=-V date="`date +'%d.%m.%Y'`"
 
-%.pdf: %.md
-	pandoc -s $(PARAMS) $(FONTS) $(DATE) $< -o $@
+Projektmanagementplan.pdf: Projektmanagementplan.md
+	pandoc -s $(PARAMS) $(FONTS) $(DATE) Projektmanagementplan.md -o Projektmanagementplan.pdf
