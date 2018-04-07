@@ -1,57 +1,269 @@
 @startuml
-skinparam classAttributeIconSize 0
 
 package "game" {
-    class Logging {
+    class DemoLoggerClient {
+        {static} + main(args:String[]):void
     }
+    class Logging {
+        {static} - loggerManager:LoggerManager
+        {static} - logger:Logger
+        ---
+        {static} + getLogger():Logger
+    }
+    note top of Logging
+        the game classes that use Logging and Logger are not displayed
+    end note
+    Logging o-- loggerinterface.LoggerManager
+    Logging o-- loggerinterface.Logger
+    DemoLoggerClient --> Logging
+    DemoLoggerClient --> loggerinterface.Logger
 }
 
 package "loggerinterface" {
     interface Logger {
+        + log(level:LogLevel, message:String):void
+        + log(level:LogLevel, message:String, args:Object[]):void
+        + log(level:LogLevel, throwable:Throwable, message:String):void
+        + log(level:LogLevel, throwable:Throwable, message:String, args:Object[]):void
     }
-    interface LoggerSetup {
-    }
-    enum LogLevel {
-    }
+    note bottom of Logger
+        trace(), debug() etc. omitted
+    end note
     class Configuration {
-    }
-    class LoggerSetupConfiguratiion {
+        - jarFile:String
+        - loggerSetupClass:String
+        - loggerSetupConfiguration:LoggerSetupConfiguration
+        + getJarFile():String
+        + setJarFile(jarFile:String):void
+        + getLoggerSetupClass():String
+        + setLoggerSetupClass(loggerSetupClass:String):void
+        + getLoggerSetupConfiguration():LoggerSetupConfiguration
+        + setLoggerSetupConfiguration(loggerSetupConfiguration:LoggerSetupConfiguration):void
     }
     class ConfigurationParser {
+        + getConfiguration():Configuration
+        + saveConfiguration(configuration:Configuration):void
     }
+    class LoggerManager {
+        {static} - xmlConfiguration:Configuration
+        - setup:LoggerSetup
+        + LoggerManager()
+        + LoggerManager(configuration:Configuration)
+        + getLogger():Logger
+        + hasProperLoggerSetup():boolean
+        + setLogLevel(logLevel:LogLevel):void
+        + getLogLevel():LogLevel
+        + setHostAndPort(host:String, port:int):void
+        + hasProperLogger():boolean
+        {static} - getConfiguration():Configuration
+        - createLoggerSetupInstance(configuration:Configuration):LoggerSetup
+        - getClassLoader(jarFile:String):ClassLoader
+    }
+    class LoggerSetup {
+        ~ getLogger():Logger
+        ~ getLogger(loggerName:String):Logger
+        ~ configure(configure:LoggerSetupConfiguration):void
+        ~ setLogLevel(logLevel:LogLevel)
+        ~ getLogLevel():LogLevel
+        ~ setHostAndPort(host:String, port:int):void
+    }
+    class LoggerSetupConfiguration {
+        - level:LogLevel
+        - host:String
+        - port:int
+        + setLevel(level:LogLevel):void
+        + getHost():String
+        + setHost(host:String):String
+        + getPort():int
+        + setPort(port:int):void
+    }
+    enum LogLevel {
+        {static} + TRACE
+        {static} + DEBUG
+        {static} + INFO
+        {static} + WARNING
+        {static} + ERROR
+        {static} + CRITICAL
+        - label:String
+        - priority:int
+        - LogLevel(label:String, priority:int)
+        + getLabel():String
+        + getPriority():int
+    }
+    Configuration o-- LoggerSetupConfiguration
+    ConfigurationParser --> Configuration
+    LoggerManager o-- Configuration
+    LoggerManager o-- LoggerSetup
+    LoggerManager --> LogLevel
+    LoggerSetup o-- Logger
+    LoggerSetup --> LoggerSetupConfiguration
+    LoggerSetup --> LogLevel
+    LoggerSetupConfiguration --> LogLevel
 }
 
 package "loggercomponent" {
     class LoggerComponent {
+        - actualLevel:LogLevel
+        - output:ObjectOutputStream
+        - input:ObjectInputStream
+        {static} + create(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream):LoggerComponent
+        - LoggerComponent(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream)
+        + log(level:LogLevel, message:String):void
+        + log(level:LogLevel, message:String, args:Object[]):void
+        + log(level:LogLevel, throwable:Throwable, message:String):void
+        + log(level:LogLevel, throwable:Throwable, message:String, args:Object[]):void
+        - send(message:Message):void
+        - toMessage(level:LogLevel, message:String):Message
+        - toErrorMessage(throwable:Throwable, String:message):Message
     }
+    note top of LoggerComponent
+        trace(), debug() etc. omitted
+    end note
     class LoggerComponentSetup {
+        - config:LoggerSetupConfiguration
+        - socket:Socket
+        + getLogger():Logger
+        + configure(config:LoggerSetupConfiguration):void
+        + setLogLevel(level:LogLevel):void
+        + getLogLevel():LogLevel
+        + setHostAndPort(host:String, port:int):void
+        - openSocket():void
+        - closeSocket():void
     }
+    loggerinterface.LoggerSetup <|-- LoggerComponentSetup 
+    LoggerComponentSetup o-- loggerinterface.LoggerSetupConfiguration
+    LoggerComponentSetup --> loggerinterface.Logger
+    loggerinterface.Logger <|-- LoggerComponent
+    LoggerComponent --> loggercommon.Message
 }
 
 package "loggerserver" {
-    class ConcurrentLoggerServer {
+    class ConcurrentLoggerServer << Runnable >> {
+        {static} + DEFAULT_PORT:int
+        - port:int
+        {static} + main(args:String[])
+        + ConcurrentLoggerServer(port:int)
+        + run():void
     }
-    class ConcurrentClientHandler {
+    class ConcurrentClientHandler << Runnable >> {
+        - socket:Socket
+        - input:ObjectInputStream
+        - output:ObjectOutputStream
+        - persistorAdapter:StringPersistorAdapter
+        {static} + listen(socket:Socket):ConcurrentClientHandler
+        - ConcurrentClientHandler(socket:Socket, input:ObjectInputStream, output:ObjectOutputStream):ConcurrentClientHandler
+        + run():void
     }
+    ConcurrentLoggerServer o-- ConcurrentClientHandler
+    ConcurrentClientHandler o-- stringpersistor.StringPersistorAdapter
+    ConcurrentClientHandler --> stringpersistor.SimpleFormatter
+    ConcurrentClientHandler --> loggercommon.Message
 }
 
 package "loggercommon" {
     class Message {
+        {static} - serialVersionUID:long
+        - level:String
+        - timestamp:String
+        - message:String
+        {static} + of(level:String, timestamp:String, message:String):Message
+        - Message(level:String, timestamp:String, message:String)
+        + getLevel():String
+        + getTimestamp():String
+        + getMessage():String
     }
 }
 
 package "stringpersistor" {
     class StringPersistorFile {
+        - lineSeparator:String
+        - writer:BufferedWriter
+        - reader:BufferedReader
+        + StringPersistorFile()
+        + setFile(file:File):void
+        + save(instant:Instant, payload:String):void
+        + get(count:int):List<PersistedString>
     }
     class PersistedStringParser {
+        {static} - ISO_INSTANT_LENGTH:int
+        {static} - SEPARATOR:String
+        {static} + parseItem(string:String):PersistedString
+        {static} + startsWithIsoDate(line:String):boolean
     }
+    interface LogMessage {
+        + getLevel():String
+        + getCreationTimestamp():Instant
+        + getServerEntryTimestamp():Instant
+        + getMessage():String
+    }
+    class LogEntry {
+        - level:String
+        - creation:Instant
+        - serverEntry:Instant
+        - message:String
+        - LogEntry(builder:LogEntryBuilder)
+        + getLevel():String
+        + getCreationTimestamp():Instant
+        + getServerEntryTimestamp():Instant
+        + getMessage():String
+    }
+    class LogEntryBuilder {
+        - level:String
+        - creation:Instant
+        - serverEntry:Instant
+        - message:String
+        + Builder(level:String, message:String)
+        + creationTimestamp(creation:Instant):LogEntryBuilder
+        + serverEntryTimestamp(serverEntry:Instant):LogEntryBuilder
+        + build():LogEntry
+    }
+    interface LogPersistor {
+        + save(log:LogMessage)
+    }
+    class LogPersistorAdapter {
+        - stringPersistor:StringPersistor
+        - formatter:LogMessageFormatter
+        - StringPersistorAdapter(formatter:LogMessageFormatter, stringPersistor:StringPersistor)
+        {static} + create(formatter:LogMessageFormatter, stringPersistor:StringPersistor):StringPersistorAdapter
+        + save(log:LogMessage)
+    }
+    interface LogMessageFormatter {
+        + format(log:LogMessage):PersistedString
+    }
+    class SimpleFormatter {
+        + format(log:LogMessage):PersistedString
+    }
+    stringpersistorapi.StringPersistor <|-- StringPersistorFile
+    StringPersistorFile --> PersistedString
+    PersistedStringParser --> PersistedString
+    LogEntry <|-- LogMessage
+    LogPersistor --> LogMessage
+    StringPersistorAdapter <|-- LogPersistor
+    StringPersistorAdapter o-- stringpersitorapi.StringPersistor
+    StringPersistorAdapter --> stringpersitorapi.StringPersistorFile
+    StringPersistorAdapter o-- LogMessageFormatter
+    LogMessageFormatter --> LogMessage
+    LogMessageFormatter --> PersistedString
+    LogMessageFormatter <|-- SimpleFormatter
+    SimpleFormatter --> LogMessage
+    SimpleFormatter --> PersistedString
+    LogEntry --> LogEntryBuilder
 }
 
-package "stringpersistor.api" {
+package "stringpersistorapi" {
     interface StringPersistor {
+        + setFile(file:File):void
+        + save(instant:Instant, payload:String):void
+        + get(count:int):List<PersistedString>
     }
     class PersistedString {
+        - timestamp:Instant
+        - payload:String
+        + PersistedString(instant:Instant, payload:String)
+        + getTimestamp():Instant
+        + getPayload():String
     }
+    StringPersistor --> PersistedString
 }
 
 @enduml
