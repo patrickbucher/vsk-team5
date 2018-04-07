@@ -33,4 +33,4 @@
     - geplant/erreicht
 - [X] TCP-Schnittstelle: **PB**
 - [ ] Systemspezifikation: **PB**
-- [ ] JavaDoc: **PB**
+- [X] JavaDoc: **PB**
