@@ -1,6 +1,7 @@
 ---
 title: Scrum-Dokumente
-subtitle: Version 1.0.0
+subtitle: Version 1.1.0
+date: 03.04.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
@@ -74,9 +75,9 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 - Änderungen in GitLab eingecheckt.
 - Build auf Jenkins funktioniert.
 
-## Sprintreviews
+## Sprintreview - Sprint 1
 
-### Protokoll Review - Sprint 1
+### Protokoll Sprintreview
 
 | Nr. / ID | Titel / Kurzbeschreibung | Version  | Status   |
 | -------: | ------------------------ | -------- | -------- |
@@ -92,7 +93,50 @@ Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, di
 
 **Im ersten Sprint konnten wir also folgende Artefakte bereitstellen: Projektmanagementplan, Projektstrukturplan, Rahmenplan, Risikoanalyse, Scrum-Stories.**
 
-### Protokoll Review - Sprint 2
+### Testprotokoll
+
+Im Sprint 1 wurden noch keine Tests vorgenommen.
+
+## Sprintreview - Sprint 2
+
+### Protokoll Sprintreview
+
+| Nr. / ID | Dokument                 | Version  | Status   |
+| -------: | ------------------------ | -------- | -------- |
+| 1        | Testplan                 | 1.0.0    | erledigt |
+| 2        | SchnittstelleTCP         | 1.0.0    | erledigt |
+
+| Nr. / ID | Scrum-Story (ScrumDo)                           | Status |
+| -------: | ----------------------------------------------- | ------ |
+| V6-10    | Komponentenaustausch                            | Doing  |
+| V6-28    | Logger-Aufrufe zum Festhalten des Spielverlaufs | Done   |
+| V6-29    | Logger-Aufrufe für Aufzeichnung von Problemen   | Done   |
+| V6-01    | Aufzeichnung des Spielverlaufs                  | Done   |
+| V6-04    | Message-Level                                   | Done   |
+| V6-17    | Unterscheidung Log-Clients                      | Done   |
+| V6-13    | Payload-Adapter                                 | Done   |
+| V6-20    | Speicherung Log-Level                           | Done   |
+| V6-22    | Speicherung Log-Zeitstempel                     | Done   |
+| V6-14    | Adapter-Tests                                   | Done   |
+| V6-21    | Speicherung Ereignis-Zeitstempel                | Done   |
+| V6-08    | Logger                                          | Done   |
+| V6-11    | StringPersistor                                 | Done   |
+| V6-02    | Aufzeichnung von Problemen                      | Done   |
+| V6-09    | Logger-Setup                                    | Done   |
+| V6-18    | Textdatei-Log                                   | Done   |
+| V6-30    | TCP-Netzwerk-Interface                          | Done   |
+| V6-24    | Konfiguration Serverzugriff                     | Done   |
+| V6-23    | Speicherung Message-Text                        | Done   |
+| V6-03    | Aufzeichnung von Exceptions                     | Done   |
+| V6-05    | Codiertes Filter-Level                          | Done   |
+| V6-07    | Logger-Interface                                | Done   |
+| V6-06    | Konfiguriertes Filter-Level                     | Done   | 
+
+Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden. <br>
+
+**Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
+
+### Testprotokoll
 
 ### Protokoll Review - Sprint 3
 
@@ -114,16 +158,112 @@ Der erste Meilenstein wurde erreicht, nachdem das Projekt bekannt gegeben wurde,
 
 Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in Anspruch genommen.
 
+#### Detail-Vorgaben zum Meilenstein 1:
+##### Projektmanagement
+###### Projektorganisation
+- Die Grundstruktur des Projektmanagementplans anhand der Vorlage der HSLU steht
+- Der Organisationsplan steht
+- Die Rollen und Zuständigkeiten sind definiert
+
+###### Projektführung
+- Der Projektstrukturplan steht
+- Der Rahmenplan steht
+- Der Iterationsplan steht
+- Der Meilensteinplan steht
+- Der Ressourcenplan steht
+- Mind. ein Vorgehen zur Projektkontrolle wird eingesetzt
+- Der ProductBacklog für Meilenstein 1 steht
+- Der SprintBacklog für Sprint 1 und 2 steht
+- Das Risikomanagement steht
+
+###### Projektunterstützung
+- Tools für Entwicklung, Test & Abnahme sind definiert
+
+###### Testplan
+- Erste Gedanken zum Testdesign gemacht
+- Erste Gedanken zu den Testfällen gemacht
+
+###### Anhänge
+- Meilensteinreview für Meilenstein 1 verfasst
+
+##### Systemspezifikation
+- Die Grundstruktur des Dokuments steht##### Applikation
+- Alle Teammitglieder haben ihre IDE für den Projektstart eingerichtet
+- Interface-Definition wurde durch das Interface-Komitee erstellt
+
 #### Meilensteinziele:
 1. Projektauftrag als Gruppe entgegennehmen
 2. Gruppe setzt sich mit Projektauftrag auseinander
 3. Jedes Gruppenmitglied setzt die Entwicklungsumgebung und alle nötigen Werkzeuge auf
+4. Alle Vorgaben des Meilensteins 1 werden erfüllt (siehe oben)
 
 #### Wurden die Meilensteinziele erreicht?
 1. Ja. Die Gruppenmitglieder waren alle jederzeit anwesend und konnten den Projektauftrag erfolgreich entgegennehmen.
 2. Ja. Die Gruppe hat sich kennengelernt und erste Aufgaben wurden verteilt. Jedes Teammitglied hat sich selbständig mit der Thematik auseinandergesetzt.
 3. Ja. Jedes Teammitglied hat die Entwicklungsumgebung und die Tools aufgesetzt.
+4. Ja. Sämtliche Vorgaben wurden erfüllt.
 
 ### Meilensteinbericht 2
+
+#### Zeitpunkt Meilenstein 2: Beginn SW08
+
+#### Beschreibung Meilenstein 2
+
+Der zweite Meilenstein wurde erreicht, nachdem das Logger-Interface zur Verfügung gestellt wurde, die Logger- und Stringpersistor-Komponenten implementiert wurden, der Logger-Server implementiert wurde und so die Aufgabe durchgeführt werden konnte, bestimmte Ereignisse der Applikation (Game of Life) mithilfe der selbstgeschriebenen Logger-Klasse zu loggen und die Logs mithilfe der Stringpersistor-Klasse zu persistieren.
+
+#### Detail-Vorgaben zum Meilenstein 2:
+##### Projektmanagement
+###### Projektführung
+- Der Ressourcenplan ist aktuell
+- Die Projektkontrolle ist aktuell
+- Der ProductBacklog für Meilenstein 2 steht
+- Der SprintBacklog für Sprint 3 und 4 steht
+
+###### Projektunterstützung
+- Tools für Entwicklung, Test & Abnahme sind aktuell
+- Konfigurationsmanagement ist aktuell
+- Releasemanagement ist aktuell
+
+###### Testplan
+- Testdesign ist vollständig definiert
+- Testfälle für implementierter Code sind vorhanden
+
+###### Anhänge
+- Meilensteinreview für Meilenstein 2 verfasst
+- Sprintreview für Sprint 1 verfasst
+- Sprintreview für Sprint 2 verfasst
+
+##### Systemspezifikation
+- TODO (weitere Infos folgen in späteren Wochen)
+
+##### Applikation
+- Der Logger-Komponente ist als Komponente mithilfe von Interfaces austauschbar
+- Die Applikation (Game of Life) gibt bei jedem Log einen Message-Level mit
+- Die API der Logger-Komponente kann einen Level-Filter setzen, um die zu übertragenden Logs einzuschränken
+- Der Level-Filter kann während der Laufzeit geändert werden
+- Die Logs werden durch Logger-Komponenten und den Logger-Server kausal und verlässlich aufgezeichnet
+- Die Logger-Komponente ist austauschbar
+- Die Logger-Komponente ist plattformunabhängig
+- Der Komponentenaustausch ist ausserhalb der IDE und ohne Code-Anpassung (Neukompilation) möglich
+- Es können mehrere Instanzen der Logger-Komponente parallel auf den Logger-Server loggen
+- Die Logs können dauerhaft auf dem Logger-Server in einem einfachen und lesbaren Textfile gespeichert werden
+- Das Textfile enthält mind. die Quelle der Logmeldung, den Zeitstempel der Erstellung, den Zeitstempel beim Erreichen beim Server, den Message-Level und den Message-Text
+- Das Schreiben des Textfiles erfolgt serverseitig unter der Verwendung der StringPersistor-Schnittstelle
+- Die StringPersistorFile-Komponente persistiert die Logs
+- Die Daten werden in strukturierter Form dem Payload-Parameter der StringPersistor-Schnittstelle unter Verwendung des Adapter-Pattern übergeben
+
+#### Meilensteinziele:
+1. Ein Logger-Interface zur Verfügung stellen
+2. Die Logger-Komponente implementieren
+3. Den Logger-Server implementieren
+4. Die Stringpersistor-Komponente implementieren
+5. Ereignisse der Applikation (Game of Life) über das Logger-Interface mit der Logger-Komponente (auf dem Logger-Server mittels Stringpersistor) loggen
+
+#### Wurden die Meilensteinziele erreicht?
+1. Ja.
+2. Ja.
+3. Ja.
+4. Ja.
+5. Ja.
 
 ### Meilensteinbericht 3
