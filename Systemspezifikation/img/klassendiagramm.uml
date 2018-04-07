@@ -234,13 +234,13 @@ package "stringpersistor" {
         + format(log:LogMessage):PersistedString
     }
     stringpersistorapi.StringPersistor <|-- StringPersistorFile
-    StringPersistorFile --> PersistedString
-    PersistedStringParser --> PersistedString
+    StringPersistorFile --> stringpersistorapi.PersistedString
+    PersistedStringParser --> stringpersistorapi.PersistedString
     LogEntry <|-- LogMessage
     LogPersistor --> LogMessage
     StringPersistorAdapter <|-- LogPersistor
-    StringPersistorAdapter o-- stringpersitorapi.StringPersistor
-    StringPersistorAdapter --> stringpersitorapi.StringPersistorFile
+    StringPersistorAdapter o-- stringpersistorapi.StringPersistor
+    StringPersistorAdapter --> StringPersistorFile
     StringPersistorAdapter o-- LogMessageFormatter
     LogMessageFormatter --> LogMessage
     LogMessageFormatter --> PersistedString
