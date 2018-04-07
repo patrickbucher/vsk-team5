@@ -1,6 +1,6 @@
 ---
 title: Artefakte
-subtitle: Verteilte Systeme und Komponenten
+subtitle: Version 1.1.0
 date: 26.02.2018
 author: Gruppe 5 (Bucher, Kiser, Meyer, Sägesser)
 ---
@@ -40,9 +40,7 @@ Die Artefakte sind für jeden Meilenstein unabhängig voneinander definiert und 
 - Meilensteinreview für Meilenstein 1 verfasst
 
 ## Systemspezifikation
-- Die Grundstruktur des Dokuments steht
-
-## Applikation
+- Die Grundstruktur des Dokuments steht## Applikation
 - Alle Teammitglieder haben ihre IDE für den Projektstart eingerichtet
 - Interface-Definition wurde durch das Interface-Komitee erstellt
 
