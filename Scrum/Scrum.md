@@ -5,29 +5,27 @@ date: 03.04.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
-# Scrumdokumente:
+# Stories (nach Epics)
 
-## Stories (nach Epics)
-
-### Epic Log-Ereignisse
+## Epic Log-Ereignisse
 
 1. Aufzeichnung Spielverlaufs: Als *Anwender* möchte ich *persistent festgehaltene Spielereignisse*, um *den Spielverlauf bei Bedarf nachvollziehen zu können*.
 2. Aufzeichnung von Problemen: Als *Anwender* möchte ich *persistent festgehaltene Fehlermeldungen*, um *auftretende Probleme nachweisen zu können*.
 3. Aufzeichnung von Exceptions: Als *Entwickler* möchte ich *persistent festgehaltene StackTraces*, um *geworfene Exceptions nachvollziehen zu können*.
 
-### Epic Log-Level
+## Epic Log-Level
 
 4. Message-Level: Als *Entwickler* möchte ich *zu jeder Log-Meldung ein Message-Level setzen können*, um *Log-Meldungen auf verschiedenen Levels definieren zu können*.
 5. Codiertes Filter-Level: Als *Entwickler* möchte ich *zur Laufzeit einen Filter-Level setzen können*, um *die Ausgabe der Log-Meldungen steuern zu können*.
 6. Konfiguriertes Filter-Level: Als *Administrator* möchte ich *vor der Ausführung einen Filter-Level konfigurieren können*, um *die Ausgabe der Log-Meldungen steuern zu können*.
 
-### Epic Log-Interface
+## Epic Log-Interface
 
 7. Logger-Interface: Als *Entwickler* möchte ich *ein definiertes Logger-Interface zur Verfügung haben*, um *eine Logger-Komponente umsetzen zu können*.
 8. Logger: Als *Entwickler* möchte ich *einen `Logger` zur Verfügung haben*, um *Log-Meldungen aus dem Game ausgeben zu können*.
 9. Logger-Setup: Als *Entwickler* möchte ich *ein `LoggerSetup` zur Verfügung haben*, um *Zugriff auf eine `Logger`-Instanz zu bekommen*.
 
-### Epic Architektur
+## Epic Architektur
 
 10. Komponenten-Austausch: Als *Administrator* möchte ich *eine austauschbare und plattformunabhängige Logger-Komponente*, um *die Logger-Komponente zur Laufzeit ohne Code-Anpassungen und Neukompilation austauschen zu können*.
 11. StringPersistor: Als *Entwickler* möchte ich *eine `StringPersistor`-Implementierung für Textdateien (`StringPersistorFile`) zur Verfügung haben*, um *geloggte Meldungen persistent in Textdateien festhalten zu können*.
@@ -36,13 +34,13 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 14. Adapter-Tests: Als *Entwickler* möchte ich *Unittests für den Adapter haben*, um *zu sehen, ob Änderungen am Adapter zu Problemen führen*.
 15. Speicherformat-Strategien: Als *Entwickler* möchte ich *über leicht austauschbare Log-Strategien verfügen*, um *das Speicherformat für Textdateien einfach auf Code-Ebene wählen zu können*.
 
-### Epic Persistenz
+## Epic Persistenz
 
 16. Log-Aufzeichnung: Als *Administrator* möchte ich *eine verlässliche Aufzeichnung der Log-Ereignisse auf dem Server*, um *die Ereignisse aus dem Spiel in korrekter Reihenfolge nachverfolgen zu können*.
 17. Unterscheidung Log-Clients: Als *Administrator* möchte ich *nach Client-Instanz unterscheidbare Logdateien*, um *die Log-Meldungen verschiedener Clients auseinanderhalten zu können*. 
 18. Textdatei-Log: Als *Administrator* möchte ich *Log-Ereignisse in einfachen Textdateien festhalten*, um *diese mit gängigen Werkzeugen betrachten und auswerten zu können (`grep`, `tail`, etc.)*.
 
-### Epic Format
+## Epic Format
 
 19. Speicherung Log-Quelle: Als *Administrator* möchte ich *die Quelle einer Logmeldung sehen*, um *verschiedene Clients und Sessions voneinander unterscheiden zu können*.
 20. Speicherung Log-Level: Als *Administrator* möchte ich *den Level einer Logmeldung sehen*, um *diese je nach Bedarf nachträglich filtern zu können*.
@@ -50,23 +48,23 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 22. Speicherung Log-Zeitstempel: Als *Administrator* möchte ich *den Zeitstempel des Message-Eingangs auf dem Server* sehen, um *Verzögerungen beim Logging-Vorgang erkennen zu können*.
 23. Speicherung Message-Text: Als *Administrator* möchte ich *den Text der Log-Message auf dem Server sehen*, um *das aufgetretene Ereignis erkennen zu können*.
 
-### Epic Konnektivität
+## Epic Konnektivität
 
 24. Konfiguration Serverzugriff: Als *Administrator* möchte ich *die Erreichbarkeit des Servers mittels Konfigurationsdatei definieren können*, um *die Verbindung zum Log-Server ohne Quellcodeanpassung definieren zu können*.
 25. Robuste Netzwerkanwendung: Als *Anwender* möchte ich *eine Anwendung mit robuster Netzwerkkonnektivität*, um *auch bei Netzwerkunterbrüchen einen ununterbrochenen Spielfluss ohne verlorene Log-Meldungen zu haben*.
 26. Message-Queue: Als *Entwickler* möchte ich *auftretende Log-Ereignisse in einer Message-Queue zwischenspeichern können*, um *Log-Ereignisse bei einem Verbindungsunterbruch erneut senden zu können*.
 
-### Epic Viewer
+## Epic Viewer
 
 27. Viewer: Als *Anwender* möchte ich *einen Viewer für Logmeldungen haben*, um *Logmeldungen ohne Kenntnis des physischen Speicherorts auf dem Server betrachten zu können*.
 
-### Rollen
+## Rollen
 
 - Ein *Entwickler* hat Zugriff auf den Quellcode und verfügt über die Fähigkeiten und Berechtigungen um Änderungen daran vorzunehmen.
 - Ein *Administrator* hat Zugang auf beide konzeptionell involvierten Systeme (Client und Server) und Zugriff auf die Konfigurationsdateien aller involvierter Komponenten.
 - Ein *Anwender* kann das Spiel auf dem Client ausführen, kann aber keine Änderungen an Quellcode und Konfigurationsdateien vornehmen und nicht auf den Server zugreifen.
 
-## Definition of Done
+# Definition of Done
 
 - Funktionalität vom Product Owner abgenommen.
 - Code-Review von mindestens einem Teammitglied durchgeführt.
@@ -74,6 +72,8 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 - Eingeführte Features sind in der Projektdokumentation vermerkt.
 - Änderungen in GitLab eingecheckt.
 - Build auf Jenkins funktioniert.
+
+# Sprintreviews
 
 ## Sprintreview - Sprint 1
 
@@ -87,7 +87,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 | 4        | Risikoanalyse            | 1.0.0    | erledigt |
 | 5        | Scrum-Stories            | 1.0.0    | erledigt |
 
-Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen. <br>
+Im ersten Sprint konnten wir nicht alle Stories, welche ursprünglich für den ersten Sprint geplant waren, umsetzen.
 
 Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, die Gruppenorganisation und -kommunikation gebraucht haben. Weiterhin benötigte auch das Aufsetzen der Umgebung mitsamt allen Tools eine gewisse Zeit.
 
@@ -132,7 +132,7 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 | V6-07    | Logger-Interface                                | Done   |
 | V6-06    | Konfiguriertes Filter-Level                     | Done   | 
 
-Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden. <br>
+Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden.
 
 **Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
@@ -146,26 +146,28 @@ Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für
 
 Im Sprint 1 wurden noch keine Tests vorgenommen.
 
-## Meilensteinberichte
+# Meilensteinberichte
 
-### Meilensteinbericht 1
+## Meilensteinbericht 1
 
-#### Zeitpunkt Meilenstein 1: Beginn SW04
+### Zeitpunkt Meilenstein 1: Beginn SW04
 
-#### Beschreibung Meilenstein 1
+### Beschreibung Meilenstein 1
 
 Der erste Meilenstein wurde erreicht, nachdem das Projekt bekannt gegeben wurde, die Gruppen gebildet wurden, alle nötigen Informationen abgegeben wurden, die Gruppen sich mit der Aufgabenstellung auseinandergesetzt haben und die Gruppen die nötige Entwicklungsumgebung und alle wichtigen Werkzeuge aufgesetzt haben.
 
 Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in Anspruch genommen.
 
-#### Detail-Vorgaben zum Meilenstein 1:
-##### Projektmanagement
-###### Projektorganisation
+### Detail-Vorgaben zum Meilenstein 1
+
+#### Projektmanagement/Projektorganisation
+
 - Die Grundstruktur des Projektmanagementplans anhand der Vorlage der HSLU steht
 - Der Organisationsplan steht
 - Die Rollen und Zuständigkeiten sind definiert
 
-###### Projektführung
+#### Projektführung
+
 - Der Projektstrukturplan steht
 - Der Rahmenplan steht
 - Der Iterationsplan steht
@@ -176,74 +178,86 @@ Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in A
 - Der SprintBacklog für Sprint 1 und 2 steht
 - Das Risikomanagement steht
 
-###### Projektunterstützung
+#### Projektunterstützung
+
 - Tools für Entwicklung, Test & Abnahme sind definiert
 
-###### Testplan
+#### Testplan
+
 - Erste Gedanken zum Testdesign gemacht
 - Erste Gedanken zu den Testfällen gemacht
 
-###### Anhänge
+#### Anhänge
+
 - Meilensteinreview für Meilenstein 1 verfasst
 
-##### Systemspezifikation
-- Die Grundstruktur des Dokuments steht##### Applikation
-- Alle Teammitglieder haben ihre IDE für den Projektstart eingerichtet
+#### Systemspezifikation
+
+- Die Grundstruktur des Dokuments steht##### Applikation
+- Alle Teammitglieder haben ihre IDE für den Projektstart eingerichtet
 - Interface-Definition wurde durch das Interface-Komitee erstellt
 
 #### Meilensteinziele:
+
 1. Projektauftrag als Gruppe entgegennehmen
 2. Gruppe setzt sich mit Projektauftrag auseinander
 3. Jedes Gruppenmitglied setzt die Entwicklungsumgebung und alle nötigen Werkzeuge auf
 4. Alle Vorgaben des Meilensteins 1 werden erfüllt (siehe oben)
 
 #### Wurden die Meilensteinziele erreicht?
+
 1. Ja. Die Gruppenmitglieder waren alle jederzeit anwesend und konnten den Projektauftrag erfolgreich entgegennehmen.
 2. Ja. Die Gruppe hat sich kennengelernt und erste Aufgaben wurden verteilt. Jedes Teammitglied hat sich selbständig mit der Thematik auseinandergesetzt.
 3. Ja. Jedes Teammitglied hat die Entwicklungsumgebung und die Tools aufgesetzt.
 4. Ja. Sämtliche Vorgaben wurden erfüllt.
 
-### Meilensteinbericht 2
+## Meilensteinbericht 2
 
-#### Zeitpunkt Meilenstein 2: Beginn SW08
+### Zeitpunkt Meilenstein 2: Beginn SW08
 
-#### Beschreibung Meilenstein 2
+### Beschreibung Meilenstein 2
 
 Der zweite Meilenstein wurde erreicht, nachdem das Logger-Interface zur Verfügung gestellt wurde, die Logger- und Stringpersistor-Komponenten implementiert wurden, der Logger-Server implementiert wurde und so die Aufgabe durchgeführt werden konnte, bestimmte Ereignisse der Applikation (Game of Life) mithilfe der selbstgeschriebenen Logger-Klasse zu loggen und die Logs mithilfe der Stringpersistor-Klasse zu persistieren.
 
-#### Detail-Vorgaben zum Meilenstein 2:
-##### Projektmanagement
-###### Projektführung
+### Detail-Vorgaben zum Meilenstein 1
+
+#### Projektmanagement/Projektführung
+
 - Der Ressourcenplan ist aktuell
 - Die Projektkontrolle ist aktuell
 - Der ProductBacklog für Meilenstein 2 steht
 - Der SprintBacklog für Sprint 3 und 4 steht
 
-###### Projektunterstützung
+#### Projektunterstützung
+
 - Tools für Entwicklung, Test & Abnahme sind aktuell
 - Konfigurationsmanagement ist aktuell
 - Releasemanagement ist aktuell
 
-###### Testplan
+#### Testplan
+
 - Testdesign ist vollständig definiert
 - Testfälle für implementierter Code sind vorhanden
 
-###### Anhänge
+#### Anhänge
+
 - Meilensteinreview für Meilenstein 2 verfasst
 - Sprintreview für Sprint 1 verfasst
 - Sprintreview für Sprint 2 verfasst
 
-##### Systemspezifikation
+### Systemspezifikation
+
 - TODO (weitere Infos folgen in späteren Wochen)
 
-##### Applikation
+### Applikation
+
 - Der Logger-Komponente ist als Komponente mithilfe von Interfaces austauschbar
 - Die Applikation (Game of Life) gibt bei jedem Log einen Message-Level mit
 - Die API der Logger-Komponente kann einen Level-Filter setzen, um die zu übertragenden Logs einzuschränken
 - Der Level-Filter kann während der Laufzeit geändert werden
 - Die Logs werden durch Logger-Komponenten und den Logger-Server kausal und verlässlich aufgezeichnet
 - Die Logger-Komponente ist austauschbar
-- Die Logger-Komponente ist plattformunabhängig
+- Die Logger-Komponente ist plattformunabhängig
 - Der Komponentenaustausch ist ausserhalb der IDE und ohne Code-Anpassung (Neukompilation) möglich
 - Es können mehrere Instanzen der Logger-Komponente parallel auf den Logger-Server loggen
 - Die Logs können dauerhaft auf dem Logger-Server in einem einfachen und lesbaren Textfile gespeichert werden
@@ -252,18 +266,18 @@ Der zweite Meilenstein wurde erreicht, nachdem das Logger-Interface zur Verfügu
 - Die StringPersistorFile-Komponente persistiert die Logs
 - Die Daten werden in strukturierter Form dem Payload-Parameter der StringPersistor-Schnittstelle unter Verwendung des Adapter-Pattern übergeben
 
-#### Meilensteinziele:
+### Meilensteinziele:
+
 1. Ein Logger-Interface zur Verfügung stellen
 2. Die Logger-Komponente implementieren
 3. Den Logger-Server implementieren
 4. Die Stringpersistor-Komponente implementieren
 5. Ereignisse der Applikation (Game of Life) über das Logger-Interface mit der Logger-Komponente (auf dem Logger-Server mittels Stringpersistor) loggen
 
-#### Wurden die Meilensteinziele erreicht?
+### Wurden die Meilensteinziele erreicht?
+
 1. Ja.
 2. Ja.
 3. Ja.
 4. Ja.
 5. Ja.
-
-### Meilensteinbericht 3
