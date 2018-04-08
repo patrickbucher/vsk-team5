@@ -69,9 +69,54 @@ Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint
 
 Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt (siehe Abbildung [Projektstrukturplan](#projektstrukturplan)).
 
-![Projektstrukturplan](img/Projektstrukturplan.png){#projektstrukturplan}
+![Projektstrukturplan](img/Projektstrukturplan.png){#projektstrukturplan width=80%}
 
 ## Risikomanagement
+
+### Risiken
+
+#### Krankheits- / Unfallbedingte Ausfälle
+
+Eine oder mehrere Personen fallen aus.
+
+Massnahmen:
+
+* Know-How redundant: Dokumentation pflegen, Austausch im Plenum
+* Keine Extremsportarten 
+* Gesunde Ernährung
+
+#### Ausfall HSLU-Netz
+
+HSLU-Netz oder EnterpriseLab fällt aus.
+
+Massnahmen:
+
+* Backup (lokal)
+* Ausweichmöglichkeiten (GitHub)
+* Dokumentation separat verwaltet
+
+#### Hardwareausfall
+
+Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
+
+Massnahmen:
+
+* Versionsverwaltung
+* Regelmässig Commit/Push
+
+#### Zeitknappheit
+
+* Priorisierung von Features
+* Minimalanforderungen definieren
+
+### Risikomatrix
+
+| Schadensschwere / Eintreffenswahrscheinlichkeit | 1   | 2   | 3   |
+| ----------------------------------------------- | --- | --- | --- |
+| sehr gering                                     |     |     |     |
+| gering                                          |     |     |     |
+| mittel                                          |     |     |     |
+| hoch                                            |     |     |     |
 
 ## Projektkontrolle
 
@@ -153,49 +198,3 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
 
-# Risikomanagement
-
-## Risikien
-
-### Krankheits- / Unfallbedingte Ausfälle
-
-Eine oder mehrere Personen fallen aus.
-
-Massnahmen:
-
-* Know-How redundant: Dokumentation pflegen, Austausch im Plenum
-* Keine Extremsportarten 
-* Gesunde Ernährung
-
-### Ausfall HSLU-Netz
-
-HSLU-Netz oder EnterpriseLab fällt aus.
-
-Massnahmen:
-
-* Backup (lokal)
-* Ausweichmöglichkeiten (GitHub)
-* Dokumentation separat verwaltet
-
-### Hardwareausfall
-
-Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
-
-Massnahmen:
-
-* Versionsverwaltung
-* Regelmässig Commit/Push
-
-### Zeitknappheit
-
-* Priorisierung von Features
-* Minimalanforderungen definieren
-
-## Risikomatrix
-
-| Schadensschwere / Eintreffenswahrscheinlichkeit | 1   | 2   | 3   |
-| ----------------------------------------------- | --- | --- | --- |
-| sehr gering                                     |     |     |     |
-| gering                                          |     |     |     |
-| mittel                                          |     |     |     |
-| hoch                                            |     |     |     |
