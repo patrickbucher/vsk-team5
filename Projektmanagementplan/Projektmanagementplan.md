@@ -75,7 +75,7 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 
 ### Risiken
 
-#### Krankheits- / Unfallbedingte Ausfälle
+#### Krankheits- / unfallbedingte Ausfälle
 
 Eine oder mehrere Personen fallen im Verlauf des Projekts krankheitsbedingt oder aufgrund eines Unfalles aus.
 
@@ -89,7 +89,7 @@ Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffensw
 
 **Reduktion Eintreffenswahrscheinlichkeit:**
 
-* Keine Extremsportarten während des den Sprint
+* Keine Extremsportarten während den Sprints
 * gesunde Ernährung
 
 #### Ausfall HSLU-Netz
@@ -101,7 +101,7 @@ Die Eintreffenswahrscheinlichkeit kann von den Gruppenmitgliedern mit beeinfluss
 **Reduktion Schadensausmass:**
 
 * Dokumentation und Sourcecode wird lokal von den einzelnen Gruppenmitgliedern gesichert
-* Ausweichmöglichkeiten, wo möglich (beispielsweise GitHub bei Ausfall von Enterpriselab/Gitlab)
+* Ausweichmöglichkeiten definiert (beispielsweise GitHub bei Ausfall von Enterpriselab/Gitlab)
 * Die Dokumentation des Projekts wird unabhängig vom Sourcecode verwaltet
 
 #### Hardwareausfall / Verlust privater Arbeitsgeräte
@@ -118,7 +118,7 @@ Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffensw
 **Reduktion Eintreffenswahrscheinlichkeit:**
 
 * Eigenverantwortung Gruppenmitglieder
-* Keine lokalen Dateien; alle relevanten Dateien zum Projekt werden extern gehostet(Gitlab, Github etc).
+* Keine lokalen Dateien; alle relevanten Dateien zum Projekt werden extern gehostet (Gitlab, Github etc).
 
 #### Zeitknappheit
 
@@ -127,6 +127,7 @@ Zeitknappheit aufgrund schlechter oder fehlender Planung.
 Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffenswahrscheinlichkeit zu reduzieren:
 
 **Reduktion Schadensausmass:**
+
 * Priorisierung von Features
 * Minimalanforderungen definieren
 
