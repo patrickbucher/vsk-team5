@@ -77,46 +77,63 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 
 #### Krankheits- / Unfallbedingte Ausfälle
 
-Eine oder mehrere Personen fallen aus.
+Eine oder mehrere Personen fallen im Verlauf des Projekts krankheitsbedingt oder aufgrund eines Unfalles aus.
 
-Massnahmen:
+Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffenswahrscheinlichkeit zu reduzieren:
 
-* Know-How redundant: Dokumentation pflegen, Austausch im Plenum
-* Keine Extremsportarten 
-* Gesunde Ernährung
+**Reduktion Schadensausmass:**
+
+* Wissensaustausch zwischen den Gruppenmitgliedern
+* Dokumentation pflegen
+* Regelmässiger Austausch im Plenum
+
+**Reduktion Eintreffenswahrscheinlichkeit:**
+
+* Keine Extremsportarten während des den Sprint
+* gesunde Ernährung
 
 #### Ausfall HSLU-Netz
 
-HSLU-Netz oder EnterpriseLab fällt aus.
+HSLU-Netz, EnterpriseLab oder andere verwendete Infrastruktur fallen aus oder können aus anderen Gründen nicht mehr verwendet werden.
 
-Massnahmen:
+Die Eintreffenswahrscheinlichkeit kann von den Gruppenmitgliedern mit beeinflusst werden. Folgende Massnahmen wurden definert, um das Schadensausmass reduzieren:
 
-* Backup (lokal)
-* Ausweichmöglichkeiten (GitHub)
-* Dokumentation separat verwaltet
+**Reduktion Schadensausmass:**
 
-#### Hardwareausfall
+* Dokumentation und Sourcecode wird lokal von den einzelnen Gruppenmitgliedern gesichert
+* Ausweichmöglichkeiten, wo möglich (beispielsweise GitHub bei Ausfall von Enterpriselab/Gitlab)
+* Die Dokumentation des Projekts wird unabhängig vom Sourcecode verwaltet
 
-Arbeit geht verloren durch Ausfall von Arbeitsgeräten.
+#### Hardwareausfall / Verlust privater Arbeitsgeräte
 
-Massnahmen:
+Geleistete Arbeit geht verloren durch Ausfall oder den Verlust verwendeter Arbeitsgeräte.
 
-* Versionsverwaltung
-* Regelmässig Commit/Push
+Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffenswahrscheinlichkeit zu reduzieren:
+
+**Reduktion Schadensausmass:**
+
+* Versionsverwaltung (Git)
+* Instruktion Gruppenmitglieder: regelmässiges Commiten/Pushen
+
+**Reduktion Eintreffenswahrscheinlichkeit:**
+
+* Eigenverantwortung Gruppenmitglieder
+* Keine lokalen Dateien; alle relevanten Dateien zum Projekt werden extern gehostet(Gitlab, Github etc).
 
 #### Zeitknappheit
 
+Zeitknappheit aufgrund schlechter oder fehlender Planung.
+
+Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffenswahrscheinlichkeit zu reduzieren:
+
+**Reduktion Schadensausmass:**
 * Priorisierung von Features
 * Minimalanforderungen definieren
 
-### Risikomatrix
+**Reduktion Eintreffenswahrscheinlichkeit:**
 
-| Schadensschwere / Eintreffenswahrscheinlichkeit | 1   | 2   | 3   |
-| ----------------------------------------------- | --- | --- | --- |
-| sehr gering                                     |     |     |     |
-| gering                                          |     |     |     |
-| mittel                                          |     |     |     |
-| hoch                                            |     |     |     |
+* Angemessene Zeitplanung
+* Regelmässige Kontrolle, klar definierte Verantwortlichkeiten
 
 ## Projektkontrolle
 
