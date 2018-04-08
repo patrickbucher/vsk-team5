@@ -8,9 +8,9 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 
 ## Organisationsplan
 
-Siehe Abbildung [Organigramm](#organigramm).
-
 ![Organigramm](img/Organigramm.png){#organigramm}
+
+Siehe Abbildung [Organigramm](#organigramm).
 
 ## Rollen
 
@@ -56,14 +56,14 @@ Das komplette Projekt ist in drei Meilensteine aufgeteilt. Der erste Meilenstein
 
 ## Sprintplan
 
-Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Jeder Sprint dauert zwei Wochen. Die Detaillierte Sprintplanung ist mittels des Online-Tools "ScrumDo" realisiert.
+Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Für die einzelnen Sprints sind Endtermin und Deliverables wie folgt festgelegt:
 
-| Sprint  | Termin     | Deliverables                        |
-| ------: | ---------- | ----------------------------------- |
-| 1       | 25.03.2018 | Sprintreview S1, Sprintplanung S2   |
-| 2       | 08.04.2018 | Sprintreview S2, Sprintplanung S3   |
-| 3       | 29.04.2018 | Sprintreview S3, Sprintplanung S4   |
-| 4       | 13.05.2018 | Sprintreview S4                     |
+1. Sprint (25.03.2018): Sprintreview S1, Sprintplanung S2 
+2. Sprint (08.04.2018): Sprintreview S2, Sprintplanung S3
+3. Sprint (29.04.2018): Sprintreview S3, Sprintplanung S4
+4. Sprint (13.05.2018): Sprintreview S4
+
+Jeder Sprint dauert zwei Wochen. Die detaillierte Sprintplanung ist mittels des Online-Tools _ScrumDo_ realisiert.
 
 ## Projektstrukturplan
 
@@ -73,9 +73,7 @@ Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist d
 
 ## Risikomanagement
 
-### Risiken
-
-#### Krankheits- / unfallbedingte Ausfälle
+### Krankheits- / unfallbedingte Ausfälle
 
 Eine oder mehrere Personen fallen im Verlauf des Projekts krankheitsbedingt oder aufgrund eines Unfalles aus.
 
@@ -92,7 +90,7 @@ Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffensw
 * Keine Extremsportarten während den Sprints
 * gesunde Ernährung
 
-#### Ausfall HSLU-Netz
+### Ausfall HSLU-Netz
 
 HSLU-Netz, EnterpriseLab oder andere verwendete Infrastruktur fallen aus oder können aus anderen Gründen nicht mehr verwendet werden.
 
@@ -104,7 +102,7 @@ Die Eintreffenswahrscheinlichkeit kann von den Gruppenmitgliedern mit beeinfluss
 * Ausweichmöglichkeiten definiert (beispielsweise GitHub bei Ausfall von Enterpriselab/Gitlab)
 * Die Dokumentation des Projekts wird unabhängig vom Sourcecode verwaltet
 
-#### Hardwareausfall / Verlust privater Arbeitsgeräte
+### Hardwareausfall / Verlust privater Arbeitsgeräte
 
 Geleistete Arbeit geht verloren durch Ausfall oder den Verlust verwendeter Arbeitsgeräte.
 
@@ -120,7 +118,7 @@ Folgende Massnahmen wurden definert, um das Schadensausmass und die Eintreffensw
 * Eigenverantwortung Gruppenmitglieder
 * Keine lokalen Dateien; alle relevanten Dateien zum Projekt werden extern gehostet (Gitlab, Github etc).
 
-#### Zeitknappheit
+### Zeitknappheit
 
 Zeitknappheit aufgrund schlechter oder fehlender Planung.
 
@@ -205,8 +203,6 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | TCP-Schnittstelle     | 1.0.0          |           |
 | Testplan              | 1.0.0          |           |
 | Scrum-Dokumentation   | 1.0.0          |           |
-| Systemspezifikation   | 1.0.0          |           |
-| Systemspezifikation   | 1.0.0          |           |
 | Logger                | 1.0.0-SNAPSHOT |           |
 | LoggerSetup           | 1.0.0-SNAPSHOT |           |
 | LoggerCommon          | 1.0.0-SNAPSHOT |           |
