@@ -104,7 +104,7 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 | Nr. / ID | Dokument                 | Version  | Status   |
 | -------: | ------------------------ | -------- | -------- |
 | 1        | Testplan                 | 1.0.0    | erledigt |
-| 2        | SchnittstelleTCP         | 1.0.0    | erledigt |
+| 2        | TCP-Schinttstelle        | 1.0.0    | erledigt |
 
 | Nr. / ID | Scrum-Story (ScrumDo)                           | Status |
 | -------: | ----------------------------------------------- | ------ |
@@ -134,13 +134,7 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 
 Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden.
 
-**Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
-
-### Testprotokoll
-
-### Protokoll Review - Sprint 3
-
-### Protokoll Review - Sprint 4
+**Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: _Testplan_ und _TCP-Schnittstelle_. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
 ### Testprotokoll
 
@@ -150,7 +144,7 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 
 ## Meilensteinbericht 1
 
-### Zeitpunkt Meilenstein 1: Beginn SW04
+Zeitpunkt Meilenstein 1: Beginn SW04
 
 ### Beschreibung Meilenstein 1
 
@@ -213,7 +207,7 @@ Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in A
 
 ## Meilensteinbericht 2
 
-### Zeitpunkt Meilenstein 2: Beginn SW08
+Zeitpunkt Meilenstein 2: Beginn SW08
 
 ### Beschreibung Meilenstein 2
 
@@ -244,10 +238,6 @@ Der zweite Meilenstein wurde erreicht, nachdem das Logger-Interface zur Verfügu
 - Meilensteinreview für Meilenstein 2 verfasst
 - Sprintreview für Sprint 1 verfasst
 - Sprintreview für Sprint 2 verfasst
-
-### Systemspezifikation
-
-- TODO (weitere Infos folgen in späteren Wochen)
 
 ### Applikation
 
