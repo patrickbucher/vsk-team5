@@ -35,7 +35,7 @@ Siehe Abbildung [Organigramm](#organigramm).
 
 Der Rahmenplan (siehe Abbildung [Rahmenplan](#rahmenplan)) stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingeplant werden.
 
-![Rahmenplan](img/Rahmenplan.png){#rahmenplan}
+![Rahmenplan](Rahmenplan/Rahmenplan.png){#rahmenplan}
 
 ## Meilensteinplan
 
@@ -197,4 +197,3 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 | StringPersistor       | 4.0.1          |           |
 | StringPersistorFile   | 1.0.0-SNAPSHOT |           |
 | GameOfLife            | 1.0.0-SNAPSHOT |           |
-
