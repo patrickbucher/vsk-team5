@@ -35,7 +35,7 @@ Siehe Abbildung [Organigramm](#organigramm).
 
 Der Rahmenplan (siehe Abbildung [Rahmenplan](#rahmenplan)) stellt eine Übersicht auf abstrakter Ebene dar. Die wichtigsten Elemente sind die definierten Meilensteine und Sprints. Dabei ist darauf zu achten, dass die Vorgaben der Aufgabenstellung, wie z.B. die Zwischen- und Schlussabgabe, von Anfang an in das Projekt miteingeplant werden.
 
-![Rahmenplan](img/Rahmenplan.png){#rahmenplan}
+![Rahmenplan](Rahmenplan/Rahmenplan.png){#rahmenplan}
 
 ## Meilensteinplan
 
@@ -164,7 +164,7 @@ Eine oder mehrere Personen fallen aus.
 Massnahmen:
 
 * Know-How redundant: Dokumentation pflegen, Austausch im Plenum
-* Keine Extremsportarten 
+* Keine Extremsportarten
 * Gesunde Ernährung
 
 ### Ausfall HSLU-Netz
