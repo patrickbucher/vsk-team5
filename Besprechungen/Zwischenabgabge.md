@@ -28,3 +28,14 @@
 
 - Checkstyle überprüfen, v.a. "günstige" Fehler herausbringen
 - Integrationstest mit Suffix "IT" markieren
+
+# Systemspezifikation
+
+- Klassendiagramm aufteilen und auf A4-Seiten verteilen
+    - Implementierunng von Interfaces nicht als Vererbung darstellen (gestrichelte Linien verwenden)
+    - Teilweise fehlerhafte Pfeilrichtungen
+- Sequenzdiagramm überarbeiten
+    - Parameter korrekt darstellen
+    - blockierende/synchrone Abläufe darstellen
+- Protokoll überdenken: "OK"-Response nötig?
+- Kontextdiagramm: GameOfLife _nicht_ als Teil des Systems!
