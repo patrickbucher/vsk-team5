@@ -1,0 +1,4 @@
+- Warum wird das R in RMI als "err" [deutsch], das I in RMI aber als "äi" [englisch] ausgesprochen?
+- Serverseitiger Port darf statisch sein.
+- Viewer im `logger`-Projekt ablegen.
+    - Komponente `logger`-Viewer
