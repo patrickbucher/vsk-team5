@@ -1,5 +1,3 @@
-alles per Mail an Martin Jud
-
 # Projektmanagementplan
 
 - pro Sprint ein Anhang, der auf das Risikomanagement eingeht
@@ -20,3 +18,13 @@ alles per Mail an Martin Jud
 # Testplan
 
 - Feedback abwarten
+
+# StringPersistor
+
+- pro Sekunde 1000 Messages schreiben und 500 lesen
+    - Benchmark schreiben!
+
+# CI
+
+- Checkstyle überprüfen, v.a. "günstige" Fehler herausbringen
+- Integrationstest mit Suffix "IT" markieren
