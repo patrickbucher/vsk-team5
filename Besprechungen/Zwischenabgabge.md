@@ -39,3 +39,5 @@
     - blockierende/synchrone Abläufe darstellen
 - Protokoll überdenken: "OK"-Response nötig?
 - Kontextdiagramm: GameOfLife _nicht_ als Teil des Systems!
+- Logger-Format beschreiben
+    - Beispiel anführen
