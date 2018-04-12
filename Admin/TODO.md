@@ -16,21 +16,16 @@
 - [X] **SS**: Artefakte definieren
 - [X] **FM**: Analyse erstellen
 
-## SW 4
+## Nacharbeit Zwischenabgabe
 
-- [X] **PB**: Epics und Stories bestimmen
-- [ ] **PK**: Risiken definieren
-- [ ] **SS**: Tools (Tests, Entwicklung, Abnahme) definieren
-- [ ] **FM**: Meilensteinbericht (1. Meilenstein)
-
-## Zwischenabgabe
-
-- [ ] Projektplan: **SS**
-    - Organisation: **SS**
-    - Risikomanagement (Abhängigkeiten, Gegenmassnahmen): **PK**
-- [X] Testplan: **PB**
-- [ ] Sprintreviews: **FM**
-    - geplant/erreicht
-- [X] TCP-Schnittstelle: **PB**
-- [ ] Systemspezifikation: **PB**
-- [X] JavaDoc: **PB**
+- [ ] **PB**: Klassendiagramm in Ordnung bringen
+    - fehlerhafte Verbindungen
+    - nach Komponenten aufteilen (je eine A4-Seite)
+- [ ] **PB**: Sequenzdiagramm (TCP-Kommunikatoin) in Ordnung bringen
+    - Parameter korrekt darstellen
+    - blockierende/synchrone Aufrufe herausarbeiten
+- [ ] **PB**: Protokoll überdenken ("OK" wirklich nötig?)
+- [ ] **SS**: Kontextdiagramm überarbeiten
+    - GameOfLife ausserhalb der Systemgrenze
+    - die selbst entwickelten Komponenten innerhalb der Systemgrenze
+- [ ] **PB**: Logger-Format in Sysspec beschreiben und Beispiele aufführen
