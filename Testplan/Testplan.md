@@ -62,6 +62,10 @@ Dem `StringPersistor` wird über die Methode `setFile(File)` eine Datei zum Schr
 
 Der bereits beschriebene Testfall `StringPersistorFileTest` deckt zwar schon einen grossen Teil vom `PersistedStringParser` ab. Dennoch wurde mit `PersistedStringParserTest` ein klassischer Unit-Test für die Klasse `PersistedStringParser` geschrieben. Bei der Umsetzung der `get()`-Methode von `StringPersistorFile`, welche den `PersistedStringParser` verwendet, sollte nämlich zunächst sichergestellt werden, dass die besagte Hilfsklasse soweit funktioniert. So gab es beim Entwickeln der `get()`-Methode Gewissheit darüber, dass etwaige Fehler in derselben und nicht andernorts zu suchen sind, was einem ein hektisches Hin und Her zwischen den einzelnen Klassen erspart.
 
+### Qualitätsmerkmale
+
+Die `StringPersistor`-Komponente muss in der Lage sein pro Sekunde 1000 Nachrichten zu schreiben und 500 Nachrichten zu lesen. Dies wird mit dem `StringPersistorBenchmarkIT` getestet, indem mit einem Timeout von 1000 Millisekunden die entsprechende Anzahl Nachrichten geschrieben und gelesen wird. Es wird zusätzlich überprüft, ob die Reihenfolge der geschriebenen und gelesenen Nachrichten die gleiche ist. Dieser Benchmark erhöht zwar nicht die Testabdeckung in Codezeilen, behandelt aber eine mögliche Fehlerquelle.
+
 ## `StringPersistor`-Komponente
 
 Die `StringPersistor`-Komponente wird durch die bereits genannten Testfälle (siehe Abschnitt [_Dauerhafte Speicherung_]{#stringpersistor}) abgedeckt.
@@ -79,14 +83,15 @@ Der `StringPersistorAdapter` wird durch den Testfall `StringPersistorAdapterTest
 | `DemoLoggerClient`           | TP      | Kompletten Anwendungsstack                          |
 | `MessageTest`                | UT      | `Message`                                           |
 | `LoggerComponentTest`        | UT      | `LoggerComponent`                                   |
-| `LoggerComponentSetupTest`   | IT      | `LoggerComponentSetup`, `LoggerComponent`           |
+| `LoggerComponentSetupIT`     | IT      | `LoggerComponentSetup`, `LoggerComponent`           |
 | `LoggerServerTest`           | IT      | `ConcurrentLoggerServer`, `ConcurrentClientHandler` |
 | `StringPersistorAdapterTest` | IT      | `StringPersistorAdapter`, `StringPersistorFile`     |
 | `LogEntryTest`               | UT      | `LogEntry`                                          |
 | `PersistedStringParserTest`  | UT      | `PersistedStringParser`                             |
-| `StringPersistorFileTest`    | IT      | `StringPersistorFile`, `PersistedStringParser`      |
+| `StringPersistorFileIT`      | IT      | `StringPersistorFile`, `PersistedStringParser`      |
+| `StringPersistorBenchmarkIT` | IT/BM   | `StringPersistorAdapter`, `StringPersistorFile`     | 
 
-[^1]: TP: Testprogramm, UT: Unit-Test, IT: Integrationstest
+[^1]: TP: Testprogramm, UT: Unit-Test, IT: Integrationstest, BM: Benchmark
 
 ## Testabdeckung
 
