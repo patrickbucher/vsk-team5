@@ -1,5 +1,6 @@
 @startuml
-skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam defaultFontName Droid Sans
 package "loggercomponent" {
     class LoggerComponent {
         - LoggerComponent(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream)

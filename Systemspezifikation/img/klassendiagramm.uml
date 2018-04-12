@@ -1,5 +1,8 @@
 @startuml
 
+skinparam monochrome true
+skinparam defaultFontName Droid Sans
+
 package "game" {
     class DemoLoggerClient {
         {static} + main(args:String[]):void
