@@ -48,7 +48,7 @@ Läuft ein Server, und werden mehrere Instanzen des `DemoLoggerClient` schnell n
 
 ## Dauerhafte Speicherung {#stringpersistor}
 
-Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile` implementiert. Der Testfall dazu heisst `StringPersistorFileTest`. Dieser testet das Schreiben (`StringPersistorFile.save()`) und anschliessende Einlesen (`StringPersistorFile.get()`) von Logmeldungen. Es werden verschiedene Zeilentrennzeichen getestet (`\n` für Unix und `\r\n` für Windows), indem die entsprechende Laufzeitvariable (`line.separator`) gesetzt wird. Da beim Loggen von Stack-Traces eine Logmeldung mehrere Zeilen umfassen kann, wird auch das Schreiben und Auslesen mehrzeiliger Logmeldungen getestet (`testMultiLineMessages()`).
+Die dauerhafte Speicherung der Meldungen ist in der Klasse `StringPersistorFile` implementiert. Der Testfall dazu heisst `StringPersistorFileIT`. Dieser testet das Schreiben (`StringPersistorFile.save()`) und anschliessende Einlesen (`StringPersistorFile.get()`) von Logmeldungen. Es werden verschiedene Zeilentrennzeichen getestet (`\n` für Unix und `\r\n` für Windows), indem die entsprechende Laufzeitvariable (`line.separator`) gesetzt wird. Da beim Loggen von Stack-Traces eine Logmeldung mehrere Zeilen umfassen kann, wird auch das Schreiben und Auslesen mehrzeiliger Logmeldungen getestet (`testMultiLineMessages()`).
 
 Dem `StringPersistor` wird über die Methode `setFile(File)` eine Datei zum Schreiben und Einlesen von Logmeldungen angegeben. Dabei kann es passieren, dass auf die angegebene Datei nicht wie gewünscht zugegriffen werden kann. Die folgenden Tests stellen sicher, dass diese Situationen rechtzeitig erkannt und mit einer Exception behandelt wird:
 
@@ -60,11 +60,11 @@ Dem `StringPersistor` wird über die Methode `setFile(File)` eine Datei zum Schr
 
 `StringPersistorFile` verwendet zum Einlesen der Logmeldungen eine Hilfsklasse namens `PersistedStringParser`. Diese liest Logmeldungen in dem Format aus, wie es in der Klasse `PersistedString.toString()` implementiert ist. (Für die Schlussabgabe soll das Formatieren der Meldungen flexibler per Strategy-Pattern implementiert werden.) So beginnt eine Logmeldung jeweils mit einem ISO-formatiertem Timestamp. Es folgt ein Leerzeichen, eine Pipe (`|`) und wieder ein Leerzeichen, worauf die eigentliche Logmeldung folgt. (Diese enthält wiederum einen Timestamp, was auf dieser Semantikebene aber nicht von Belang ist. Schliesslich geht es hier darum, den Beginn einer neuen Logmeldung feststellen zu können.)
 
-Der bereits beschriebene Testfall `StringPersistorFileTest` deckt zwar schon einen grossen Teil vom `PersistedStringParser` ab. Dennoch wurde mit `PersistedStringParserTest` ein klassischer Unit-Test für die Klasse `PersistedStringParser` geschrieben. Bei der Umsetzung der `get()`-Methode von `StringPersistorFile`, welche den `PersistedStringParser` verwendet, sollte nämlich zunächst sichergestellt werden, dass die besagte Hilfsklasse soweit funktioniert. So gab es beim Entwickeln der `get()`-Methode Gewissheit darüber, dass etwaige Fehler in derselben und nicht andernorts zu suchen sind, was einem ein hektisches Hin und Her zwischen den einzelnen Klassen erspart.
+Der bereits beschriebene Testfall `StringPersistorFileIT` deckt zwar schon einen grossen Teil vom `PersistedStringParser` ab. Dennoch wurde mit `PersistedStringParserTest` ein klassischer Unit-Test für die Klasse `PersistedStringParser` geschrieben. Bei der Umsetzung der `get()`-Methode von `StringPersistorFile`, welche den `PersistedStringParser` verwendet, sollte nämlich zunächst sichergestellt werden, dass die besagte Hilfsklasse soweit funktioniert. So gab es beim Entwickeln der `get()`-Methode Gewissheit darüber, dass etwaige Fehler in derselben und nicht andernorts zu suchen sind, was einem ein hektisches Hin und Her zwischen den einzelnen Klassen erspart.
 
 ### Qualitätsmerkmale
 
-Die `StringPersistor`-Komponente muss in der Lage sein pro Sekunde 1000 Nachrichten zu schreiben und 500 Nachrichten zu lesen. Dies wird mit dem `StringPersistorBenchmarkIT` getestet, indem mit einem Timeout von 1000 Millisekunden die entsprechende Anzahl Nachrichten geschrieben und gelesen wird. Es wird zusätzlich überprüft, ob die Reihenfolge der geschriebenen und gelesenen Nachrichten die gleiche ist. Dieser Benchmark erhöht zwar nicht die Testabdeckung in Codezeilen, behandelt aber eine mögliche Fehlerquelle.
+Die `StringPersistor`-Komponente muss in der Lage sein pro Sekunde 1000 Nachrichten zu schreiben und 500 Nachrichten zu lesen. Dies wird mit dem `StringPersistorBenchmark` getestet, indem mit einem Timeout von 1000 Millisekunden die entsprechende Anzahl Nachrichten geschrieben und gelesen wird. Es wird zusätzlich überprüft, ob die Reihenfolge der geschriebenen und gelesenen Nachrichten die gleiche ist. Dieser Benchmark erhöht zwar nicht die Testabdeckung in Codezeilen, behandelt aber eine mögliche Fehlerquelle.
 
 ## `StringPersistor`-Komponente
 
@@ -74,22 +74,22 @@ Die `StringPersistor`-Komponente wird durch die bereits genannten Testfälle (si
 
 Der Logger-Server soll den `StringPersistor` über einen Adapter verwenden. Der Logger-Server nimmt von der Logger-Component Instanzen der Klasse `Message` entgegen. Der `StringPersistor` arbeitet intern mit Instanzen der Klasse `PersistedString`. Für den Austausch der Logmeldungen zwischen Logger-Server und `StringPersistor` wurde darum ein neuer Übergabeparameter entwickelt, der sich auf die Aspekte beschränkt, die für Logger-Server und `StringPersistor` wichtig sind: Das Interface `LogMessage`. Dieses wird von der Klasse `LogEntry` implementiert, und definiert Methoden um die folgendenden Felder auslesen zu können: `Level` (als `String`, da der Server die Enum `LogLevel` nicht kennt), `CreationTimestamp` und `ServerEntryTimestamp` (beide vom Typ `java.time.Instant`) und `Message` (`String`). Zum komfortablen Erstellen einer `LogEntry`-Instanz wurde das Builder-Pattern implementiert (`LogEntry.Builder`), welches durch den Testfall `LogEntryTest` abgedeckt wird, indem sichergestellt wird, dass die gesetzten Werte (zwingende und optionale) korrekt gesetzt werden.
 
-Der `StringPersistorAdapter` wird durch den Testfall `StringPersistorAdapterTest` abgedeckt. In der Testmethode `testAdapter()` wird eine Logmeldung über das Adapter-Interface in eine temporäre Datei geschrieben. Die Logmeldung wird anschliessend aus der Datei ausgelesen und mit dem ursprünglichen `LogEntry` verglichen. Dabei wird auch ein grosser Teil der Klasse `StringPersistor` und der `LogEntry.Builder` mitgetestet.
+Der `StringPersistorAdapter` wird durch den Testfall `StringPersistorAdapterIT` abgedeckt. In der Testmethode `testAdapter()` wird eine Logmeldung über das Adapter-Interface in eine temporäre Datei geschrieben. Die Logmeldung wird anschliessend aus der Datei ausgelesen und mit dem ursprünglichen `LogEntry` verglichen. Dabei wird auch ein grosser Teil der Klasse `StringPersistor` und der `LogEntry.Builder` mitgetestet.
 
 # Testübersicht
 
-| Testfall                     | Art[^1] | Testet                                              |
-|------------------------------|---------|-----------------------------------------------------|
-| `DemoLoggerClient`           | TP      | Kompletten Anwendungsstack                          |
-| `MessageTest`                | UT      | `Message`                                           |
-| `LoggerComponentTest`        | UT      | `LoggerComponent`                                   |
-| `LoggerComponentSetupIT`     | IT      | `LoggerComponentSetup`, `LoggerComponent`           |
-| `LoggerServerTest`           | IT      | `ConcurrentLoggerServer`, `ConcurrentClientHandler` |
-| `StringPersistorAdapterTest` | IT      | `StringPersistorAdapter`, `StringPersistorFile`     |
-| `LogEntryTest`               | UT      | `LogEntry`                                          |
-| `PersistedStringParserTest`  | UT      | `PersistedStringParser`                             |
-| `StringPersistorFileIT`      | IT      | `StringPersistorFile`, `PersistedStringParser`      |
-| `StringPersistorBenchmarkIT` | IT/BM   | `StringPersistorAdapter`, `StringPersistorFile`     | 
+| Testfall                    | Art[^1] | Testet                                              |
+|-----------------------------|---------|-----------------------------------------------------|
+| `DemoLoggerClient`          | TP      | Kompletten Anwendungsstack                          |
+| `MessageTest`               | UT      | `Message`                                           |
+| `LoggerComponentTest`       | UT      | `LoggerComponent`                                   |
+| `LoggerComponentSetupIT`    | IT      | `LoggerComponentSetup`, `LoggerComponent`           |
+| `LoggerServerIT`            | IT      | `ConcurrentLoggerServer`, `ConcurrentClientHandler` |
+| `StringPersistorAdapterIT`  | IT      | `StringPersistorAdapter`, `StringPersistorFile`     |
+| `LogEntryTest`              | UT      | `LogEntry`                                          |
+| `PersistedStringParserTest` | UT      | `PersistedStringParser`                             |
+| `StringPersistorFileIT`     | IT      | `StringPersistorFile`, `PersistedStringParser`      |
+| `StringPersistorBenchmark`  | BM      | `StringPersistorFile`                               |
 
 [^1]: TP: Testprogramm, UT: Unit-Test, IT: Integrationstest, BM: Benchmark
 
