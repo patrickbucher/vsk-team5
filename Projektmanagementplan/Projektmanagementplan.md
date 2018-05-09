@@ -4,11 +4,17 @@ subtitle: Version 1.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
+# TODOs
+
+- Evtl. Risikomanagement updaten
+- Aufwandschätzung Schlussabgabe einfügen
+- Releasemanagement für Release 2 vervollständigen
+
 # Projektorganisation
 
 ## Organisationsplan
 
-![Organigramm](img/Organigramm.png){#organigramm}
+![Organigramm](img/Organigramm.png){#organigramm width=50%}
 
 Siehe Abbildung [Organigramm](#organigramm).
 
@@ -45,20 +51,17 @@ Das komplette Projekt ist in drei Meilensteine aufgeteilt. Der erste Meilenstein
     - ProductBacklog
     - Sprintplanung S1/S2
     - Detailplanung S1
-    - Meilensteinbericht MS 2
 2. **Meilenstein (Zwischenabgabe, 08.04.2018)**
     - Release 1 gemäss Muss-Features deployed und lauffähig
     - Sprintplanung S3/S4
-    - Meilensteinbericht MS 3
 3. **Meilenstein (Schlussabgabe, 13.05.2018)**
     - Release 2 gemäss Muss-Features deployed und lauffähig
-    - Meilensteinbericht MS 4
 
 ## Sprintplan
 
 Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Für die einzelnen Sprints sind Endtermin und Deliverables wie folgt festgelegt:
 
-1. Sprint (25.03.2018): Sprintreview S1, Sprintplanung S2 
+1. Sprint (25.03.2018): Sprintreview S1, Sprintplanung S2
 2. Sprint (08.04.2018): Sprintreview S2, Sprintplanung S3
 3. Sprint (29.04.2018): Sprintreview S3, Sprintplanung S4
 4. Sprint (13.05.2018): Sprintreview S4
@@ -69,7 +72,7 @@ Jeder Sprint dauert zwei Wochen. Die detaillierte Sprintplanung ist mittels des 
 
 Um das Projekt besser planen, durchzuführen und kontrollieren zu können, ist dieses in mehrere Teilprojekte, welche wiederum in Teilaufgaben gegliedert sind, aufgeteilt (siehe Abbildung [Projektstrukturplan](#projektstrukturplan)).
 
-![Projektstrukturplan](img/Projektstrukturplan.png){#projektstrukturplan width=80%}
+![Projektstrukturplan](img/projektstrukturplan.png){#projektstrukturplan width=80%}
 
 ## Risikomanagement
 
@@ -144,7 +147,6 @@ Für die Projektkontrolle sind folgende Tools und Methoden im Einsatz:
 - Backlog-Grooming
 - Definierung von Definition of Done der Tasks
 - Sprintreviews
-- Meilensteinberichte
 
 ## Aufwandschätzung
 
@@ -158,7 +160,24 @@ Der Aufwand wird weiterhin in folgende Kategorien unterteilt:
 - Testing
 - Reviewing
 
-Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung. Für die Schlussabgabe wird jedoch eine erstellt.
+### Zwischenabgabe
+
+Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung.
+
+### Schlussabgabe
+
+TODO Aufwandschätzung einfügen
+
+## Defition of Done
+
+Um gruppenintern klarstellen zu können, wann ein Task als erfüllt gilt, sind mehrere Definition of Done definiert worden.
+
+- Funktionalität vom Product Owner abgenommen.
+- Code-Review von mindestens einem Teammitglied durchgeführt.
+- Bestehende Tests erfolgreich durchgelaufen.
+- Eingeführte Features sind in der Projektdokumentation vermerkt.
+- Änderungen in GitLab eingecheckt.
+- Build auf Jenkins funktioniert.
 
 # Projektunterstützung
 

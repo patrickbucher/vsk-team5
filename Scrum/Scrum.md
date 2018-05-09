@@ -5,6 +5,12 @@ date: 03.04.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
+# TODOs
+
+- Stories entfernen + Verweis auf ScrumDo
+- Sprintreview 3 und 4 einfügen
+- Meilensteinberichte entfernen
+
 # Stories (nach Epics)
 
 ## Epic Log-Ereignisse
@@ -37,7 +43,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ## Epic Persistenz
 
 16. Log-Aufzeichnung: Als *Administrator* möchte ich *eine verlässliche Aufzeichnung der Log-Ereignisse auf dem Server*, um *die Ereignisse aus dem Spiel in korrekter Reihenfolge nachverfolgen zu können*.
-17. Unterscheidung Log-Clients: Als *Administrator* möchte ich *nach Client-Instanz unterscheidbare Logdateien*, um *die Log-Meldungen verschiedener Clients auseinanderhalten zu können*. 
+17. Unterscheidung Log-Clients: Als *Administrator* möchte ich *nach Client-Instanz unterscheidbare Logdateien*, um *die Log-Meldungen verschiedener Clients auseinanderhalten zu können*.
 18. Textdatei-Log: Als *Administrator* möchte ich *Log-Ereignisse in einfachen Textdateien festhalten*, um *diese mit gängigen Werkzeugen betrachten und auswerten zu können (`grep`, `tail`, etc.)*.
 
 ## Epic Format
@@ -63,15 +69,6 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 - Ein *Entwickler* hat Zugriff auf den Quellcode und verfügt über die Fähigkeiten und Berechtigungen um Änderungen daran vorzunehmen.
 - Ein *Administrator* hat Zugang auf beide konzeptionell involvierten Systeme (Client und Server) und Zugriff auf die Konfigurationsdateien aller involvierter Komponenten.
 - Ein *Anwender* kann das Spiel auf dem Client ausführen, kann aber keine Änderungen an Quellcode und Konfigurationsdateien vornehmen und nicht auf den Server zugreifen.
-
-# Definition of Done
-
-- Funktionalität vom Product Owner abgenommen.
-- Code-Review von mindestens einem Teammitglied durchgeführt.
-- Bestehende Tests erfolgreich durchgelaufen.
-- Eingeführte Features sind in der Projektdokumentation vermerkt.
-- Änderungen in GitLab eingecheckt.
-- Build auf Jenkins funktioniert.
 
 # Sprintreviews
 
@@ -130,7 +127,7 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 | V6-03    | Aufzeichnung von Exceptions                     | Done   |
 | V6-05    | Codiertes Filter-Level                          | Done   |
 | V6-07    | Logger-Interface                                | Done   |
-| V6-06    | Konfiguriertes Filter-Level                     | Done   | 
+| V6-06    | Konfiguriertes Filter-Level                     | Done   |
 
 Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden.
 
