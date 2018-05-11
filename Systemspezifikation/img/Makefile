@@ -1,13 +1,10 @@
-all: klassendiagramm.pdf klassendiagramm.png klassendiagramm.svg komponentendiagramm.png komponentendiagramm.svg
+all: stringpersistor.png stringpersistor.svg komponentendiagramm.png komponentendiagramm.svg
 
-klassendiagramm.pdf: klassendiagramm.svg
-	convert klassendiagramm.svg klassendiagramm.pdf
+stringpersistor.png: stringpersistor.uml
+	plantuml -Tpng stringpersistor.uml
 
-klassendiagramm.png: klassendiagramm.uml
-	plantuml -Tpng klassendiagramm.uml
-
-klassendiagramm.svg: klassendiagramm.uml
-	plantuml -Tsvg klassendiagramm.uml
+stringpersistor.svg: stringpersistor.uml
+	plantuml -Tsvg stringpersistor.uml
 
 komponentendiagramm.png: komponentendiagramm.uml
 	plantuml -Tpng komponentendiagramm.uml
@@ -16,4 +13,4 @@ komponentendiagramm.svg: komponentendiagramm.uml
 	plantuml -Tsvg komponentendiagramm.uml
 
 clean:
-	rm -f klassendiagramm.pdf klassendiagramm.png klassendiagramm.svg komponentendiagramm.png komponentendiagramm.svg
+	rm -f stringpersistor.png stringpersistor.svg komponentendiagramm.png komponentendiagramm.svg
