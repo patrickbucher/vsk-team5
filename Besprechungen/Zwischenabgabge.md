@@ -7,7 +7,8 @@
 
 # Scrum-Dokumentation
 
-- Epics/Sprints in ScrumDo festhalten und von Scrum-Dokument auf ScrumDo verweisen
+- Epics/Sprints in ScrumDo festhalten und von Scrum-Dokument auf ScrumDo
+  verweisen
 - Definitions of Done in Projektmanagementplan verschieben
     - DoD = Vertrag
     - "wir sind _stolz auf unsere Arbeit, wenn: ..._
@@ -32,7 +33,8 @@
 # Systemspezifikation
 
 - Klassendiagramm aufteilen und auf A4-Seiten verteilen
-    - Implementierunng von Interfaces nicht als Vererbung darstellen (gestrichelte Linien verwenden)
+    - Implementierunng von Interfaces nicht als Vererbung darstellen
+      (gestrichelte Linien verwenden)
     - Teilweise fehlerhafte Pfeilrichtungen
 - Sequenzdiagramm überarbeiten
     - Parameter korrekt darstellen
