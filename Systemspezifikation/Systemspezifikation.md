@@ -1,6 +1,6 @@
 ---
 title: Systemspezifikation
-subtitle: Version 1.0.0
+subtitle: Version 2.0.0 (Schlussabgabe)
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
@@ -24,7 +24,7 @@ Die Abbildung [Komponentendiagramm](#komponentendiagramm) gibt das Komponentendi
 
 Die Abbildung [Kontextdiagramm](#kontextdiagramm) bietet einen abstrakten Überblick über das System und dessen Kontext. Zum System gehört die gesammte Applikation.
 
-Die Schnittstelle zwischen dem System und dem Benutzer stellt z.B. ein Computer dar, auf dem der Benutzer dann das _Game of Life_ spielen und gleichzeitig loggen kann. Zusätzlich gehört die Aufgabenstellung, sprich der _LoggerProjektauftrag_, zum Kontext, da das System auf Basis dessen entwickelt wird.
+Die Schnittstelle zwischen dem System und dem Benutzer stellt z.B. ein Computer dar, auf dem der Benutzer das _Game of Life_ spielen und gleichzeitig loggen kann. Zusätzlich gehört die Aufgabenstellung, sprich der _LoggerProjektauftrag_, zum Kontext, da das System auf Basis vom diesem entwickelt wird.
 
 # Architektur und Designentscheide
 
@@ -42,13 +42,66 @@ Da alle Projektmitarbeiter und selbst die Auftraggeber die Anwendung aus allen d
 
 ## Datenstrukturen
 
-Für den Austausch von Log-Meldungen wurden zahlreiche Datenstrukturen definiert:
+Für den Austausch von Log-Meldungen wurde die Datenstrukture `Message` definiert. Hierbei handelt es sich um eine serialisierbare Klasse, als Austauschcontainer für Log-Meldungen zwischen `LoggerComponent` und `LoggerServer` dient. Sie besteht aus den folgenden Attributen:
 
-- `Message` ist eine serialisierbare Klasse im `logger-common`-Projekt und dient als Austauschcontainer für Log-Meldungen zwischen `LoggerComponent` und `LoggerServer`. Sie besteht nur aus `String`-Attributen.
-- Die Schnittstelle `LogMessage` und deren Implementierung `LogEntry` dienen als Austauschcontainer für Log-Meldungen zwischen `LoggerServer` und `StringPersistor` über den `StringPersistorAdapter`. Diese kann flexibel mit verschiedenen `LogMessage`-Implementierungen umgehen.
-- Die Klasse `PersistedString` dient zum Abspeichern und späteren Auslesen von Log-Meldungen durch den `StringPersistor`.
+- `level`: Das Log-Level als `String` (`TRACE`, `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`)
+- `creationTimestamp`: Zeitpunkt der Erstellung als `java.time.Instant`
+- `serverEntryTimestamp`: Zeitpunkt der Ankunft auf dem Server als `java.time.Instant`
+- `source`: Die Quelle der Meldung als `String` im Format `host:port` (z.B. `localhost:1234`)
+- `message`: Die eigentliche Log-Meldung als `String`
 
-Wie diese Datenstrukturen genau von den verschiedenen Komponenten verwendet werden, kann dem Dokument _Klassendiagramm_ entnommen werden.
+Die Klasse `Message` implementiert das Interface `LogMessage`, welches getter-Methoden für die genannten Parameter definiert.
+
+Die Klasse `PersistedString` dient zum Abspeichern und späteren Auslesen von Log-Meldungen durch den `StringPersistor`. `Message`-Instanzen können über die Implementierungen des Interfaces `LogMessageFormatter` in `PersistedString`-Instanzen umgewandelt und wieder zurück geparst werden.
+
+Wie diese Datenstrukturen genau von den verschiedenen Komponenten verwendet werden, kann dem Klassendiagramm der `stringpersistor`-Komponente entnommen werden.
+
+TODO: Klassendiagramm erstellen
+
+### Anpassungen gegenüber Zwischenabgabe
+
+Seit der Zwischenabgabe haben sich folgende Änderungen ergeben:
+
+- Das (alte) Interface `LogMessage` mit der Implementierung `LogEntry` ist entfallen. Diese wurde als Austauschcontainer zwischen `LoggerServer` und `StringPersistor` verwendet, entsprach aber grösstenteils der gegenwärtigen `Message`-Klasse.
+- Die `Message`-Klasse und das (neue) `LogMessage`-Interface wurden vom `loggercommon`-Projekt ins `stringpersistor`-Projekt verschoben. Grund dafür war die Änderung des Projektauftrags, wodurch der `StringPersistor` sowohl client- wie auch serverseitig referenziert werden darf.
+    - Vorteil: Die grösstenteils redundante Datenstruktur `LogEntry` konnte zu Gunsten von `Message` entfallen. Es musste auch für den Viewer keine neue Datenstruktur eingeführt werden, da `Message` bereits alle Informationen enthält.
+    - Nachteil: Da man aus dem `stringpersistor`-Projekt nicht auf Klassen des `loggercommon`-Projektes zugreifen darf, musste der Formatierungs- und Parsing-Code ebenfalls in das `stringpersistor`-Projekt verschoben wurden. Die Komponente `StringPersistor` wurde mächtiger, das `loggercommon`-Projekt dadurch hinfällig. Die `StringPersistor`-Komponente wird zusätzlich als `common`-Codebasis missbraucht.
+
+Fazit: Durch die Entscheidung zur Vereinfachung und Vereinheitlichung der Datenstrukturen konnte sehr viel Code entfernt werden. Auch die Konvertierungsschritte zwischen den verschiedenen Datenstrukturen entfielen. Das Projekt wurde ingsgesamt schlanker und übersichtlicher, wenn auch die Komponentenstruktur des Auftragsgeber etwas verwässert wurde. (Wobei die Aufteilung in Timestamp und Payload auf der Datenstruktur `PersistedString` eher Teil des Problems als Teil der Lösung war.)
+
+### Struktur der Log-Datei
+
+Die `Message`-Instanzen werden über die `LogMessageFormatter`-Implementierungen `SimpleFormatter` und `CurlyFormatter` folgendermassen formatiert (Zeilenumbrüche aus Platgründen eingefügt, mit `~` markiert):
+
+`SimpleFormatter`:
+
+    2018-05-11T17:20:10.703Z | [TRACE] [2018-05-11T17:20:10.953Z] ~
+        [192.168.1.42:52413] Cell at [14;23] died
+    2018-05-11T17:20:10.727Z | [DEBUG] [2018-05-11T17:20:10.977Z] ~
+        [192.168.1.42:52413] New generation
+    2018-05-11T17:20:10.728Z | [INFO] [2018-05-11T17:20:10.978Z] ~
+        [192.168.1.42:52413] Window was resized
+    2018-05-11T17:20:10.728Z | [WARNING] [2018-05-11T17:20:10.978Z] ~
+        [192.168.1.42:52413] Speed 'Hyper' was selected
+    2018-05-11T17:20:10.728Z | [ERROR] [2018-05-11T17:20:10.978Z] ~
+        [192.168.1.42:52413] Connection to server lost
+    2018-05-11T17:20:10.728Z | [CRITICAL] [2018-05-11T17:20:10.978Z] ~
+        [192.168.1.42:52413] Unable to log locally
+
+`CurlyFormatter`:
+
+    2018-05-11T17:20:10.728Z | {received:2018-05-11T17:20:10.978Z} ~
+        {level:TRACE} {source:192.168.1.42:52413} {message:Cell at [14;23] died}
+    2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
+        {level:DEBUG} {source:192.168.1.42:52413} {message:New generation}
+    2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
+        {level:INFO} {source:192.168.1.42:52413} {message:Window was resized}
+    2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
+        {level:WARNING} {source:192.168.1.42:52413} {message:Speed 'Hyper' was selected}
+    2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
+        {level:ERROR} {source:192.168.1.42:52413} {message:Connection to server lost}
+    2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
+        {level:CRITICAL} {source:192.168.1.42:52413} {message:Unable to log locally}
 
 # Schnittstellen
 
