@@ -1,4 +1,7 @@
-all: loggerinterface.png loggercomponent.png loggerserver.png loggerviewer.png loggercommon.png stringpersistor.png komponentendiagramm.png
+all: game.png loggerinterface.png loggercomponent.png loggerserver.png loggerviewer.png loggercommon.png stringpersistor.png komponentendiagramm.png
+
+game.png: game.uml
+	plantuml -Tpng game.uml
 
 loggerinterface.png: loggerinterface.uml
 	plantuml -Tpng loggerinterface.uml
@@ -22,4 +25,4 @@ komponentendiagramm.png: komponentendiagramm.uml
 	plantuml -Tpng komponentendiagramm.uml
 
 clean:
-	rm -f loggerinterface.png loggercomponent.png loggerserver.png loggerviewer.png loggercommon.png stringpersistor.png komponentendiagramm.png
+	rm -f game.png loggerinterface.png loggercomponent.png loggerserver.png loggerviewer.png loggercommon.png stringpersistor.png komponentendiagramm.png

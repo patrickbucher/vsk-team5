@@ -1,0 +1,26 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontName Droid Sans
+skinparam dpi 150
+
+package "game" {
+    class DemoLoggerClient {
+        {static} + main(args:String[]):void
+    }
+    class Logging {
+        {static} - loggerManager:LoggerManager
+        {static} - logger:Logger
+        ---
+        {static} + getLogger():Logger
+    }
+    note top of Logging
+        the game classes that use Logging and Logger are not displayed
+    end note
+    Logging o-- loggerinterface.LoggerManager
+    Logging o-- loggerinterface.Logger
+    DemoLoggerClient --> Logging
+    DemoLoggerClient --> loggerinterface.Logger
+}
+
+@enduml

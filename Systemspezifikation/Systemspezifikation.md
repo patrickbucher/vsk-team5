@@ -192,3 +192,19 @@ Zum Ausführen der Anwendung auf zwei oder drei verschiedenen Rechnern (Client, 
 [^make]: Ironischerweise ist Maven angetreten um `ant` zu ersetzen, welches wiederum angetreten ist um `make` zu ersetzen. Die Lösung mit dem `Makefile` macht das Zusammensuchen und Ausführen (mit der entsprechenden `-classpath`-Option aber äusserst bequem, da `make` die Vorzüge leichtgewichtigen Dependency-Managements und der Shell kombiniert.
 
 # Klassendiagramme
+
+Die folgenden Klassendiagramme dokumentieren einerseits bestimmte Komponenten des Projekts (Logger-Server, Logger-Component), andererseits bestimmte Aspekte der Anwendung (Persistierung, RMI). Bei der Aufteilung wurde pragmatisch verfahren, sodass die Diagramme auf einer A4-Seite Platz haben und dennoch lesbar sind. Mussten aus Gründen der Klarheit Artefakte aus externen Paketen hinzugezogen werden, wurden diese aus Platzgründen nur auszugsweise wiedergegeben, was auch entsprechend markiert ist. Bei den aufgelisteten Schnittstellen, Klassen, Eigenschaften, Methoden und Beziehungen besteht Anspruch auf Verständlichkeit, nicht auf Vollständigkeit. Ein Blick in den Code gewährt indes beides.
+
+![Game of Life (und `loggerinterface` auszugsweise)](img/game.png)
+
+![Logger-Interface](img/loggerinterface.png)
+
+![Logger-Common (ohne RMI-Interfaces)](img/loggercommon.png)
+
+![Logger-Component (und `loggerinterface`/`loggercommon` auszugsweise)](img/loggercomponent.png)
+
+![Logger-Server (und `stringpersistor`/`loggercommon` auszugsweise)](img/loggerserver.png)
+
+![StringPersistor und StringPersistor-API](img/stringpersistor.png)
+
+![Logger-Viewer, RMI (und `loggercommon`/`loggerserver` auszugsweise)](img/loggerviewer.png)

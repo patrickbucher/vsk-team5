@@ -2,6 +2,7 @@
 
 skinparam monochrome true
 skinparam defaultFontName Droid Sans
+skinparam dpi 150
 
 interface TCP
 
