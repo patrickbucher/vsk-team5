@@ -8,8 +8,8 @@ SchnittstelleTCP.pdf: SchnittstelleTCP.md Kommunikation.png classes.png sequence
 Kommunikation.png: Kommunikation.dot
 	dot Kommunikation.dot -Tpng -o Kommunikation.png
 
-classes.png: classes.uml
-	plantuml classes.uml
-
 sequence.png: sequence.uml
 	plantuml sequence.uml
+
+classes.png: classes.uml
+	plantuml classes.uml

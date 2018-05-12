@@ -1,22 +1,75 @@
 @startuml
+
 skinparam monochrome true
 skinparam defaultFontName Droid Sans
-group Setup
-    LoggerClient -> LoggerComponentSetup: create
-    LoggerComponentSetup -> LoggerComponent: create
-    LoggerComponent -> ConcurrentLoggerServer: connect
-    ConcurrentLoggerServer -> ConcurrentClientHandler: create
-    ConcurrentClientHandler --> LoggerComponent: listen
+skinparam dpi 150
+
+group ServerLogging
+    LoggerClient -> LoggerComponent: String
+    activate LoggerComponent
+    LoggerComponent -> LoggerServer: Message
+    deactivate LoggerComponent
+    activate LoggerServer
+    LoggerServer -> StringPersistorAdapter: Message
+    deactivate LoggerServer
+    activate StringPersistorAdapter
+    StringPersistorAdapter -> StringPersistor: PersistedString
+    deactivate StringPersistorAdapter
+    activate StringPersistor
+    StringPersistor -> Filesystem: Instant, String
+    deactivate StringPersistor
 end
-group Communication
-    LoggerComponent -> ConcurrentClientHandler: log message
-    ConcurrentClientHandler -> StringPersistor: persist
-    StringPersistor --> ConcurrentClientHandler: persisted
-    ConcurrentClientHandler --> LoggerComponent: "OK"
+
+group SwitchToLocalLogging
+    LoggerClient -> LoggerComponent: String
+    note right: The connection to the server was lost.
+    activate LoggerComponent
+    LoggerComponent ->o]: Message
+    LoggerComponent -> StringPersistorAdapter: Message
+    deactivate LoggerComponent
+    activate StringPersistorAdapter
+    StringPersistorAdapter -> StringPersistor: PersistedString
+    deactivate StringPersistorAdapter
+    activate StringPersistor
+    StringPersistor -> Filesystem: Instant, String
+    deactivate StringPersistor
 end
-group Disconnect
-    LoggerClient -> LoggerComponentSetup: disconnect
-    LoggerComponentSetup -> ConcurrentClientHandler: close
-    ConcurrentClientHandler --> LoggerComponentSetup: closed
+
+group SwitchToServerLogging
+    LoggerClient -> LoggerComponent: String
+    note right: The connection to the server could be re-established.
+    activate LoggerComponent
+    LoggerComponent -> StringPersistor
+    activate StringPersistor
+    StringPersistor --> LoggerComponent: List<Message>
+    deactivate StringPersistor
+    deactivate LoggerComponent
+
+    loop for all stored Messages 
+        LoggerComponent -> LoggerServer: Message
+        activate LoggerServer
+        LoggerServer -> StringPersistorAdapter: Message
+        deactivate LoggerServer
+        activate StringPersistorAdapter
+        StringPersistorAdapter -> StringPersistor: PersistedString
+        deactivate StringPersistorAdapter
+        activate StringPersistor
+        StringPersistor -> Filesystem: Instant, String
+        deactivate StringPersistor
+    end
+
+    activate LoggerComponent
+    LoggerComponent -> LoggerServer: Message
+    deactivate LoggerComponent
+    activate LoggerServer
+    LoggerServer -> StringPersistorAdapter: Message
+    deactivate LoggerServer
+    activate StringPersistorAdapter
+    StringPersistorAdapter -> StringPersistor: PersistedString
+    deactivate StringPersistorAdapter
+    activate StringPersistor
+    StringPersistor -> Filesystem: Instant, String
+    deactivate StringPersistor
 end
+
 @enduml
