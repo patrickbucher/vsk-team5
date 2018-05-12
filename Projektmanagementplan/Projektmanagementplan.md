@@ -1,22 +1,14 @@
 ---
 title: Projektmanagementplan
-subtitle: Version 1.0.0
+subtitle: Version 2.0.0
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
-
-# TODOs
-
-- Evtl. Risikomanagement updaten
-- Aufwandschätzung Schlussabgabe einfügen
-- Releasemanagement für Release 2 vervollständigen
 
 # Projektorganisation
 
 ## Organisationsplan
 
 ![Organigramm](img/Organigramm.png){#organigramm width=50%}
-
-Siehe Abbildung [Organigramm](#organigramm).
 
 ## Rollen
 
@@ -66,7 +58,7 @@ Die Projektdurchführung (MS 2 / 3) ist in vier Sprints aufgeteilt. Für die ein
 3. Sprint (29.04.2018): Sprintreview S3, Sprintplanung S4
 4. Sprint (13.05.2018): Sprintreview S4
 
-Jeder Sprint dauert zwei Wochen. Die detaillierte Sprintplanung ist mittels des Online-Tools _ScrumDo_ realisiert.
+Jeder Sprint dauert zwei Wochen. Die detaillierte Sprintplanung ist mittels des Online-Tools [ScrumDo](https://app.scrumdo.com/projects/vsk-18fs-t05/#/summary) realisiert.
 
 ## Projektstrukturplan
 
@@ -155,10 +147,13 @@ Insgesamt entsteht so ein geschätzter Aufwand von 40 Stunden pro Sprint, respek
 
 Der Aufwand wird weiterhin in folgende Kategorien unterteilt:
 
-- Dokumentation
-- Entwicklung
-- Testing
-- Reviewing
+- **Scrum:** Backlog Grooming, Projektkontrolle
+- **Entwicklung:** Entwicklung der Software
+- **Testing:** Testfälle schreiben und Tests durchführen
+- **Reviewing:** Software, Tests und generell Sprint mit jeweils 2+ Gruppenmitgliedern reviewen
+- **Dokumentation:** Verfassen sämtlicher Dokumente (ohne Sprintviews)
+
+Zu beachten ist, dass die nachfolgenden Werte grobe Schätzungen darstellen und aufgrund mangelnder Erfahrung stark vom tatsächlichen Wert abweichen können. Der wesentlich genauer geschätzte und benötigte Aufwand der Entwicklung und des Testings sind den Sprintreviews des Dokuments *Scrum.pdf* zu entnehmen.
 
 ### Zwischenabgabe
 
@@ -166,18 +161,22 @@ Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung.
 
 ### Schlussabgabe
 
-TODO Aufwandschätzung einfügen
+- **Scrum:** 5h
+- **Entwicklung:** 40h
+- **Testing:** 15h
+- **Reviewing:** 5h
+- **Dokumentation:** 15h
 
-## Defition of Done
+## Definition of Done
 
-Um gruppenintern klarstellen zu können, wann ein Task als erfüllt gilt, sind mehrere Definition of Done definiert worden.
+Um gruppenintern klarstellen zu können, wann ein Task als erfüllt gilt, sind mehrere *Definition of Done* definiert worden.
 
-- Funktionalität vom Product Owner abgenommen.
-- Code-Review von mindestens einem Teammitglied durchgeführt.
-- Bestehende Tests erfolgreich durchgelaufen.
-- Eingeführte Features sind in der Projektdokumentation vermerkt.
-- Änderungen in GitLab eingecheckt.
-- Build auf Jenkins funktioniert.
+- Funktionalität vom Product Owner abgenommen
+- Code-Review von mindestens einem Teammitglied durchgeführt
+- Bestehende Tests erfolgreich durchgelaufen
+- Eingeführte Features sind in der Projektdokumentation vermerkt
+- Änderungen in GitLab eingecheckt
+- Build auf Jenkins funktioniert
 
 # Projektunterstützung
 
@@ -206,7 +205,7 @@ Für die **Entwicklung** sind folgende Tools im Einsatz:
 
 Das Konfigurationsmanagement soll die Einhaltung von Regeln für einen organisatiorischen und verhaltensmässigen Lebenslauf eines Produkts und seiner Configuration Items (Konfigurationseinheiten) gewährleisten.
 
-Ein Configuration Item ist eine beliebige Kombination aus Hardware, Software oder Dienstleistung. In diesem Projekt sind diese die Dokumentationen, Komponenten und Interfaces. Im Kapitel "Releasemanagement" sind diese ausführlich aufgelistet.
+Ein Configuration Item ist eine beliebige Kombination aus Hardware, Software und / oder Dienstleistung. In diesem Projekt sind das die Dokumentationen, Komponenten und Interfaces. Im Kapitel *Releasemanagement* sind eben erwähnte ausführlich aufgelistet.
 
 ## Releasemanagement
 
@@ -215,18 +214,28 @@ Das Releasemanagement befasst sich mit der Planung und Durchführung der Veröff
 - Release 1: Zwischenabgabe (SW08)
 - Release 2: Schlussgabe (SW13)
 
-| Configuration Item    | Release 1      | Release 2 |
-| --------------------- | -------------- | --------- |
-| Projektmanagementplan | 1.0.0          |           |
-| Systemspezifikation   | 1.0.0          |           |
-| TCP-Schnittstelle     | 1.0.0          |           |
-| Testplan              | 1.0.0          |           |
-| Scrum-Dokumentation   | 1.0.0          |           |
-| Logger                | 1.0.0-SNAPSHOT |           |
-| LoggerSetup           | 1.0.0-SNAPSHOT |           |
-| LoggerCommon          | 1.0.0-SNAPSHOT |           |
-| LoggerComponent       | 1.0.0-SNAPSHOT |           |
-| LoggerServer          | 1.0.0-SNAPSHOT |           |
-| StringPersistor       | 4.0.1          |           |
-| StringPersistorFile   | 1.0.0-SNAPSHOT |           |
-| GameOfLife            | 1.0.0-SNAPSHOT |           |
+Zur verbesserten Lesbarkeit sind die Configuration Items in *Dokumentation* und *Software* aufgeteilt.
+
+### Dokumentation
+
+| Configuration Item    | Release 1      | Release 2      |
+| --------------------- | -------------- | -------------- |
+| Projektmanagementplan | 1.0.0          | 2.0.0          |
+| Systemspezifikation   | 1.0.0          | 2.0.0          |
+| TCP-Schnittstelle     | 1.0.0          | 2.0.0          |
+| Testplan              | 1.0.0          | 2.0.0          |
+| Scrum-Dokumentation   | 1.0.0          | 2.0.0          |
+
+### Software
+
+| Configuration Item    | Release 1      | Release 2      |
+| --------------------- | -------------- | -------------- |
+| Logger                | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| LoggerSetup           | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| LoggerCommon          | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| LoggerComponent       | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| LoggerServer          | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| LoggerViewer          |                | 1.0.0-SNAPSHOT |
+| StringPersistor       | 4.0.1          | 4.0.1          |
+| StringPersistorFile   | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
+| GameOfLife            | 1.0.0-SNAPSHOT | 1.0.0-SNAPSHOT |
