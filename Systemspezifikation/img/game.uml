@@ -14,13 +14,16 @@ package "game" {
         ---
         {static} + getLogger():Logger
     }
-    note top of Logging
-        the game classes that use Logging and Logger are not displayed
+    class GameOfLife {
+    }
+    class GameOfLifeGrid {
+    }
+    note bottom of Logging
+        the other game classes that neither use Logging nor Logger are not displayed
     end note
-    Logging o-- loggerinterface.LoggerManager
-    Logging o-- loggerinterface.Logger
     DemoLoggerClient --> Logging
-    DemoLoggerClient --> loggerinterface.Logger
+    GameOfLife --> Logging
+    GameOfLifeGrid --> Logging
 }
 
 @enduml

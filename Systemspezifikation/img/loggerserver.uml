@@ -6,25 +6,38 @@ skinparam dpi 150
 
 package "loggerserver" {
     class ConcurrentLoggerServer << Runnable >> {
-        {static} + DEFAULT_PORT:int
+        {static} + LOGGING_PORT:int
         - port:int
+        - bound:boolean
+        - viewers:Collection<RemotePushHandler>
+        - registrationServer:Remote
+        ---
         {static} + main(args:String[])
         + ConcurrentLoggerServer(port:int)
         + run():void
+        + register(viewer:RemotePushHandler):void
+        + notifyViewers(message:LogMessage):void
+        + isBound():boolean
+        - registerPusher():void
+        - createLoggerFile(directory:String):File
     }
     class ConcurrentClientHandler << Runnable >> {
         - socket:Socket
         - input:ObjectInputStream
-        - output:ObjectOutputStream
         - persistorAdapter:StringPersistorAdapter
-        {static} + listen(socket:Socket):ConcurrentClientHandler
-        - ConcurrentClientHandler(socket:Socket, input:ObjectInputStream, output:ObjectOutputStream):ConcurrentClientHandler
+        - messageSource:String
+        - server:ConcurrentLoggerServer
+        ---
+        {static} + listen(socket:Socket, persistorAdapter:StringPersistorAdapter, server:ConcurrentLoggerServer):ConcurrentClientHandler
+        - ConcurrentClientHandler(socket:Socket, input:ObjectInputStream, persistorAdapter:StringPersistorAdapter, messageSouce:String, server:ConcurrentLoggerServer)
         + run():void
     }
-    ConcurrentLoggerServer o-- ConcurrentClientHandler
-    ConcurrentClientHandler o-- stringpersistor.StringPersistorAdapter
-    ConcurrentClientHandler --> stringpersistor.SimpleFormatter
-    ConcurrentClientHandler --> loggercommon.Message
+    class RegistrySetup << Runnable >> {
+        + run():void
+    }
+    ConcurrentLoggerServer --> ConcurrentClientHandler
+    ConcurrentClientHandler o-- ConcurrentLoggerServer
+    ConcurrentLoggerServer --> RegistrySetup
 }
 
 @enduml
