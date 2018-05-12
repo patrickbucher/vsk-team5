@@ -18,11 +18,11 @@ Die Abbildung [Komponentendiagramm](#komponentendiagramm) gibt das Komponentendi
 
 ## Kontextdiagramm
 
-![Kontextdiagramm](img/kontextdiagramm.png){#kontextdiagramm}
+![Kontextdiagramm](img/kontextdiagramm.png){#kontextdiagramm width=80%}
 
-Die Abbildung [Kontextdiagramm](#kontextdiagramm) bietet einen abstrakten Überblick über das System und dessen Kontext. Zum System gehört die gesammte Applikation.
+Die Abbildung [Kontextdiagramm](#kontextdiagramm) bietet einen abstrakten Überblick über das realisierte System und dessen vorgegebenen Kontext. Zum System gehört die gesammte Applikation.
 
-Die Schnittstelle zwischen dem System und dem Benutzer stellt z.B. ein Computer dar, auf dem der Benutzer das _Game of Life_ spielen und gleichzeitig loggen kann. Zusätzlich gehört die Aufgabenstellung, sprich der _LoggerProjektauftrag_, zum Kontext, da das System auf Basis vom diesem entwickelt wird.
+Die Schnittstellen *Logger* und *LoggerSetup* sowie die Applikation *Game* gehören zum relevanten Kontext des Systems. Die Schnittstelle *StringPersistor* gehört eigentlich ebenfalls nur zum Kontext, da die Komponente *StringPersistorFile* jedoch stark von Komponenten des Systems abhängt, wurde sie miteinbezogen.
 
 # Architektur und Designentscheide
 
@@ -136,8 +136,8 @@ Diese Angaben werden folgendermassen beispielhaft in einer XML-Datei `config.xml
 ```
 
 - Die Jar-Datei ist unter `/home/johndoe/loggercomponent.jar` zu finden.
-- Die Logger-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent` 
-- Die Logger-Setup-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup` 
+- Die Logger-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent`
+- Die Logger-Setup-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup`
 - Es werden nur Meldungen des Log-Levels `DEBUG` und schwerer an den Server übertragen.
 - Der Server ist unter `localhost:1234` erreichbar.
 
