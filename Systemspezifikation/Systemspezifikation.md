@@ -38,38 +38,38 @@ Beim Formulieren der Scrum-Stories (siehe Dokument _Scrum_) wurde die Anwendung 
 - Ein _Administrator_ führt Konfigurationsarbeiten aus und will Parameter wie Log-Level und Serverkoordinaten einstellen können.
 - Ein _Programmierer_ will die Software-Komponenten zur Verfügung haben, um damit die Anforderungen von _Anwender_ und _Administrator_ umsetzen zu können: z.B. eine Logger-Komponente mit entsprechenden Interface, damit der die Logger-Aufrufe in die Anwendung einführen kann.
 
-Da alle Projektmitarbeiter und selbst die Auftraggeber die Anwendung aus allen der genannten Perspektiven betrachten und diese gar von innen her kennen, erübrigt sich eine tiefgehende Diskussion über Perspektiven.
+Da die Teammitlieder und die Auftraggeber die Anwendung aus allen genannten Perspektiven betrachten auch von innen her kennen, erübrigt sich eine Diskussion über Perspektiven.
 
-## Datenstrukturen
+## Datenstrukturen {#datenstrukturen}
 
-Für den Austausch von Log-Meldungen wurde die Datenstrukture `Message` definiert. Hierbei handelt es sich um eine serialisierbare Klasse, als Austauschcontainer für Log-Meldungen zwischen `LoggerComponent` und `LoggerServer` dient. Sie besteht aus den folgenden Attributen:
+Für den Austausch von Logmeldungen wurde die Datenstrukture `Message` definiert. Hierbei handelt es sich um eine serialisierbare Klasse, als Austauschcontainer für Logmeldungen zwischen `LoggerComponent` und `LoggerServer` dient. Sie besteht aus den folgenden Attributen:
 
 - `level`: Das Log-Level als `String` (`TRACE`, `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`)
 - `creationTimestamp`: Zeitpunkt der Erstellung als `java.time.Instant`
 - `serverEntryTimestamp`: Zeitpunkt der Ankunft auf dem Server als `java.time.Instant`
 - `source`: Die Quelle der Meldung als `String` im Format `host:port` (z.B. `localhost:1234`)
-- `message`: Die eigentliche Log-Meldung als `String`
+- `message`: Die eigentliche Logmeldung als `String`
 
 Die Klasse `Message` implementiert das Interface `LogMessage`, welches getter-Methoden für die genannten Parameter definiert.
 
-Die Klasse `PersistedString` dient zum Abspeichern und späteren Auslesen von Log-Meldungen durch den `StringPersistor`. `Message`-Instanzen können über die Implementierungen des Interfaces `LogMessageFormatter` in `PersistedString`-Instanzen umgewandelt und wieder zurück geparst werden.
+Die Klasse `PersistedString` dient zum Abspeichern und späteren Auslesen von Logmeldungen durch den `StringPersistor`. `Message`-Instanzen können über die Implementierungen des Interfaces `LogMessageFormatter` in `PersistedString`-Instanzen umgewandelt und wieder zurück geparst werden.
 
-Wie diese Datenstrukturen genau von den verschiedenen Komponenten verwendet werden, kann dem Klassendiagramm der `stringpersistor`-Komponente entnommen werden.
-
-TODO: Klassendiagramm erstellen
+Wie diese Datenstrukturen von den verschiedenen Komponenten verwendet werden, kann den [Klassendiagrammen](#klassendiagramme) werden.
 
 ### Anpassungen gegenüber Zwischenabgabe
 
 Seit der Zwischenabgabe haben sich folgende Änderungen ergeben:
 
 - Das (alte) Interface `LogMessage` mit der Implementierung `LogEntry` ist entfallen. Diese wurde als Austauschcontainer zwischen `LoggerServer` und `StringPersistor` verwendet, entsprach aber grösstenteils der gegenwärtigen `Message`-Klasse.
-- Die `Message`-Klasse und das (neue) `LogMessage`-Interface wurden vom `loggercommon`-Projekt ins `stringpersistor`-Projekt verschoben. Grund dafür war die Änderung des Projektauftrags, wodurch der `StringPersistor` sowohl client- wie auch serverseitig referenziert werden darf.
-    - Vorteil: Die grösstenteils redundante Datenstruktur `LogEntry` konnte zu Gunsten von `Message` entfallen. Es musste auch für den Viewer keine neue Datenstruktur eingeführt werden, da `Message` bereits alle Informationen enthält.
-    - Nachteil: Da man aus dem `stringpersistor`-Projekt nicht auf Klassen des `loggercommon`-Projektes zugreifen darf, musste der Formatierungs- und Parsing-Code ebenfalls in das `stringpersistor`-Projekt verschoben wurden. Die Komponente `StringPersistor` wurde mächtiger, das `loggercommon`-Projekt dadurch hinfällig. Die `StringPersistor`-Komponente wird zusätzlich als `common`-Codebasis missbraucht.
+- Der `StringPersistorAdapter` und die `*Formatter`-Klassen (Strategy-Pattern zum Formatieren von Logmeldungen) wurden vom `stringpersistor`-Projekt ins `loggercommon`-Projekt verschoben. Da die besagten Klassen auf die `Message`-Datenstruktur zugreifen, die ins `loggercommon`-Projekt gehört, und die im `stringpersistor`-Projekt somit nicht zur Verfügung steht, müssen sie ebenfalls im `loggercommon`-Projekt liegen.
+    - Vorteil: Die grösstenteils redundante Datenstruktur `LogEntry` konnte zu Gunsten von `Message` entfallen. Es musste auch für den Viewer keine neue Datenstruktur eingeführt werden, da `Message` bereits alle Informationen enthält. Das `stringpersistor`-Projekt wird dadurch schlanker.
+    - Nachteil: Es lässt sich darüber streiten, ob der `StringPersistorAdapter` nicht ins `stringpersistor`-Projekt gehört. Der Name der Komponente spricht dafür. Die Grundidee des Adapter-Patterns[^adapter]  -- inkompatible Interfaces zu überbrücken -- dagegen: ein Adapter wird dann benötigt, wenn man das bestehende Interface nicht verändern kann, und liegt deshalb _ausserhalb_ des zu adaptierenden Systems.
 
-Fazit: Durch die Entscheidung zur Vereinfachung und Vereinheitlichung der Datenstrukturen konnte sehr viel Code entfernt werden. Auch die Konvertierungsschritte zwischen den verschiedenen Datenstrukturen entfielen. Das Projekt wurde ingsgesamt schlanker und übersichtlicher, wenn auch die Komponentenstruktur des Auftragsgeber etwas verwässert wurde. (Wobei die Aufteilung in Timestamp und Payload auf der Datenstruktur `PersistedString` eher Teil des Problems als Teil der Lösung war.)
+[^adapter]: **Adapter (GoF 139)** Convert the interface of a class into another interface clients expect. dapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 
-### Struktur der Log-Datei
+Fazit: Durch die Entscheidung zur Vereinfachung und Vereinheitlichung der Datenstrukturen konnte etwas Code entfernt und musste viel Code verschoben werden. Die Konvertierungsschritte zwischen den verschiedenen Datenstrukturen entfielen. Ob mehr Code im Projekt `loggercommon` oder `stringpersistor` vorliegt, ist ein Kompromiss. Die gewählte Lösung hat den Vorteil, dass der gemeinsam verwendete Code im Projekt `loggercommon` («common» = «gemeinsam») vorliegt, wo er auch hingehört, und das Projekt `stringpersistor` schlank bleibt.
+
+### Struktur der Log-Datei {#logdatei}
 
 Die `Message`-Instanzen werden über die `LogMessageFormatter`-Implementierungen `SimpleFormatter` und `CurlyFormatter` folgendermassen formatiert (Zeilenumbrüche aus Platgründen eingefügt, mit `~` markiert):
 
@@ -103,6 +103,44 @@ Die `Message`-Instanzen werden über die `LogMessageFormatter`-Implementierungen
     2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
         {level:CRITICAL} {source:192.168.1.42:52413} {message:Unable to log locally}
 
+Der Logger-Server speichert die Log-Dateien jeweils im Home-Verzeichnis des ausführenden Benutzers ab. Das Verzeichnis ist nicht konfigurierbar. Der Dateiname folgt dem Muster `vsk.g05.Jahr-Monat-Tag_Stunde-Minute-Sekunde.Millisekunden.log`, also z.B. `vsk.g05.2018-05-12_08-43-55.179.log` wenn der Server am 12. Mai 2018 um 8:43 Uhr (und ca. 55 Sekunden) aufgestartet wurde.
+
+### Konfiguration
+
+Es können clientseitig folgende Konfigurationen vorgenommen werden:
+
+- Angabe der Jar-Datei, welche die Loggerkomponente enthält, inklusive voll qualifizierter Klassenname der jeweiligen Implementierung von `LoggerComponent` und `LoggerComponentSetup`
+- Angabe des Log-Levels (Meldungen dieses und schwereren Log-Levels werden tatsächlich an den Server weitergeleitet.
+- Angabe der Server-Koordinaten: Host (Name oder IP-Adresse) und Portnummer.
+
+Diese Angaben werden folgendermassen beispielhaft in einer XML-Datei `config.xml` konfiguriert:
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+	<jarFile>/home/johndoe/loggercomponent.jar</jarFile>
+	<loggerClass>
+        ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent
+    </loggerClass>
+	<loggerSetupClass>
+        ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup
+    </loggerSetupClass>
+	<loggerSetupConfiguration>
+		<level>DEBUG</level>
+		<host>localhost</host>
+		<port>1234</port>
+	</loggerSetupConfiguration>
+</configuration>
+```
+
+- Die Jar-Datei ist unter `/home/johndoe/loggercomponent.jar` zu finden.
+- Die Logger-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent` 
+- Die Logger-Setup-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup` 
+- Es werden nur Meldungen des Log-Levels `DEBUG` und schwerer an den Server übertragen.
+- Der Server ist unter `localhost:1234` erreichbar.
+
+Diese Konfiguration wird automatisch von der Klasse `LoggerManager` aus dem vorgegebenen Logger-Interface-Projekt ausgelesen.
+
 # Schnittstellen
 
 Im Rahmen des vorliegenden Projektes wurden mehrere Schnittstellen definiert. Diese wurden einerseits vom Auftraggeber festgelegt (`StringPersistor`) bzw. in den Interface-Komitees definiert (`Logger` und `LoggerSetup`), wobei der Auftraggeber den entsprechende Rahmen vorgegeben hat; andererseits in den jeweiligen Projektteams ausgearbeitet.
@@ -123,27 +161,34 @@ Die Schnittstellen `Logger`, `LoggerSetup` und `StringPersistor` werden hier nic
 
 Neben den externen, von aussen vorgegebenen Schnittstellen enthielt der Projektauftrag auch Anforderungen, welche die Definition weiterer Schnittstellen erforderlich machten. Dies sind:
 
-| Schnittstelle  | Version        |
-|----------------|----------------|
-| `LogPersistor` | 1.0.0-SNAPSHOT |
-| TCP-Protokoll  | 1.0.0-SNAPSHOT |
+| Schnittstelle         | Version        |
+|-----------------------|----------------|
+| `LogMessage`          | 1.0.0-SNAPSHOT |
+| `LogPersistor`        | 1.0.0-SNAPSHOT |
+| `LogMessageFormatter` | 1.0.0-SNAPSHOT |
+| `RemoteRegistration`  | 1.0.0-SNAPSHOT |
+| `RemotePushHandler`   | 1.0.0-SNAPSHOT |
+| TCP-Protokoll         | 2.0.0          |
 
-Die Schnittstelle `LogPersistor` wurde selber definiert. Sie bildet die Grundlage für den `StringPersistorAdapter` und stellt dem `LoggerServer` eine für diesen geeigneten Schnittstelle zum `StringPersistor` dar. Hierzu wurde das Adapter-Pattern (GoF 139) implementiert. Auf das TCP-Protokoll wird im Dokument _TCP-Schnittstelle_ näher eingegangen.
+- Die Schnittstelle `LogMessage` wurde bereits im Abschnitt [Datenstrukturen](#datenstrukturen) besprochen.
+- Beim `LogPersistor` handelt es um die Adapter-Schnittstelle, welche die `StringPersistor`-Schnittstelle für die Logger-Komponente und den Logger-Server adaptiert (*Adapter*, GoF 139).
+- Der `LogMessageFormatter` ist im Abschnitt [Log-Datei](#logdatei) beschrieben (*Strategy*, GoF 315).
+- Das erste `Remote`-Interface `RemoteRegistration` erlaubt es einem Logger-Viewer, sich bei einem Logger-Server anzumelden (*Observer*, GoF 293). Es wird vom Logger-Server implementiert.
+- Das zweite `Remote`-Interface `RemotePushHandler`  erlaubt es einem Logger-Server, einem Logger-Viewer Meldungen per Push-Verfahren zuzustellen (*Observer*, GoF 239). Es wird vom Logger-Viewer implementiert.
+- Auf das TCP-Protokoll wird im Dokument _TCP-Schnittstelle_ näher eingegangen. Es handelt sich dabei um eine Definition, nicht um eine Schnittstelle im Sinner eines Java-Interfaces. Die angegebene Version 2.0.0 bezieht sich auf das Dokument, nicht auf die Implementierung.
 
 # Implementierung
 
-Auf die Implementierung der Anwendung soll an dieser Stelle nicht weiter eingegangen werden. Stattdessen sei hier auf die JavaDoc und auf das umfassende Klassendiagramm (Dokument _Klassendiagramm_) hingewiesen. Weitere Hinweise zur Implementierung finden sich in den Dokumenten _Testplan_ und _TCP-Schnittstelle_.
-
-## Zwischenabgabe
-
-Für die Zwischenabgabe ist weiter zu beachten, dass die gegenwärtige Implementierung _nicht_ für die persistente Aufzeichnung von Logmeldungen ausgelegt ist. Die Logdateien werden derzeit im temporären Verzeichnis des jeweiligen Benutzers gehalten. Dies führt dazu, dass bei einem Systemneustart sämtliche Daten verloren gehen. Für die Schlussabgabe soll das System dahingehend erweitert werden, dass das Log-Verzeichnis auf dem Server konfigurierbar ist.
+Auf die Implementierung der Anwendung soll an dieser Stelle nicht weiter eingegangen werden. Stattdessen sei hier auf die JavaDoc, auf die [Klassendiagramme](#klassendiagramme) und auf den Programmcode verwiesen. Weitere Hinweise zur Implementierung finden sich in den Dokumenten _Testplan_ und _TCP-Schnittstelle_.
 
 # Environment-Anforderungen
 
-Zum Ausführen der Anwendung wird client- wie serverseitig die [Java SE Runtime Environment 8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) benötigt. Tests mit dern Open-Source-Variante _OpenJDK 8_ sind problemlos verlaufen.
+Zum Ausführen der Anwendung wird client- wie serverseitig die [Java SE Runtime Environment 8](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) mit [JavaFX](https://www.java.com/de/download/faq/javafx.xml) benötigt. Tests mit dern Open-Source-Variante _OpenJDK 8_ sind problemlos verlaufen.
 
 Zum Kompilieren der Anwendung wird Maven und das HSLU-Nexus-Repository benötigt. Weiter wurde zum bequemen Packen und Ausführen von Client und Server jeweils ein `Makefile` geschrieben, das sich im Wurzelverzeichnis des Projekts `g05-game` (Client) bzw. `g05-logger` (Server) befindet[^make].
 
-Zum Ausführen der Anwendung auf zwei verschiedenen Rechnern (Client und Server) wird eine funktionierende Netzwerkverbindung zwischen diesen beiden verlangt. Die beiden Systeme sollten zum gleichen Netzwerk gehören, da eine wechselseitige TCP-Kommunikation über einen Port `>1024` oftmals von Firewalls (d.h. an den Netzwerkgrenzen) unterbunden wird.
+Zum Ausführen der Anwendung auf zwei oder drei verschiedenen Rechnern (Client, Server, Viewer) wird eine funktionierende Netzwerkverbindung zwischen diesen verlangt. Alle involvierten Systeme sollten zum gleichen Netzwerk gehören, da eine wechselseitige TCP-Kommunikation über einen Port `>1024` oftmals von Firewalls (d.h. an den Netzwerkgrenzen) unterbunden wird.
 
 [^make]: Ironischerweise ist Maven angetreten um `ant` zu ersetzen, welches wiederum angetreten ist um `make` zu ersetzen. Die Lösung mit dem `Makefile` macht das Zusammensuchen und Ausführen (mit der entsprechenden `-classpath`-Option aber äusserst bequem, da `make` die Vorzüge leichtgewichtigen Dependency-Managements und der Shell kombiniert.
+
+# Klassendiagramme
