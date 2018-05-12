@@ -1,0 +1,71 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontName Droid Sans
+
+package "loggercommon" {
+    interface RemoteRegistration {
+        + register(viewer:RemotePushHandler):void
+    }
+    interface RemotePushHandler {
+        + push(message:LogMessage):void
+    }
+    RemoteRegistration --> RemotePushHandler
+}
+
+package "loggerserver" {
+    class RegistrySetup {
+        + run():void
+    }
+    class ConcurrentLoggerServer {
+        - registrationServer:Remote
+        - viewers:Collection<RemotePushHandler>
+        ---
+        + register(viewer:RemotePushHandler):void
+        + notifyViewers(message:LogMessage):void
+        - registerPusher():void
+    }
+    ConcurrentLoggerServer --> RegistrySetup
+}
+
+package "loggerviewer" {
+    class LoggerController {
+        - model:LoggerModel
+        - logTable:TableView<LogMessage>
+        - level:TableColumn<LogMessage,String>
+        - message:TableColumn<LogMessage,String>
+        - source:TableColumn<LogMessage,String>
+        - serverEntryTimestamp:TableColumn<LogMessage,Instant>
+        - creationTimestamp:TableColumn<LogMessage,Instant>
+        ---
+        + initializeModel(model:LoggerModel):void
+        + updateLogTable():void
+    }
+    class LoggerModel {
+        - list:List<LogMessage>
+        - observableList:ObservableList<LogMessage>
+        ---
+        + addLogMessage(message:LogMessage):void
+        + getObservableList():ObservableList<LogMessage>
+        + push(message:LogMessage):void
+    }
+    class LoggerViewer {
+        - handler:Remote
+        ---
+        {static} + main(args:String[]):void
+        + start(stage:Stage):void
+        - registerViewer(model:LoggerModel, args:List<String>):void
+    }
+    LoggerController o-- LoggerModel
+    LoggerViewer --> LoggerController
+    LoggerViewer --> LoggerModel
+}
+
+RemoteRegistration <|.. ConcurrentLoggerServer 
+RemotePushHandler <|.. LoggerModel
+ConcurrentLoggerServer --> LoggerViewer : RMI
+LoggerViewer --> RemoteRegistration
+LoggerViewer --> ConcurrentLoggerServer : RMI
+ConcurrentLoggerServer --> RemotePushHandler
+
+@enduml

@@ -4,23 +4,6 @@ skinparam monochrome true
 skinparam defaultFontName Droid Sans
 
 package "stringpersistor" {
-    interface LogMessage {
-        + getLevel():String
-        + getCreationTimestamp():Instant
-        + getServerEntryTimestamp():Instant
-        + getSource():String
-        + getMessage():String
-    }
-    class Message {
-        {static} - serialVersionUID:long
-        - level:String
-        - creationTimestamp:Instant
-        - serverEntryTimestamp:Instant
-        - message:String
-        - source:String
-        + Message(level:String, message:String)
-        + Message(level:String, creationTimestamp:Instant, serverEntryTimestamp:Instant, source:String, message:String)
-    }
     class StringPersistorFile {
         - lineSeparator:String
         - writer:BufferedWriter
@@ -36,51 +19,10 @@ package "stringpersistor" {
         {static} + parseItem(string:String):PersistedString
         {static} + startsWithIsoDate(line:String):boolean
     }
-    interface LogPersistor {
-        + save(log:LogMessage)
-    }
-    class StringPersistorAdapter {
-        - stringPersistor:StringPersistor
-        - formatter:LogMessageFormatter
-        - StringPersistorAdapter(formatter:LogMessageFormatter, stringPersistor:StringPersistor)
-        {static} + create(formatter:LogMessageFormatter, stringPersistor:StringPersistor):StringPersistorAdapter
-        + save(log:LogMessage)
-    }
-    interface LogMessageFormatter {
-        + format(log:LogMessage):PersistedString
-        + parse(str:PersistedString):LogMessage
-    }
-    class SimpleFormatter {
-    }
-    class CurlyFormatter {
-    }
-    class MessageFormatter {
-        {static} - FORMATTER:Class
-        {static} - instance:LogMessageFormatter
-        {static} + getInstance():LogMessageFormatter
-    }
-    interface RemotePushHandler {
-        push(message:Message):void
-    }
-    interface RemoteRegistration {
-        register(viewer:RemotePushHandler):void
-    }
-    stringpersistorapi.StringPersistor <|-- StringPersistorFile
+    stringpersistorapi.StringPersistor <|.. StringPersistorFile
     StringPersistorFile --> stringpersistorapi.PersistedString
     PersistedStringParser --> stringpersistorapi.PersistedString
-    LogMessage <|.. Message
-    LogPersistor --> LogMessage
-    StringPersistorAdapter <|-- LogPersistor
-    StringPersistorAdapter o-- stringpersistorapi.StringPersistor
-    StringPersistorAdapter --> StringPersistorFile
-    StringPersistorAdapter o-- LogMessageFormatter
-    LogMessageFormatter --> LogMessage
-    LogMessageFormatter --> stringpersistorapi.PersistedString
-    LogMessageFormatter <|.. SimpleFormatter
-    LogMessageFormatter <|.. CurlyFormatter
-    MessageFormatter --> LogMessageFormatter
-    RemotePushHandler --> Message
-    RemoteRegistration --> RemotePushHandler
+    StringPersistorFile --> PersistedStringParser
 }
 
 package "stringpersistorapi" {
