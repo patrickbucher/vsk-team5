@@ -14,7 +14,7 @@ Die Systemarchitektur ist grösstenteils durch den Projektauftrag festgelegt. Di
 
 Die Abbildung [Komponentendiagramm](#komponentendiagramm) gibt das Komponentendiagramm aus dem Projektauftrag leicht verändert wieder, indem es dem Umstand Rechnung trägt, dass der _LoggerServer_  und die Komponente _StringPersistorFile_ nicht direkt über die _StringPersistor_-Schnittstelle, sondern per _LogPersistor_-Schnittstelle über den _StringPersistorAdapter_ und die _StringPersistor_-Schnittstelle miteinander kommunizieren.
 
-![Komponentendiagramm](img/komponentendiagramm.png){#komponentendiagramm}
+![Komponentendiagramm](img/komponentendiagramm.png){#komponentendiagramm width=80%}
 
 ## Kontextdiagramm
 
