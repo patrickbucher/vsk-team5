@@ -21,6 +21,9 @@ package "loggercommon" {
         - source:String
         + Message(level:String, message:String)
         + Message(level:String, creationTimestamp:Instant, serverEntryTimestamp:Instant, source:String, message:String)
+        + hashCode():int
+        + equals(other:Object):boolean
+        + toString():String
     }
     interface LogPersistor {
         + save(log:LogMessage)
