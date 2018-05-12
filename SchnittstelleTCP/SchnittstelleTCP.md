@@ -36,7 +36,7 @@ Die Konfiguration des Clients erfolgt über die Konfigurationsdatei `config.xml`
 
 ## Lokales Logging
 
-Fällt die Verbindung zum Server aus, werden die `Message`-Instanzen zwischenzeitlich lokal geloggt. Dies geschieht direkt über den `StringPersistorAdapter` und nicht per TCP-Schnittstelle. Bei jedem Log-Aufruf wird versucht die Verbindung zum Server wieder aufzunehmen. Funktioniert dies, werden die lokal geloggten Meldungen ausgelesen und über die TCP-Schnittstelle versendet, bevor die neue Logmeldung verschickt wird.
+Fällt die Verbindung zum Server aus, werden die `Message`-Instanzen zwischenzeitlich lokal geloggt. Dies geschieht direkt über den `StringPersistorAdapter` und nicht per TCP-Schnittstelle. Bei jedem Log-Aufruf wird versucht die Verbindung zum Server wieder aufzunehmen. Funktioniert dies, werden die lokal geloggten Meldungen ausgelesen und über die TCP-Schnittstelle versendet, bevor die neue Logmeldung verschickt wird. Dieser Ablauf wird im [Sequenzdiagramm](#sequenzdiagramm) dargestellt (Sektion `SwtichToServerLogging`).
 
 # Überblick
 
@@ -44,6 +44,6 @@ Fällt die Verbindung zum Server aus, werden die `Message`-Instanzen zwischenzei
 
 ![Klassendiagramm zur TCP-Kommunikation](classes.png){width=90%}
 
-## Sequenzdiagramm
+## Sequenzdiagramm {#sequenzdiagramm}
 
 ![Sequenzdiagramm zur TCP-Kommunikation](sequence.png){width=90%}
