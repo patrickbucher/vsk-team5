@@ -4,15 +4,26 @@ skinparam monochrome true
 skinparam defaultFontName Droid Sans
 
 package "loggerserver" {
-    class ConcurrentLoggerServer {
-
+    class ConcurrentLoggerServer << Runnable >> {
+        {static} + DEFAULT_PORT:int
+        - port:int
+        {static} + main(args:String[])
+        + ConcurrentLoggerServer(port:int)
+        + run():void
     }
-    class ConcurrentClientHandler {
-
+    class ConcurrentClientHandler << Runnable >> {
+        - socket:Socket
+        - input:ObjectInputStream
+        - output:ObjectOutputStream
+        - persistorAdapter:StringPersistorAdapter
+        {static} + listen(socket:Socket):ConcurrentClientHandler
+        - ConcurrentClientHandler(socket:Socket, input:ObjectInputStream, output:ObjectOutputStream):ConcurrentClientHandler
+        + run():void
     }
-    class RegistrySetup {
-
-    }
+    ConcurrentLoggerServer o-- ConcurrentClientHandler
+    ConcurrentClientHandler o-- stringpersistor.StringPersistorAdapter
+    ConcurrentClientHandler --> stringpersistor.SimpleFormatter
+    ConcurrentClientHandler --> loggercommon.Message
 }
 
 @enduml

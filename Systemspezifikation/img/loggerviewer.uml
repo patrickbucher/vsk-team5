@@ -14,10 +14,10 @@ package "loggercommon" {
 }
 
 package "loggerserver" {
-    class RegistrySetup {
+    class RegistrySetup << Runnable >> {
         + run():void
     }
-    class ConcurrentLoggerServer {
+    class ConcurrentLoggerServer << Runnable >> {
         - registrationServer:Remote
         - viewers:Collection<RemotePushHandler>
         ---

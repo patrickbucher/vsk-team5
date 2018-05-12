@@ -1,0 +1,42 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontName Droid Sans
+
+package "loggercomponent" {
+    class LoggerComponent {
+        - actualLevel:LogLevel
+        - output:ObjectOutputStream
+        - input:ObjectInputStream
+        {static} + create(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream):LoggerComponent
+        - LoggerComponent(level:LogLevel, output:ObjectOutputStream, input:ObjectInputStream)
+        + log(level:LogLevel, message:String):void
+        + log(level:LogLevel, message:String, args:Object[]):void
+        + log(level:LogLevel, throwable:Throwable, message:String):void
+        + log(level:LogLevel, throwable:Throwable, message:String, args:Object[]):void
+        - send(message:Message):void
+        - toMessage(level:LogLevel, message:String):Message
+        - toErrorMessage(throwable:Throwable, String:message):Message
+    }
+    note top of LoggerComponent
+        trace(), debug() etc. omitted
+    end note
+    class LoggerComponentSetup {
+        - config:LoggerSetupConfiguration
+        - socket:Socket
+        + getLogger():Logger
+        + configure(config:LoggerSetupConfiguration):void
+        + setLogLevel(level:LogLevel):void
+        + getLogLevel():LogLevel
+        + setHostAndPort(host:String, port:int):void
+        - openSocket():void
+        - closeSocket():void
+    }
+    loggerinterface.LoggerSetup <|-- LoggerComponentSetup 
+    LoggerComponentSetup o-- loggerinterface.LoggerSetupConfiguration
+    LoggerComponentSetup --> loggerinterface.Logger
+    loggerinterface.Logger <|-- LoggerComponent
+    LoggerComponent --> loggercommon.Message
+}
+
+@enduml
