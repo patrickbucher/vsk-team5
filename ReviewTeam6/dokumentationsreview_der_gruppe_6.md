@@ -36,7 +36,24 @@ Dieses Kapitel befasst sich mit der Systemspezifikation. Die Kritikpunkte stütz
 
 **Anmerkungen / Verbesserungsvorschläge**
 
-
+- Allgemein
+    - zweite Seite hat in der Kopfzeile die Bezeichung "Projektmanagementplan"
+    - Seitennummerierung fehlt
+    - es fehlen noch einige Sachen, diese sind aber entsprechend markiert
+- Architektur/Designentscheide 
+    - 2.3.2: LogConverterStrategy
+        - Wie kann die Logger-Stretegy ausgetauscht werden?
+    - Wie sieht eine Logdatei beispielsweise aus?
+- TCP-Protokoll
+    - 3.2.5: "Nachdem die TCP Verbindung aufgebaut wurde, dürfen beide Parteien anfangen, nach Belieben Pakete zu versenden."
+    - Dürfen Acknowledgment-Pakete auch geschickt werden, wenn zuvor nichts erhalten wurde?
+    - Was passiert, wenn die Integer-Variable `position` überläuft?
+- Environment-Anforderungen
+    - Wie wird die Erreichbarkeit des Logger-Servers für den Viewer konfiguriert?
+- Testing
+    - Gibt es einen Benchmark-Test für den StringPersistor?
+    - Wie hoch ist die Testabdeckung, wie wird diese beurteilt?
+    - Gibt es keine Integrationstests oder sind die einfach noch nicht dokumentiert?
 
 # Sprintreviews
 
