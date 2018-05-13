@@ -34,7 +34,7 @@ Dieses Kapitel befasst sich mit dem Projektmanagementplan. Die Kritikpunkte stü
 
 Dieses Kapitel befasst sich mit der Systemspezifikation. Die Kritikpunkte stützen sich auf der SoDa-Vorlage, dem Erlernten aus den Modulen *Objektorientes Programmieren*, *Algorithmen und Datenstrukturen* und *Verteilte Systeme und Komponenten* sowie Quellen aus dem Internet.
 
-## Anmerkungen und Verbesserungsvorschläge**
+## Anmerkungen und Verbesserungsvorschläge
 
 - Allgemein
     - Die Zweite Seite (komplett leer) hat in der Kopfzeile die Bezeichung "Projektmanagementplan".
