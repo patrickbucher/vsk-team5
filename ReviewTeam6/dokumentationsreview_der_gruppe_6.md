@@ -21,14 +21,6 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 | Sprintreview 3        | n. a.   | 30.04.2018 |
 | Sprintreview 4        | n. a.   | 30.04.2018 |
 
-# Allgemein
-
-Dieses Kapitel befasst sich mit der allgemeinen Dokumentation. Die Kritikpunkte stützen sich auf der SoDa-Vorlage.
-
-**Anmerkungen / Verbesserungsvorschläge**
-
-- Die Daten der Sprintreviews 3 und 4 sind gleich. Das Sprintreview 4 scheint zwei Wochen zu früh datiert zu sein.
-
 # Projektmanagementplan
 
 Dieses Kapitel befasst sich mit dem Projektmanagementplan. Die Kritikpunkte stützen sich auf der SoDa-Vorlage, dem Erlernten aus den Modulen *Project Management Basics* und *Verteilte Systeme und Komponenten* sowie Quellen aus dem Internet.
@@ -52,4 +44,4 @@ Dieses Kapitel fasst sämtliche Sprintreviews zusammen. Deswegen ist weder eine 
 
 **Anmerkungen / Verbesserungsvorschläge**
 
-- Die Sprintreviews sind vollständig und verständlich.
+- Die Daten der Sprintreviews 3 und 4 sind gleich. Das Sprintreview 4 scheint zwei Wochen zu früh datiert zu sein.
