@@ -44,6 +44,4 @@ Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für
 
 **Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
-## Testprotokoll
-
-
+## Testprotokoll Sprint 2
