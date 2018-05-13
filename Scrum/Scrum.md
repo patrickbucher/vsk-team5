@@ -1,6 +1,6 @@
 ---
 title: Scrum-Dokumente
-subtitle: Version 1.2.0
+subtitle: Version 1.2.1
 date: 13.05.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
@@ -88,10 +88,6 @@ Dies liegt daran, dass wir sehr viel Zeit für die Einarbeitung in den Stoff, di
 
 **Im ersten Sprint konnten wir also folgende Artefakte bereitstellen: Projektmanagementplan, Projektstrukturplan, Rahmenplan, Risikoanalyse, Scrum-Stories.**
 
-### Testprotokoll
-
-Im Sprint 1 wurden noch keine Tests vorgenommen.
-
 ## Sprintreview - Sprint 2
 
 ### Protokoll Sprintreview
@@ -130,10 +126,6 @@ Im Sprint 1 wurden noch keine Tests vorgenommen.
 Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden.
 
 **Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: _Testplan_ und _TCP-Schnittstelle_. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
-
-### Testprotokoll Sprint 1
-
-Im Sprint 1 wurden noch keine Tests vorgenommen.
 
 ## Sprintreview - Sprint 2
 
@@ -174,25 +166,21 @@ Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für
 
 **Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
-### Testprotokoll Sprint 2
-
 ## Sprintreview - Sprint 3
 
 ### Protokoll Sprintreview
 
-| Nr. / ID | Scrum-Story (ScrumDo)                              | Zeit (geschätzter Wert) | Status |
-| -------: | -------------------------------------------------- | ----------------------- | ------ |
-| V6-38    | Log-Meldungen im Viewer sortieren                  | 4 h                     | Done   |
-| V6-37    | Viewer-GUI                                         | 8 h                     | Done   |
-| V6-39    | Projektstruktur für logger-viewer bereitstellen    | 1 h                     | Done   |
-| V6-33    | Server: Fehler im Endlosloop                       | 4 h                     | Done   |
-| V6-32    | Spiel kann nur noch schrittweise ausgeführt werden | 2 h                     | Done   |
-| V6-27    | Viewer                                             | 8 h                     | Done   |
-| V6-31    | LoggerComponentSetupTest korrigieren               | 4 h                     | Done   |
+| Nr. / ID | Scrum-Story (ScrumDo)                              | Zeit (geschätzter Wert) | Zeit (effektiver Wert) | Status |
+| -------: | -------------------------------------------------- | ----------------------- | ---------------------- | ------ |
+| V6-38    | Log-Meldungen im Viewer sortieren                  | 4 h                     | 3 h                    | Done   |
+| V6-37    | Viewer-GUI                                         | 8 h                     | 9 h                    | Done   |
+| V6-39    | Projektstruktur für logger-viewer bereitstellen    | 1 h                     | 0 h 30                 | Done   |
+| V6-33    | Server: Fehler im Endlosloop                       | 4 h                     | 1 h                    | Done   |
+| V6-32    | Spiel kann nur noch schrittweise ausgeführt werden | 2 h                     | 1 h                    | Done   |
+| V6-27    | Viewer                                             | 8 h                     | 7 h                    | Done   |
+| V6-31    | LoggerComponentSetupTest korrigieren               | 4 h                     | 1 h                    | Done   |
 
 **Im dritten Sprint wurden keine Artefakte bereitstellen. Es wurden insgesamt 7 Scrum-Stories umgesetzt.**
-
-### Testprotokoll Sprint 3
 
 ## Sprintreview - Sprint 4
 
@@ -202,25 +190,23 @@ Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für
 | -------: | ------------------------ | -------- | -------- |
 | 1        | RMI-Policy               | 1.0.0    | erledigt |
 
-| Nr. / ID | Scrum-Story (ScrumDo)                                       | Zeit (geschätzter Wert) | Status |
-| -------: | ----------------------------------------------------------- | ----------------------- | ------ |
-| V6-35    | Konfiguration Logger-Verzeichnis (und optional Server-Port) | 1 h 30                  | Todo   |
-| V6-10    | Komponenten-Austausch                                       | 8 h                     | Todo   |
-| V6-42    | RMI-Kommunikation umsetzen                                  | 4 h                     | Done   |
-| V6-16    | Log-Aufzeichnung                                            | 4 h                     | Done   |
-| V6-40    | Unsolide Validierungslogik von Log-Meldungen                | 0 h 30                  | Done   |
-| V6-34    | Integrationstests als solche markieren                      | 0 h 30                  | Done   |
-| V6-41    | Message-Format für Logger erweitern                         | 1 h                     | Done   |
-| V6-28    | Logger-Aufrufe zum Festhalten des Spielverlaufs             | 2 h                     | Done   |
-| V6-29    | Logger-Aufrufe für Aufzeichnung von Problemen               | 1 h                     | Done   |
-| V6-01    | Aufzeichnung des Spielverlaufs                              | 2 h                     | Done   |
-| V6-19    | Logger-Aufrufe für Aufzeichnung von Problemen               | 2 h                     | Done   |
-| V6-26    | Temporäre Zwischenspeicherung                               | 8 h                     | Done   |
-| V6-36    | RMI-Interface definieren                                    | 4 h                     | Done   |
-| V6-25    | Robuste Netzwerkanwendung                                   | 2 h                     | Done   |
-| V6-12    | Mehrere Log-Clients                                         | 2 h                     | Done   |
-| V6-15    | Speicherformat-Strategien                                   | 4 h                     | Done   |
+| Nr. / ID | Scrum-Story (ScrumDo)                                       | Zeit (geschätzter Wert) | Zeit (effektiver Wert) | Status |
+| -------: | ----------------------------------------------------------- | ----------------------- | ---------------------- | ------ |
+| V6-35    | Konfiguration Logger-Verzeichnis (und optional Server-Port) | 1 h 30                  | -                      | Todo   |
+| V6-10    | Komponenten-Austausch                                       | 8 h                     | -                      | Todo   |
+| V6-42    | RMI-Kommunikation umsetzen                                  | 4 h                     | 8 h                    | Done   |
+| V6-16    | Log-Aufzeichnung                                            | 4 h                     | 3 h                    | Done   |
+| V6-40    | Unsolide Validierungslogik von Log-Meldungen                | 0 h 30                  | 0 h 15                 | Done   |
+| V6-34    | Integrationstests als solche markieren                      | 0 h 30                  | 0 h 15                 | Done   |
+| V6-41    | Message-Format für Logger erweitern                         | 1 h                     | 0 h 30                 | Done   |
+| V6-28    | Logger-Aufrufe zum Festhalten des Spielverlaufs             | 2 h                     | 2 h 30                 | Done   |
+| V6-29    | Logger-Aufrufe für Aufzeichnung von Problemen               | 1 h                     | 1 h 30                 | Done   |
+| V6-01    | Aufzeichnung des Spielverlaufs                              | 2 h                     | 3 h                    | Done   |
+| V6-19    | Logger-Aufrufe für Aufzeichnung von Problemen               | 2 h                     | 1 h                    | Done   |
+| V6-26    | Temporäre Zwischenspeicherung                               | 8 h                     | 9 h                    | Done   |
+| V6-36    | RMI-Interface definieren                                    | 4 h                     | 2 h                    | Done   |
+| V6-25    | Robuste Netzwerkanwendung                                   | 2 h                     | 4 h                    | Done   |
+| V6-12    | Mehrere Log-Clients                                         | 2 h                     | 4 h                    | Done   |
+| V6-15    | Speicherformat-Strategien                                   | 4 h                     | 4 h                    | Done   |
 
 **Im letzten Sprint konnten wir folgendes Artefakt bereitstellen: RMI-Policy. Weiterhin konnten von 16 Scrum-Stories 14 fertiggestellt werden. Der Komponentenaustausch wird am Ende des Sprint 4 ausgeführt.**
-
-### Testprotokoll Sprint 4
