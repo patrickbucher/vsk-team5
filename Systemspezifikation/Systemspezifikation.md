@@ -101,6 +101,8 @@ Die `Message`-Instanzen werden über die `LogMessageFormatter`-Implementierungen
     2018-05-11T17:20:10.729Z | {received:2018-05-11T17:20:10.979Z} ~
         {level:CRITICAL} {source:192.168.1.42:52413} {message:Unable to log locally}
 
+Das `LogMessageFormatter`-Strategie kann in der Klasse `MessageFormatter` über das Feld `FORMATTER` (Angabe einer `Class`-Referenz) angepasst werden. `MessageFormatter` implementiert zugleich einen Singleton (GoF 127), womit eine zentrale `LogMessageFormatter`-Instanz zur Verfügung gestellt wird.
+
 Der Logger-Server speichert die Log-Dateien jeweils im Home-Verzeichnis des ausführenden Benutzers ab. Das Verzeichnis ist nicht konfigurierbar. Der Dateiname folgt dem Muster `vsk.g05.Jahr-Monat-Tag_Stunde-Minute-Sekunde.Millisekunden.log`, also z.B. `vsk.g05.2018-05-12_08-43-55.179.log` wenn der Server am 12. Mai 2018 um 8:43 Uhr (und ca. 55 Sekunden) aufgestartet wurde.
 
 ## Konfiguration
@@ -136,8 +138,8 @@ Diese Angaben werden folgendermassen beispielhaft in einer XML-Datei `config.xml
 ```
 
 - Die Jar-Datei ist unter `/home/johndoe/loggercomponent.jar` zu finden.
-- Die Logger-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent`
-- Die Logger-Setup-Klasse heisst `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup`
+- `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent` ist die Logger-Klasse
+- `ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup` ist die Logger-Setup-Klasse
 - Es werden nur Meldungen des Log-Levels `DEBUG` und schwerer an den Server übertragen.
 - Der Server ist unter `localhost:1234` erreichbar.
 
@@ -153,11 +155,17 @@ grant {
 };
 ```
 
-Diese Policy wird beim Aufstarten des Servers und des Viewers mit dem Parameter `-Djava.security.policy` angegeben.
+Mit dem Parameter `-Djava.security.policy=fake.policy` wird diese Policy beim Aufstarten des Servers und des Viewers angegeben.
 
 Bei Tests auf mehreren Rechnern wurde festgestellt, dass der Logger-Server nur dann erreichbar ist, wenn dessen Hostname explizit mit der Option `-Djava.rmi.server.hostname` auf seine jeweilige von aussen erreichbare IP-Adresse gesetzt wird.[^localhost]
 
 [^localhost]: Bei lokalen Tests bestand dieses Problem nicht. Es besteht also der Verdacht, dass die Registry dem Client mitteilte, der Code sei auf `localhost` verfügbar, was auf Client und Server selbstverständlich eine andere Bedeutung hat. «Zu Hause» ist eben ein dehnbarer Begriff.
+
+### Uhren-Synchronisation
+
+Sämtliche involvierten Rechner müssen die Systemzeit per NTP synchronisieren. Auf eine anwendungsseitige Uhren-Synchronisation wird verzichtet. Es finden weiterhin keine kausalen Überprüfungen statt was die Zeitstempel betrifft. So wird _nicht_ geprüft, ob der Zeitstempel der Erstellung _vor_ dem Zeitstempel der Ankunft liegt.
+
+Im Projekt wird durchgehend `java.time.Instant` für Zeitstempel verwendet. Hierbei handelt es sich um eine UTC-Zeitangabe. Bei der Formatierung wird diese UTC-Zeitangabe entsprechend in die jeweils lokale Zeitzone umgewandelt, welche bei allen Clients auf `Europe/Zurich` oder eine andere Angabe, die UTC+1 (mit Sommerzeit) entspricht, eingestellt ist. Die Verwendung von UTC-Zeitangaben hat den Vorteil, dass die Zeitstempel eines Clients aus einer anderen Zeitzone auf dem Server ohne jegliche weitere Konvertierungslogik korrekt in lokale Zeitangaben dargestellt werden.
 
 # Schnittstellen
 
