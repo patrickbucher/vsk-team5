@@ -161,8 +161,8 @@ Für die Zwischenabgabe besteht keine detaillierte Aufwandschätzung.
 
 ### Schlussabgabe
 
-- **Scrum:** 5h
-- **Entwicklung:** 40h
+- **Scrum:** 8h
+- **Entwicklung:** 37h
 - **Testing:** 15h
 - **Reviewing:** 5h
 - **Dokumentation:** 15h
