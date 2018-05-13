@@ -18,7 +18,7 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 | V6-35    | Konfiguration Logger-Verzeichnis (und optional Server-Port) | 1 h 30                  | Todo   |
 | V6-10    | Komponenten-Austausch                                       | 8 h                     | Todo   |
 | V6-42    | RMI-Kommunikation umsetzen                                  | 4 h                     | Done   |
-| V6-16    | Log-Aufzeichnung                                            | ? h                     | Done   |
+| V6-16    | Log-Aufzeichnung                                            | 4 h                     | Done   |
 | V6-40    | Unsolide Validierungslogik von Log-Meldungen                | 0 h 30                  | Done   |
 | V6-34    | Integrationstests als solche markieren                      | 0 h 30                  | Done   |
 | V6-41    | Message-Format für Logger erweitern                         | 1 h                     | Done   |
@@ -28,10 +28,10 @@ author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 | V6-19    | Logger-Aufrufe für Aufzeichnung von Problemen               | 2 h                     | Done   |
 | V6-26    | Temporäre Zwischenspeicherung                               | 8 h                     | Done   |
 | V6-36    | RMI-Interface definieren                                    | 4 h                     | Done   |
-| V6-25    | Robuste Netzwerkanwendung                                   | ? h                     | Done   |
-| V6-12    | Mehrere Log-Clients                                         | ? h                     | Done   |
+| V6-25    | Robuste Netzwerkanwendung                                   | 2 h                     | Done   |
+| V6-12    | Mehrere Log-Clients                                         | 2 h                     | Done   |
 | V6-15    | Speicherformat-Strategien                                   | 4 h                     | Done   |
 
 **Im letzten Sprint konnten wir folgendes Artefakt bereitstellen: RMI-Policy. Weiterhin konnten von 16 Scrum-Stories 14 fertiggestellt werden. Der Komponentenaustausch wird am Ende des Sprint 4 ausgeführt.**
 
-## Testprotokoll
+## Testprotokoll Sprint 4

@@ -1,15 +1,13 @@
 ---
 title: Scrum-Dokumente
-subtitle: Version 1.1.0
-date: 03.04.2018
+subtitle: Version 1.2.0
+date: 13.05.2018
 author: Gruppe 5 (Patrick Bucher, Pascal Kiser, Fabian Meyer, Sascha Sägesser)
 ---
 
 # TODOs
 
 - Stories entfernen + Verweis auf ScrumDo
-- Sprintreview 3 und 4 einfügen
-- Meilensteinberichte entfernen
 
 # Stories (nach Epics)
 
@@ -133,138 +131,96 @@ Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für
 
 **Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: _Testplan_ und _TCP-Schnittstelle_. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
-### Testprotokoll
+### Testprotokoll Sprint 1
 
 Im Sprint 1 wurden noch keine Tests vorgenommen.
 
-# Meilensteinberichte
+## Sprintreview - Sprint 2
 
-## Meilensteinbericht 1
+### Protokoll Sprintreview
 
-Zeitpunkt Meilenstein 1: Beginn SW04
+| Nr. / ID | Dokument                 | Version  | Status   |
+| -------: | ------------------------ | -------- | -------- |
+| 1        | Testplan                 | 1.0.0    | erledigt |
+| 2        | SchnittstelleTCP         | 1.0.0    | erledigt |
 
-### Beschreibung Meilenstein 1
+| Nr. / ID | Scrum-Story (ScrumDo)                           | Status |
+| -------: | ----------------------------------------------- | ------ |
+| V6-10    | Komponentenaustausch                            | Doing  |
+| V6-28    | Logger-Aufrufe zum Festhalten des Spielverlaufs | Done   |
+| V6-29    | Logger-Aufrufe für Aufzeichnung von Problemen   | Done   |
+| V6-01    | Aufzeichnung des Spielverlaufs                  | Done   |
+| V6-04    | Message-Level                                   | Done   |
+| V6-17    | Unterscheidung Log-Clients                      | Done   |
+| V6-13    | Payload-Adapter                                 | Done   |
+| V6-20    | Speicherung Log-Level                           | Done   |
+| V6-22    | Speicherung Log-Zeitstempel                     | Done   |
+| V6-14    | Adapter-Tests                                   | Done   |
+| V6-21    | Speicherung Ereignis-Zeitstempel                | Done   |
+| V6-08    | Logger                                          | Done   |
+| V6-11    | StringPersistor                                 | Done   |
+| V6-02    | Aufzeichnung von Problemen                      | Done   |
+| V6-09    | Logger-Setup                                    | Done   |
+| V6-18    | Textdatei-Log                                   | Done   |
+| V6-30    | TCP-Netzwerk-Interface                          | Done   |
+| V6-24    | Konfiguration Serverzugriff                     | Done   |
+| V6-23    | Speicherung Message-Text                        | Done   |
+| V6-03    | Aufzeichnung von Exceptions                     | Done   |
+| V6-05    | Codiertes Filter-Level                          | Done   |
+| V6-07    | Logger-Interface                                | Done   |
+| V6-06    | Konfiguriertes Filter-Level                     | Done   | 
 
-Der erste Meilenstein wurde erreicht, nachdem das Projekt bekannt gegeben wurde, die Gruppen gebildet wurden, alle nötigen Informationen abgegeben wurden, die Gruppen sich mit der Aufgabenstellung auseinandergesetzt haben und die Gruppen die nötige Entwicklungsumgebung und alle wichtigen Werkzeuge aufgesetzt haben.
+Im zweiten Sprint konnten sämtliche Scrum-Stories umgesetzt werden, welche für diesen Sprint vorgesehen waren. Zusätzlich konnte der Rückstand aus Sprint 1 aufgeholt werden. Als Artefakte konnten der Testplan und die TCP-Schnittstelle dokumentiert werden. <br>
 
-Leider haben die Arbeiten des Meilenstein 1 ein wenig mehr Zeit als geplant in Anspruch genommen.
+**Im zweiten Sprint konnten wir also folgende Artefakte bereitstellen: Testplan und SchnittstelleTCP. Weiterhin konnten von 23 Scrum-Stories 22 fertiggestellt werden. Der Komponentenaustausch steht noch aus.**
 
-### Detail-Vorgaben zum Meilenstein 1
+### Testprotokoll Sprint 2
 
-#### Projektmanagement/Projektorganisation
+## Sprintreview - Sprint 3
 
-- Die Grundstruktur des Projektmanagementplans anhand der Vorlage der HSLU steht
-- Der Organisationsplan steht
-- Die Rollen und Zuständigkeiten sind definiert
+### Protokoll Sprintreview
 
-#### Projektführung
+| Nr. / ID | Scrum-Story (ScrumDo)                              | Zeit (geschätzter Wert) | Status |
+| -------: | -------------------------------------------------- | ----------------------- | ------ |
+| V6-38    | Log-Meldungen im Viewer sortieren                  | 4 h                     | Done   |
+| V6-37    | Viewer-GUI                                         | 8 h                     | Done   |
+| V6-39    | Projektstruktur für logger-viewer bereitstellen    | 1 h                     | Done   |
+| V6-33    | Server: Fehler im Endlosloop                       | 4 h                     | Done   |
+| V6-32    | Spiel kann nur noch schrittweise ausgeführt werden | 2 h                     | Done   |
+| V6-27    | Viewer                                             | 8 h                     | Done   |
+| V6-31    | LoggerComponentSetupTest korrigieren               | 4 h                     | Done   |
 
-- Der Projektstrukturplan steht
-- Der Rahmenplan steht
-- Der Iterationsplan steht
-- Der Meilensteinplan steht
-- Der Ressourcenplan steht
-- Mind. ein Vorgehen zur Projektkontrolle wird eingesetzt
-- Der ProductBacklog für Meilenstein 1 steht
-- Der SprintBacklog für Sprint 1 und 2 steht
-- Das Risikomanagement steht
+**Im dritten Sprint wurden keine Artefakte bereitstellen. Es wurden insgesamt 7 Scrum-Stories umgesetzt.**
 
-#### Projektunterstützung
+### Testprotokoll Sprint 3
 
-- Tools für Entwicklung, Test & Abnahme sind definiert
+## Sprintreview - Sprint 4
 
-#### Testplan
+##3 Protokoll Sprintreview
 
-- Erste Gedanken zum Testdesign gemacht
-- Erste Gedanken zu den Testfällen gemacht
+| Nr. / ID | Dokument                 | Version  | Status   |
+| -------: | ------------------------ | -------- | -------- |
+| 1        | RMI-Policy               | 1.0.0    | erledigt |
 
-#### Anhänge
+| Nr. / ID | Scrum-Story (ScrumDo)                                       | Zeit (geschätzter Wert) | Status |
+| -------: | ----------------------------------------------------------- | ----------------------- | ------ |
+| V6-35    | Konfiguration Logger-Verzeichnis (und optional Server-Port) | 1 h 30                  | Todo   |
+| V6-10    | Komponenten-Austausch                                       | 8 h                     | Todo   |
+| V6-42    | RMI-Kommunikation umsetzen                                  | 4 h                     | Done   |
+| V6-16    | Log-Aufzeichnung                                            | 4 h                     | Done   |
+| V6-40    | Unsolide Validierungslogik von Log-Meldungen                | 0 h 30                  | Done   |
+| V6-34    | Integrationstests als solche markieren                      | 0 h 30                  | Done   |
+| V6-41    | Message-Format für Logger erweitern                         | 1 h                     | Done   |
+| V6-28    | Logger-Aufrufe zum Festhalten des Spielverlaufs             | 2 h                     | Done   |
+| V6-29    | Logger-Aufrufe für Aufzeichnung von Problemen               | 1 h                     | Done   |
+| V6-01    | Aufzeichnung des Spielverlaufs                              | 2 h                     | Done   |
+| V6-19    | Logger-Aufrufe für Aufzeichnung von Problemen               | 2 h                     | Done   |
+| V6-26    | Temporäre Zwischenspeicherung                               | 8 h                     | Done   |
+| V6-36    | RMI-Interface definieren                                    | 4 h                     | Done   |
+| V6-25    | Robuste Netzwerkanwendung                                   | 2 h                     | Done   |
+| V6-12    | Mehrere Log-Clients                                         | 2 h                     | Done   |
+| V6-15    | Speicherformat-Strategien                                   | 4 h                     | Done   |
 
-- Meilensteinreview für Meilenstein 1 verfasst
+**Im letzten Sprint konnten wir folgendes Artefakt bereitstellen: RMI-Policy. Weiterhin konnten von 16 Scrum-Stories 14 fertiggestellt werden. Der Komponentenaustausch wird am Ende des Sprint 4 ausgeführt.**
 
-#### Systemspezifikation
-
-- Die Grundstruktur des Dokuments steht##### Applikation
-- Alle Teammitglieder haben ihre IDE für den Projektstart eingerichtet
-- Interface-Definition wurde durch das Interface-Komitee erstellt
-
-#### Meilensteinziele:
-
-1. Projektauftrag als Gruppe entgegennehmen
-2. Gruppe setzt sich mit Projektauftrag auseinander
-3. Jedes Gruppenmitglied setzt die Entwicklungsumgebung und alle nötigen Werkzeuge auf
-4. Alle Vorgaben des Meilensteins 1 werden erfüllt (siehe oben)
-
-#### Wurden die Meilensteinziele erreicht?
-
-1. Ja. Die Gruppenmitglieder waren alle jederzeit anwesend und konnten den Projektauftrag erfolgreich entgegennehmen.
-2. Ja. Die Gruppe hat sich kennengelernt und erste Aufgaben wurden verteilt. Jedes Teammitglied hat sich selbständig mit der Thematik auseinandergesetzt.
-3. Ja. Jedes Teammitglied hat die Entwicklungsumgebung und die Tools aufgesetzt.
-4. Ja. Sämtliche Vorgaben wurden erfüllt.
-
-## Meilensteinbericht 2
-
-Zeitpunkt Meilenstein 2: Beginn SW08
-
-### Beschreibung Meilenstein 2
-
-Der zweite Meilenstein wurde erreicht, nachdem das Logger-Interface zur Verfügung gestellt wurde, die Logger- und Stringpersistor-Komponenten implementiert wurden, der Logger-Server implementiert wurde und so die Aufgabe durchgeführt werden konnte, bestimmte Ereignisse der Applikation (Game of Life) mithilfe der selbstgeschriebenen Logger-Klasse zu loggen und die Logs mithilfe der Stringpersistor-Klasse zu persistieren.
-
-### Detail-Vorgaben zum Meilenstein 1
-
-#### Projektmanagement/Projektführung
-
-- Der Ressourcenplan ist aktuell
-- Die Projektkontrolle ist aktuell
-- Der ProductBacklog für Meilenstein 2 steht
-- Der SprintBacklog für Sprint 3 und 4 steht
-
-#### Projektunterstützung
-
-- Tools für Entwicklung, Test & Abnahme sind aktuell
-- Konfigurationsmanagement ist aktuell
-- Releasemanagement ist aktuell
-
-#### Testplan
-
-- Testdesign ist vollständig definiert
-- Testfälle für implementierter Code sind vorhanden
-
-#### Anhänge
-
-- Meilensteinreview für Meilenstein 2 verfasst
-- Sprintreview für Sprint 1 verfasst
-- Sprintreview für Sprint 2 verfasst
-
-### Applikation
-
-- Der Logger-Komponente ist als Komponente mithilfe von Interfaces austauschbar
-- Die Applikation (Game of Life) gibt bei jedem Log einen Message-Level mit
-- Die API der Logger-Komponente kann einen Level-Filter setzen, um die zu übertragenden Logs einzuschränken
-- Der Level-Filter kann während der Laufzeit geändert werden
-- Die Logs werden durch Logger-Komponenten und den Logger-Server kausal und verlässlich aufgezeichnet
-- Die Logger-Komponente ist austauschbar
-- Die Logger-Komponente ist plattformunabhängig
-- Der Komponentenaustausch ist ausserhalb der IDE und ohne Code-Anpassung (Neukompilation) möglich
-- Es können mehrere Instanzen der Logger-Komponente parallel auf den Logger-Server loggen
-- Die Logs können dauerhaft auf dem Logger-Server in einem einfachen und lesbaren Textfile gespeichert werden
-- Das Textfile enthält mind. die Quelle der Logmeldung, den Zeitstempel der Erstellung, den Zeitstempel beim Erreichen beim Server, den Message-Level und den Message-Text
-- Das Schreiben des Textfiles erfolgt serverseitig unter der Verwendung der StringPersistor-Schnittstelle
-- Die StringPersistorFile-Komponente persistiert die Logs
-- Die Daten werden in strukturierter Form dem Payload-Parameter der StringPersistor-Schnittstelle unter Verwendung des Adapter-Pattern übergeben
-
-### Meilensteinziele:
-
-1. Ein Logger-Interface zur Verfügung stellen
-2. Die Logger-Komponente implementieren
-3. Den Logger-Server implementieren
-4. Die Stringpersistor-Komponente implementieren
-5. Ereignisse der Applikation (Game of Life) über das Logger-Interface mit der Logger-Komponente (auf dem Logger-Server mittels Stringpersistor) loggen
-
-### Wurden die Meilensteinziele erreicht?
-
-1. Ja.
-2. Ja.
-3. Ja.
-4. Ja.
-5. Ja.
+### Testprotokoll Sprint 4
