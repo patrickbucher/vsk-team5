@@ -1,0 +1,12 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+   <mirrors>
+      <mirror> 
+         <id>hslu-nexus</id>
+         <name>HSLU Nexus Repository</name>
+         <url>https://repohub.enterpriselab.ch/repository/maven-public/</url>
+         <mirrorOf>*</mirrorOf>
+      </mirror>
+   </mirrors>
+</settings>
