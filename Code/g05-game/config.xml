@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+	<jarFile>/Users/patrick.bucher/.m2/repository/ch/hslu/vsk18fs/g05/g05-loggercomponent/1.0.0-SNAPSHOT/g05-loggercomponent-1.0.0-SNAPSHOT.jar</jarFile>
+	<loggerClass>ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponent</loggerClass>
+	<loggerSetupClass>ch.hslu.vsk18fs.g05.loggercomponent.LoggerComponentSetup</loggerSetupClass>
+	<loggerSetupConfiguration>
+		<level>DEBUG</level>
+		<host>10.155.101.146</host>
+		<port>1234</port>
+	</loggerSetupConfiguration>
+</configuration>

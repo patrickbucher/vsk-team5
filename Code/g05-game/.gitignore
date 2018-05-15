@@ -1,0 +1,13 @@
+/build/
+/nbproject/private/
+/eclipse/
+/target/
+/.gradle/
+/.idea/
+/out/
+/.settings/
+*.iml
+.classpath
+.project
+.build-client
+client/
