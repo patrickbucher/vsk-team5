@@ -20,27 +20,27 @@ Die Abbildung [Komponentendiagramm](#komponentendiagramm) gibt das Komponentendi
 
 ![Kontextdiagramm](img/kontextdiagramm.png){#kontextdiagramm width=80%}
 
-Die Abbildung [Kontextdiagramm](#kontextdiagramm) bietet einen abstrakten Überblick über das realisierte System und dessen vorgegebenen Kontext. Zum System gehört die gesammte Applikation.
+Die Abbildung [Kontextdiagramm](#kontextdiagramm) bietet einen abstrakten Überblick über das realisierte System und dessen vorgegebenen Kontext. Zum System gehört die gesamte Applikation.
 
 Die Schnittstellen *Logger* und *LoggerSetup* sowie die Applikation *Game* gehören zum relevanten Kontext des Systems. Die Schnittstelle *StringPersistor* gehört eigentlich ebenfalls nur zum Kontext, da die Komponente *StringPersistorFile* jedoch stark von Komponenten des Systems abhängt, wurde sie miteinbezogen.
 
 # Architektur und Designentscheide
 
-Die Architektur wurde weitgehendst vom Auftraggeber vorgegeben. Diese können grösstenteils im Dokument _Projektauftrag_ nachgelesen werden bzw. sind bereits eingangs in diesem Dokument aufgeführt.
+Die Architektur wurde weitestgehend vom Auftraggeber vorgegeben. Diese können grösstenteils im Dokument _Projektauftrag_ nachgelesen werden bzw. sind bereits eingangs in diesem Dokument aufgeführt.
 
 ## Modelle und Sichten
 
-Beim Formulieren der Scrum-Stories (siehe Dokument _Scrum_) wurde die Anwendung von drei Perspektiven aus betrachtet:
+Beim Formulieren der Scrum-Stories wurde die Anwendung von drei Perspektiven aus betrachtet:
 
 - Ein _Anwender_ führt die die _Game of Life_-Applikation aus und will seinen Spielstand geloggt wissen.
 - Ein _Administrator_ führt Konfigurationsarbeiten aus und will Parameter wie Log-Level und Serverkoordinaten einstellen können.
-- Ein _Programmierer_ will die Software-Komponenten zur Verfügung haben, um damit die Anforderungen von _Anwender_ und _Administrator_ umsetzen zu können: z.B. eine Logger-Komponente mit entsprechenden Interface, damit der die Logger-Aufrufe in die Anwendung einführen kann.
+- Ein _Programmierer_ will die Software-Komponenten zur Verfügung haben, um damit die Anforderungen von _Anwender_ und _Administrator_ umsetzen zu können: z.B. eine Logger-Komponente mit entsprechendem Interface, damit der die Logger-Aufrufe in die Anwendung einführen kann.
 
-Da die Teammitlieder und die Auftraggeber die Anwendung aus allen genannten Perspektiven betrachten auch von innen her kennen, erübrigt sich eine Diskussion über Perspektiven.
+Da die Teammitglieder und die Auftraggeber die Anwendung aus allen genannten Perspektiven betrachten und auch von innen her kennen, erübrigt sich eine Diskussion über Perspektiven.
 
 ## Datenstrukturen {#datenstrukturen}
 
-Für den Austausch von Logmeldungen wurde die Datenstrukture `Message` definiert. Hierbei handelt es sich um eine serialisierbare Klasse, als Austauschcontainer für Logmeldungen zwischen `LoggerComponent` und `LoggerServer` dient. Sie besteht aus den folgenden Attributen:
+Für den Austausch von Logmeldungen wurde die Datenstrukture `Message` definiert. Hierbei handelt es sich um eine serialisierbare Klasse, die als Austauschcontainer für Logmeldungen zwischen `LoggerComponent` und `LoggerServer` dient. Sie besteht aus den folgenden Attributen:
 
 - `level`: Das Log-Level als `String` (`TRACE`, `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`)
 - `creationTimestamp`: Zeitpunkt der Erstellung als `java.time.Instant`
@@ -50,17 +50,17 @@ Für den Austausch von Logmeldungen wurde die Datenstrukture `Message` definiert
 
 Die Klasse `Message` implementiert das Interface `LogMessage`, welches getter-Methoden für die genannten Parameter definiert.
 
-Die Klasse `PersistedString` dient zum Abspeichern und späteren Auslesen von Logmeldungen durch den `StringPersistor`. `Message`-Instanzen können über die Implementierungen des Interfaces `LogMessageFormatter` in `PersistedString`-Instanzen umgewandelt und wieder zurück geparst werden.
+Die Klasse `PersistedString` dient zum Abspeichern und zum späteren Auslesen von Logmeldungen durch den `StringPersistor`. `Message`-Instanzen können über die Implementierungen des Interfaces `LogMessageFormatter` in `PersistedString`-Instanzen umgewandelt und wieder zurück geparst werden.
 
-Wie diese Datenstrukturen von den verschiedenen Komponenten verwendet werden, kann den [Klassendiagrammen](#klassendiagramme) werden.
+Wie diese Datenstrukturen von den verschiedenen Komponenten verwendet werden, kann in den [Klassendiagrammen](#klassendiagramme) eingesehen werden.
 
 ### Anpassungen gegenüber Zwischenabgabe
 
 Seit der Zwischenabgabe haben sich folgende Änderungen ergeben:
 
-- Das (alte) Interface `LogMessage` mit der Implementierung `LogEntry` ist entfallen. Diese wurde als Austauschcontainer zwischen `LoggerServer` und `StringPersistor` verwendet, entsprach aber grösstenteils der gegenwärtigen `Message`-Klasse.
+- Das (alte) Interface `LogMessage` und dessen Implementierung `LogEntry` sind entfallen. Diese Schnittstelle und Implementierung wurde als Austauschcontainer zwischen `LoggerServer` und `StringPersistor` verwendet, entsprach aber grösstenteils der gegenwärtigen `Message`-Klasse.
 - Der `StringPersistorAdapter` und die `*Formatter`-Klassen (Strategy-Pattern zum Formatieren von Logmeldungen) wurden vom `stringpersistor`-Projekt ins `loggercommon`-Projekt verschoben. Da die besagten Klassen auf die `Message`-Datenstruktur zugreifen, die ins `loggercommon`-Projekt gehört, und die im `stringpersistor`-Projekt somit nicht zur Verfügung steht, müssen sie ebenfalls im `loggercommon`-Projekt liegen.
-    - Vorteil: Die grösstenteils redundante Datenstruktur `LogEntry` konnte zu Gunsten von `Message` entfallen. Es musste auch für den Viewer keine neue Datenstruktur eingeführt werden, da `Message` bereits alle Informationen enthält. Das `stringpersistor`-Projekt wird dadurch schlanker.
+    - Vorteil: Die grösstenteils redundante Datenstruktur `LogEntry` konnte zu Gunsten von `Message` entfallen. Es musste auch für den Viewer keine neue Datenstruktur eingeführt werden, da `Message` bereits alle benötigten Informationen enthält. Das `stringpersistor`-Projekt wird dadurch schlanker.
     - Nachteil: Es lässt sich darüber streiten, ob der `StringPersistorAdapter` nicht ins `stringpersistor`-Projekt gehört. Der Name der Komponente spricht dafür. Die Grundidee des Adapter-Patterns[^adapter]  -- inkompatible Interfaces zu überbrücken -- dagegen: ein Adapter wird dann benötigt, wenn man das bestehende Interface nicht verändern kann, und liegt deshalb _ausserhalb_ des zu adaptierenden Systems.
 
 [^adapter]: **Adapter (GoF 139)** Convert the interface of a class into another interface clients expect. dapter lets classes work together that couldn't otherwise because of incompatible interfaces.
@@ -114,7 +114,7 @@ Im vorliegenden Projekt gibt es zwei Arten von Konfigurationsartefakten: 1) Die 
 Es können clientseitig folgende Konfigurationen vorgenommen werden:
 
 - Angabe der Jar-Datei, welche die Loggerkomponente enthält, inklusive voll qualifizierter Klassenname der jeweiligen Implementierung von `LoggerComponent` und `LoggerComponentSetup`
-- Angabe des Log-Levels (Meldungen dieses und schwereren Log-Levels werden tatsächlich an den Server weitergeleitet.
+- Angabe des Log-Levels (Meldungen dieses und schwereren Log-Levels werden tatsächlich an den Server weitergeleitet).
 - Angabe der Server-Koordinaten: Host (Name oder IP-Adresse) und Portnummer.
 
 Diese Angaben werden folgendermassen beispielhaft in einer XML-Datei `config.xml` konfiguriert:
@@ -165,11 +165,11 @@ Bei Tests auf mehreren Rechnern wurde festgestellt, dass der Logger-Server nur d
 
 Sämtliche involvierten Rechner müssen die Systemzeit per NTP synchronisieren. Auf eine anwendungsseitige Uhren-Synchronisation wird verzichtet. Es finden weiterhin keine kausalen Überprüfungen statt was die Zeitstempel betrifft. So wird _nicht_ geprüft, ob der Zeitstempel der Erstellung _vor_ dem Zeitstempel der Ankunft liegt.
 
-Im Projekt wird durchgehend `java.time.Instant` für Zeitstempel verwendet. Hierbei handelt es sich um eine UTC-Zeitangabe. Bei der Formatierung wird diese UTC-Zeitangabe entsprechend in die jeweils lokale Zeitzone umgewandelt, welche bei allen Clients auf `Europe/Zurich` oder eine andere Angabe, die UTC+1 (mit Sommerzeit) entspricht, eingestellt ist. Die Verwendung von UTC-Zeitangaben hat den Vorteil, dass die Zeitstempel eines Clients aus einer anderen Zeitzone auf dem Server ohne jegliche weitere Konvertierungslogik korrekt in lokale Zeitangaben dargestellt werden.
+Im Projekt wird durchgehend `java.time.Instant` für Zeitstempel verwendet. Hierbei handelt es sich um eine UTC-Zeitangabe. Bei der Formatierung wird diese UTC-Zeitangabe entsprechend in die jeweils lokale Zeitzone umgewandelt, welche bei allen Clients auf `Europe/Zurich` oder eine andere Angabe, die UTC+1 (mit Sommerzeit) entspricht, eingestellt ist. Die Verwendung von UTC-Zeitangaben hat den Vorteil, dass die Zeitstempel eines Clients aus einer anderen Zeitzone auf dem Server ohne jegliche weitere Konvertierungslogik korrekt als lokale Zeitangaben dargestellt werden.
 
 # Schnittstellen
 
-Im Rahmen des vorliegenden Projektes wurden mehrere Schnittstellen definiert. Diese wurden einerseits vom Auftraggeber festgelegt (`StringPersistor`) bzw. in den Interface-Komitees definiert (`Logger` und `LoggerSetup`), wobei der Auftraggeber den entsprechende Rahmen vorgegeben hat; andererseits in den jeweiligen Projektteams ausgearbeitet.
+Im Rahmen des vorliegenden Projekts wurden mehrere Schnittstellen definiert. Diese wurden einerseits vom Auftraggeber festgelegt (`StringPersistor`) bzw. in den Interface-Komitees definiert (`Logger` und `LoggerSetup`), wobei der Auftraggeber den entsprechende Rahmen vorgegeben hat; andererseits in den jeweiligen Projektteams ausgearbeitet.
 
 ## Externe Schnittstellen
 
@@ -213,7 +213,7 @@ Zum Kompilieren der Anwendung wird Maven und das HSLU-Nexus-Repository benötigt
 
 Zum Ausführen der Anwendung auf zwei oder drei verschiedenen Rechnern (Client, Server, Viewer) wird eine funktionierende Netzwerkverbindung zwischen diesen verlangt. Alle involvierten Systeme sollten zum gleichen Netzwerk gehören, da eine wechselseitige TCP-Kommunikation über einen Port `>1024` oftmals von Firewalls (d.h. an den Netzwerkgrenzen) unterbunden wird.
 
-[^make]: Ironischerweise ist Maven angetreten um `ant` zu ersetzen, welches wiederum angetreten ist um `make` zu ersetzen. Die Lösung mit dem `Makefile` macht das Zusammensuchen und Ausführen (mit der entsprechenden `classpath`-Option aber äusserst bequem, da `make` die Vorzüge leichtgewichtigen Dependency-Managements und der Shell kombiniert.
+[^make]: Ironischerweise ist Maven angetreten um `ant` zu ersetzen, welches wiederum angetreten ist um `make` zu ersetzen. Die Lösung mit dem `Makefile` macht das Zusammensuchen und Ausführen (mit der entsprechenden `classpath`-Option) aber äusserst bequem, da `make` die Vorzüge leichtgewichtigen Dependency-Managements und der Shell kombiniert.
 
 # Klassendiagramme
 
